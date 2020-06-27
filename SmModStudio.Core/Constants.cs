@@ -4,7 +4,7 @@
     public static class Constants
     {
 
-        public const long DiscordClientId = 726303683150741505;
+        public const string DiscordClientId = "726303683150741505";
 
     }
 

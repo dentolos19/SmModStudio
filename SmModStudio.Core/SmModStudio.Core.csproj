@@ -13,4 +13,9 @@
         <Product>Scrap Mechanic Mod Studio</Product>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
 </Project>

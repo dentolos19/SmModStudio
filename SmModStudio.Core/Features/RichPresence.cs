@@ -6,14 +6,14 @@ namespace SmModStudio.Core.Features
     public class RichPresence
     {
 
-        private DiscordRpcClient _client;
+        private readonly DiscordRpcClient _client;
         private Timestamps _currentTimestamp;
         
         public bool IsActivated { get; private set; }
 
         public RichPresence()
         {
-            _client = new DiscordRpcClient(Constants.DiscordClientId.ToString());
+            _client = new DiscordRpcClient(Constants.DiscordClientId);
         }
 
         public void Activate()

@@ -13,7 +13,7 @@
         <Authors>Dennise Catolos</Authors>
         <Title>Scrap Mechanic Mod Studio</Title>
         <Copyright>Copyright © 2020</Copyright>
-        <ApplicationIcon>Resources/Icon.ico</ApplicationIcon>
+        <ApplicationIcon>Resources/Assets/Icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,18 +30,28 @@
 
     <ItemGroup>
       <PackageReference Include="AvalonEdit" Version="6.0.1" />
-      <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
       <PackageReference Include="MahApps.Metro" Version="2.1.0" />
       <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Resources\Logo.png" />
-      <Resource Include="Resources\Logo.png" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\SmModStudio.Core\SmModStudio.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\LuaSyntax.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Resources\Assets\Logo.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\Syntax\Lua.xml" />
     </ItemGroup>
 
 </Project>
