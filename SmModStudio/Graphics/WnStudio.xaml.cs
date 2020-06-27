@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
 
 namespace SmModStudio.Graphics
 {
@@ -9,6 +11,7 @@ namespace SmModStudio.Graphics
         public WnStudio()
         {
             InitializeComponent();
+            App.WindowPreferences.Show();
         }
 
         public void LoadProject(string filePath)
@@ -20,7 +23,11 @@ namespace SmModStudio.Graphics
         {
             // TODO: Add Unsaved Project Safety
         }
-        
+
+        private void StudioClosed(object sender, EventArgs args)
+        {
+            Application.Current.Shutdown();
+        }
     }
 
 }

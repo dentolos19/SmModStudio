@@ -23,6 +23,9 @@
       <Page Update="Graphics\PgEditor.xaml">
         <Generator></Generator>
       </Page>
+      <Page Update="Graphics\WnPreferences.xaml">
+        <Generator></Generator>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
@@ -31,6 +34,9 @@
       </Compile>
       <Compile Update="Graphics\PgEditor.xaml.cs">
         <DependentUpon>PgEditor.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Graphics\WnPreferences.xaml.cs">
+        <DependentUpon>WnPreferences.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 
