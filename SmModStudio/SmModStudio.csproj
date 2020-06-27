@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <UseWPF>true</UseWPF>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
+        <PublicSign>true</PublicSign>
+        <TargetFrameworks>net46;netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
+        <Company>Aprodots</Company>
+        <Product>Scrap Mechanic Mod Studio</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Page Update="Graphics\WnMain.xaml">
+        <Generator></Generator>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Graphics\WnMain.xaml.cs">
+        <DependentUpon>WnMain.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AvalonEdit" Version="6.0.1" />
+      <PackageReference Include="MahApps.Metro" Version="2.1.0" />
+      <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
+    </ItemGroup>
+
+</Project>
