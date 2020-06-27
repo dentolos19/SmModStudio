@@ -6,9 +6,13 @@
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
         <PublicSign>true</PublicSign>
-        <TargetFrameworks>net46;netcoreapp3.1;netcoreapp5.0</TargetFrameworks>
         <Company>Aprodots</Company>
         <Product>Scrap Mechanic Mod Studio</Product>
+        <TargetFramework>netcoreapp5.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <Authors>Dennise Catolos</Authors>
+        <Title>Scrap Mechanic Mod Studio</Title>
+        <Copyright>Copyright © 2020</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,6 +29,7 @@
 
     <ItemGroup>
       <PackageReference Include="AvalonEdit" Version="6.0.1" />
+      <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
       <PackageReference Include="MahApps.Metro" Version="2.1.0" />
       <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
     </ItemGroup>

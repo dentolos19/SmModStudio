@@ -11,6 +11,8 @@ namespace SmModStudio.Core
         private static readonly string Source = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SmModStudio.cfg");
         private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
+        public bool EnableRichPresence { get; set; } = true;
+
         public void Save()
         {
             var stream = new FileStream(Source, FileMode.Create);
