@@ -24,7 +24,6 @@ namespace SmModStudio.Core.Features
                 IsActivated = true;
                 SetIdlePresence("Created by @dentolos19", true);
             }
-                
         }
 
         public void Deactivate()
@@ -34,7 +33,6 @@ namespace SmModStudio.Core.Features
                 _client.Deinitialize();
                 IsActivated = false;
             }
-                
         }
 
         public void SetIdlePresence(string state = null, bool resetTimestamp = false)

@@ -3,32 +3,39 @@
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
                      Title="Scrap Mechanic Mod Studio" Closing="StudioClosing" Closed="StudioClosed">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewProject"/>
+        <CommandBinding Command="Open" Executed="OpenProject"/>
+        <CommandBinding Command="Save" Executed="SaveFile"/>
+        <CommandBinding Command="SaveAs" Executed="SaveFileAs"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="Ctrl+N"/>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="New Project" InputGestureText="Ctrl+N" Click="NewProject"/>
+                <MenuItem Header="Open Project" InputGestureText="Ctrl+O" Click="OpenProject"/>
+                <MenuItem Header="Open File" Click="OpenFile"/>
                 <Separator/>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S"/>
-                <MenuItem Header="Save As" InputGestureText="Ctrl+Shift+S"/>
+                <MenuItem Header="Save File" InputGestureText="Ctrl+S" Click="SaveFile"/>
+                <MenuItem Header="Save File As" InputGestureText="Ctrl+Shift+S" Click="SaveFileAs"/>
                 <Separator/>
-                <MenuItem Header="Exit" InputGestureText="Alt+F4"/>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="ExitStudio"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z"/>
-                <MenuItem Header="Redo" InputGestureText="Ctrl+Y"/>
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="UndoText"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="RedoText"/>
                 <Separator/>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X"/>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C"/>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V"/>
-                <MenuItem Header="Delete" InputGestureText="Del"/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Click="CutText"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Click="CopyText"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Click="PasteText"/>
+                <MenuItem Header="Delete" InputGestureText="Del" Click="DeleteText"/>
                 <Separator/>
-                <MenuItem Header="Select All" InputGestureText="Ctrl+A"/>
+                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
             </MenuItem>
             <MenuItem Header="Options">
-                <MenuItem Header="Preferences"/>
+                <MenuItem Header="Preferences" Click="ShowPreferences"/>
                 <Separator/>
-                <MenuItem Header="About SmModStudio"/>
+                <MenuItem Header="About SmModStudio" Click="ShowAbout"/>
             </MenuItem>
         </Menu>
         <DockPanel>

@@ -2,8 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
-        Title="Studio Preferences" SizeToContent="WidthAndHeight" Closing="PreferencesClosing">
+        Title="Studio Preferences" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Closing="PreferencesClosing">
     <DockPanel Width="500" Height="300">
-        <!-- TODO: Add Controls -->
+        <DockPanel DockPanel.Dock="Bottom" Height="50">
+            <Button DockPanel.Dock="Right" Content="Save" Width="100"/>
+            <Button DockPanel.Dock="Right" Content="Reset" Width="100"/>
+            <Label Content="Created by Dennise Catolos (@dentolos19)" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <StackPanel></StackPanel>
     </DockPanel>
 </mahApps:MetroWindow>

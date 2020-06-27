@@ -14,8 +14,8 @@ namespace SmModStudio.Graphics
 
         private void PreferencesClosing(object sender, CancelEventArgs args)
         {
-            args.Cancel = true;
             Hide();
+            args.Cancel = true;
         }
     }
 

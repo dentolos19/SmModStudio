@@ -8,7 +8,7 @@
         <PublicSign>true</PublicSign>
         <Company>Aprodots</Company>
         <Product>Scrap Mechanic Mod Studio</Product>
-        <TargetFramework>netcoreapp5.0</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <IsPackable>false</IsPackable>
         <Authors>Dennise Catolos</Authors>
         <Title>Scrap Mechanic Mod Studio</Title>
