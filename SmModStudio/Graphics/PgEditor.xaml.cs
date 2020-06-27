@@ -7,8 +7,7 @@ namespace SmModStudio.Graphics
     {
 
         public string CurrentFile { get; private set; }
-        public string SaveExtension { get; private set; }
-        
+
         public PgEditor()
         {
             InitializeComponent();
@@ -21,15 +20,12 @@ namespace SmModStudio.Graphics
             {
                 case ".lua":
                     CodeEditor.SyntaxHighlighting = Constants.LuaSyntax;
-                    SaveExtension = ".lua";
                     break;
                 case ".json":
                     CodeEditor.SyntaxHighlighting = Constants.JsonSyntax;
-                    SaveExtension = ".json";
                     break;
                 default:
                     CodeEditor.SyntaxHighlighting = null;
-                    SaveExtension = string.Empty;
                     break;
             }
 

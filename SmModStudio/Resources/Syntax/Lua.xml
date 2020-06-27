@@ -1,15 +1,15 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <SyntaxDefinition name="SharpLua" extensions=".lua" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-    <Color name="Comment" foreground="#ff999999" exampleText="-- comment" />
-    <Color name="String" foreground="#fff99157" />
-    <Color name="Punctuation" />
+    <Color name="Comment" foreground="#ff999999"/>
+    <Color name="String" foreground="#fff99157"/>
+    <Color name="Punctuation"/>
     <Color name="MethodCall" foreground="#ffffcc66" fontWeight="bold"/>
     <Color name="NumberLiteral" foreground="#ff99cc99"/>
     <Color name="NilKeyword" fontWeight="bold"/>
-    <Color name="Keywords" fontWeight="bold" foreground="#ff6699cc" />
-    <Color name="GotoKeywords" foreground="#ffcc99cc" />
+    <Color name="Keywords" fontWeight="bold" foreground="#ff6699cc"/>
+    <Color name="GotoKeywords" foreground="#ffcc99cc"/>
     <Color name="Visibility" fontWeight="bold" foreground="#fff99157"/>
-    <Color name="TrueFalse" fontWeight="bold" foreground="#ff66cccc" />
+    <Color name="TrueFalse" fontWeight="bold" foreground="#ff66cccc"/>
     <RuleSet name="CommentMarkerSet">
         <Keywords fontWeight="bold" foreground="#fff2777a">
             <Word>TODO</Word>

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using System.IO;
 using System.Windows;
-using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Win32;
 
 namespace SmModStudio.Graphics
@@ -29,7 +27,7 @@ namespace SmModStudio.Graphics
 
         private void StudioClosing(object sender, CancelEventArgs args)
         {
-            // TODO: Add Unsaved Project Safety
+            // TODO: Add unsaved project safety
         }
 
         private void StudioClosed(object sender, EventArgs args)
@@ -39,7 +37,7 @@ namespace SmModStudio.Graphics
 
         private void NewProject(object sender, RoutedEventArgs args)
         {
-            this.ShowMessageAsync("Hello world!", "Testing New");
+            // TODO: New project
         }
         
         private void OpenProject(object sender, RoutedEventArgs args)
@@ -49,13 +47,15 @@ namespace SmModStudio.Graphics
         
         private void OpenFile(object sender, RoutedEventArgs args)
         {
-            var dialog = new OpenFileDialog {Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*"};
+            var dialog = new OpenFileDialog { Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*" };
             if (dialog.ShowDialog() == true)
                 OpenSpecificFile(dialog.FileName);
         }
         
         private void SaveFile(object sender, RoutedEventArgs args)
         {
+            if (!PageView.Content.Equals(App.PageEditor))
+                return;
             if (string.IsNullOrEmpty(App.PageEditor.CurrentFile))
             {
                 SaveFileAs(null, null);
@@ -66,7 +66,9 @@ namespace SmModStudio.Graphics
         
         private void SaveFileAs(object sender, RoutedEventArgs args)
         {
-            var dialog = new SaveFileDialog {Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*", DefaultExt = App.PageEditor.SaveExtension};
+            if (!PageView.Content.Equals(App.PageEditor))
+                return;
+            var dialog = new SaveFileDialog { Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*" };
             if (dialog.ShowDialog() == true)
                 App.PageEditor.Save(dialog.FileName);
         }
@@ -78,39 +80,44 @@ namespace SmModStudio.Graphics
 
         private void UndoText(object sender, RoutedEventArgs args)
         {
-            if (App.PageEditor.CodeEditor.CanUndo)
+            if (App.PageEditor.CodeEditor.CanUndo && PageView.Content.Equals(App.PageEditor))
                 App.PageEditor.CodeEditor.Undo();
         }
         
         private void RedoText(object sender, RoutedEventArgs args)
         {
-            if (App.PageEditor.CodeEditor.CanRedo)
+            if (App.PageEditor.CodeEditor.CanRedo && PageView.Content.Equals(App.PageEditor))
                 App.PageEditor.CodeEditor.Redo();
         }
         
         private void CutText(object sender, RoutedEventArgs args)
         {
-            App.PageEditor.CodeEditor.Cut();
+            if (PageView.Content.Equals(App.PageEditor))
+                App.PageEditor.CodeEditor.Cut();
         }
         
         private void CopyText(object sender, RoutedEventArgs args)
         {
-            App.PageEditor.CodeEditor.Copy();
+            if (PageView.Content.Equals(App.PageEditor))
+                App.PageEditor.CodeEditor.Copy();
         }
         
         private void PasteText(object sender, RoutedEventArgs args)
         {
-            App.PageEditor.CodeEditor.Paste();
+            if (PageView.Content.Equals(App.PageEditor))
+                App.PageEditor.CodeEditor.Paste();
         }
         
         private void DeleteText(object sender, RoutedEventArgs args)
         {
-            App.PageEditor.CodeEditor.Delete();
+            if (PageView.Content.Equals(App.PageEditor))
+                App.PageEditor.CodeEditor.Delete();
         }
         
         private void SelectAllText(object sender, RoutedEventArgs args)
         {
-            App.PageEditor.CodeEditor.SelectAll();
+            if (PageView.Content.Equals(App.PageEditor))
+                App.PageEditor.CodeEditor.SelectAll();
         }
         
         private void ShowPreferences(object sender, RoutedEventArgs args)
@@ -120,7 +127,7 @@ namespace SmModStudio.Graphics
         
         private void ShowAbout(object sender, RoutedEventArgs args)
         {
-            
+            // TODO: Show about
         }
         
     }

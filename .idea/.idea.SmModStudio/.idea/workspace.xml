@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95f13b10-7ce9-4c51-b387-aa05089a00b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Json.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Lua.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Lua.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/IL/F3F14740-77BC-434E-9C52-E0AF54452E7F/9b/83c6dad8/02000005pdb.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/App.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +37,8 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Lua.xml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Json.xml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
       </list>
     </option>
@@ -59,7 +59,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager">
     <configuration name="SmModStudio" type="DotNetProject" factoryName=".NET Project">
@@ -92,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1593250340531</updated>
       <workItem from="1593250354335" duration="6000" />
-      <workItem from="1593254775123" duration="3053000" />
+      <workItem from="1593254775123" duration="4563000" />
     </task>
     <servers />
   </component>
@@ -105,30 +105,34 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593255713085">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593258013740">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593255713085" />
-    <state width="1495" height="205" key="GridCell.Tab.0.bottom" timestamp="1593257408218">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593258013740" />
+    <state x="512" y="234" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1593258580762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593257408218" />
-    <state width="1495" height="205" key="GridCell.Tab.0.center" timestamp="1593257408218">
+    <state x="512" y="234" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1536.824@0.0.1536.824" timestamp="1593258580762" />
+    <state width="1495" height="205" key="GridCell.Tab.0.bottom" timestamp="1593259381067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593257408218" />
-    <state width="1495" height="205" key="GridCell.Tab.0.left" timestamp="1593257408218">
+    <state width="1495" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593259381067" />
+    <state width="1495" height="205" key="GridCell.Tab.0.center" timestamp="1593259381067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593257408218" />
-    <state width="1495" height="205" key="GridCell.Tab.0.right" timestamp="1593257408218">
+    <state width="1495" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593259381067" />
+    <state width="1495" height="205" key="GridCell.Tab.0.left" timestamp="1593259381067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593257408218" />
-    <state x="277" y="58" key="SettingsEditor" timestamp="1593254884766">
+    <state width="1495" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593259381067" />
+    <state width="1495" height="205" key="GridCell.Tab.0.right" timestamp="1593259381067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593254884766" />
+    <state width="1495" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593259381067" />
+    <state x="277" y="58" key="SettingsEditor" timestamp="1593257919491">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593257919491" />
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1593257856510">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
