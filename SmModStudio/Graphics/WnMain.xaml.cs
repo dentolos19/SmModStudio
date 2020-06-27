@@ -7,6 +7,7 @@
         public WnMain()
         {
             InitializeComponent();
+            PageView.Navigate(App.PageEditor);
         }
 
     }

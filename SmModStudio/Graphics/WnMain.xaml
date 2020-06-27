@@ -2,7 +2,6 @@
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
-                     xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
                      Title="Scrap Mechanic Mod Studio">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -23,6 +22,8 @@
             </MenuItem>
         </Menu>
         <DockPanel>
+            <TreeView DockPanel.Dock="Left" Width="200"/>
+            <Frame x:Name="PageView" NavigationUIVisibility="Hidden"/>
         </DockPanel>
     </DockPanel>
 </mahApps:MetroWindow>

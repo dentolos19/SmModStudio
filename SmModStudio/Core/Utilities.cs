@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Windows;
 
 namespace SmModStudio.Core
@@ -24,6 +26,18 @@ namespace SmModStudio.Core
             var dictionary = new ResourceDictionary
                 {Source = new Uri($"pack://application:,,,/MahApps.Metro;component/Styles/Themes/Dark.{accent}.xaml")};
             Application.Current.Resources.MergedDictionaries.Add(dictionary);
+        }
+
+        public static string RetrieveResourceData(string resourceName)
+        {
+            var manifest = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            if (manifest == null)
+                return null;
+            var reader = new StreamReader(manifest);
+            var result = reader.ReadToEnd();
+            reader.Close();
+            manifest.Close();
+            return result;
         }
 
     }

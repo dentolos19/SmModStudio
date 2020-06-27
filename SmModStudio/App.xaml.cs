@@ -11,16 +11,21 @@ namespace SmModStudio
 
         public static Configuration Settings { get; private set; }
         
-        public static RichPresence RichPresenceFeature { get; private set; }
+        public static RichPresence FeatureRichPresence { get; private set; }
+        
+        public static WnMain WindowMain { get; private set; }
+        public static PgEditor PageEditor { get; private set; }
 
         private void Initialize(object sender, StartupEventArgs args)
         {
             Settings = Configuration.Load();
-            RichPresenceFeature = new RichPresence();
+            FeatureRichPresence = new RichPresence();
             if (Settings.EnableRichPresence)
-                RichPresenceFeature.Activate();
+                FeatureRichPresence.Activate();
             Utilities.SetAppTheme(Utilities.GetRandomAccent());
-            new WnMain().Show();
+            PageEditor = new PgEditor();
+            WindowMain = new WnMain();
+            WindowMain.Show();
         }
 
     }

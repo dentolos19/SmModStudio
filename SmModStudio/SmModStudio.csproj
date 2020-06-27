@@ -20,11 +20,17 @@
       <Page Update="Graphics\WnMain.xaml">
         <Generator></Generator>
       </Page>
+      <Page Update="Graphics\PgEditor.xaml">
+        <Generator></Generator>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
       <Compile Update="Graphics\WnMain.xaml.cs">
         <DependentUpon>WnMain.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Graphics\PgEditor.xaml.cs">
+        <DependentUpon>PgEditor.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 
