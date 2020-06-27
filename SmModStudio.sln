@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmModStudio", "SmModStudio\SmModStudio.csproj", "{951BD080-9CDA-4123-9BC5-13D498A3B55E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmModStudio.Core", "SmModStudio.Core\SmModStudio.Core.csproj", "{C232DAC1-028B-4286-A051-8E551C7C082A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{951BD080-9CDA-4123-9BC5-13D498A3B55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{951BD080-9CDA-4123-9BC5-13D498A3B55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{951BD080-9CDA-4123-9BC5-13D498A3B55E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C232DAC1-028B-4286-A051-8E551C7C082A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C232DAC1-028B-4286-A051-8E551C7C082A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C232DAC1-028B-4286-A051-8E551C7C082A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C232DAC1-028B-4286-A051-8E551C7C082A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

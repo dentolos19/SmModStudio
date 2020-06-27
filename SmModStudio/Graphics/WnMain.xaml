@@ -6,17 +6,23 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <!-- TODO -->
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <Separator/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As"/>
+                <Separator/>
+                <MenuItem Header="Exit"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <!-- TODO -->
+                <!-- TODO: Add Functions -->
             </MenuItem>
             <MenuItem Header="Options">
-                <!-- TODO -->
+                <!-- TODO: Add Functions -->
             </MenuItem>
         </Menu>
         <DockPanel>
-            <!-- TODO -->
+            <!-- TODO: Add Functions -->
         </DockPanel>
     </DockPanel>
 </mahApps:MetroWindow>

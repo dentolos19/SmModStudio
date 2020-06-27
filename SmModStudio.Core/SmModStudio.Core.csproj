@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <Title>Scrap Mechanic Mod Studio</Title>
+        <Authors>Dennise Catolos</Authors>
+        <Copyright>Copyright © 2020</Copyright>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
+        <PublicSign>true</PublicSign>
+        <Company>Aprodots</Company>
+        <Product>Scrap Mechanic Mod Studio</Product>
+    </PropertyGroup>
+
+</Project>
