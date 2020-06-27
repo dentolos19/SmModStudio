@@ -13,7 +13,7 @@ namespace SmModStudio
         
         public static RichPresence FeatureRichPresence { get; private set; }
         
-        public static WnMain WindowMain { get; private set; }
+        public static WnStudio WindowStudio { get; private set; }
         public static PgEditor PageEditor { get; private set; }
 
         private void Initialize(object sender, StartupEventArgs args)
@@ -24,8 +24,10 @@ namespace SmModStudio
                 FeatureRichPresence.Activate();
             Utilities.SetAppTheme(Utilities.GetRandomAccent());
             PageEditor = new PgEditor();
-            WindowMain = new WnMain();
-            WindowMain.Show();
+            WindowStudio = new WnStudio();
+            if (args.Args.Length == 1)
+                WindowStudio.LoadProject(args.Args[0]);
+            WindowStudio.Show();
         }
 
     }

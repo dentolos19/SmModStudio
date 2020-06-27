@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Page Update="Graphics\WnMain.xaml">
+      <Page Update="Graphics\WnStudio.xaml">
         <Generator></Generator>
       </Page>
       <Page Update="Graphics\PgEditor.xaml">
@@ -26,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Graphics\WnMain.xaml.cs">
+      <Compile Update="Graphics\WnStudio.xaml.cs">
         <DependentUpon>WnMain.xaml</DependentUpon>
       </Compile>
       <Compile Update="Graphics\PgEditor.xaml.cs">
@@ -59,6 +59,8 @@
 
     <ItemGroup>
       <EmbeddedResource Include="Resources\Syntax\Lua.xml" />
+      <None Remove="Resources\Syntax\Json.xml" />
+      <EmbeddedResource Include="Resources\Syntax\Json.xml" />
     </ItemGroup>
 
 </Project>

@@ -1,7 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Windows;
+using System.Xml;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 
 namespace SmModStudio.Core
 {
@@ -37,6 +41,16 @@ namespace SmModStudio.Core
             var result = reader.ReadToEnd();
             reader.Close();
             manifest.Close();
+            return result;
+        }
+
+        public static IHighlightingDefinition ConvertXmlToSyntax(string data)
+        {
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
+            var reader = new XmlTextReader(stream);
+            var result = HighlightingLoader.Load(reader, HighlightingManager.Instance);
+            reader.Close();
+            stream.Close();
             return result;
         }
 
