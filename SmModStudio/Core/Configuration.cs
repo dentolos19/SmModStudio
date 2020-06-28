@@ -8,9 +8,12 @@ namespace SmModStudio.Core
     public class Configuration
     {
 
-        private static readonly string Source = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SmModStudio.cfg");
+        private static readonly string Source = Path.Combine(AppDomain.CurrentDomain.BaseDirectory!, "SmModStudio.cfg");
         private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
+        public string GameDataPath { get; set; } = string.Empty;
+        public string AccentName { get; set; } = "Orange";
+        public bool EnableDarkMode { get; set; } = true;
         public bool EnableRichPresence { get; set; } = true;
 
         public void Save()
@@ -18,6 +21,12 @@ namespace SmModStudio.Core
             var stream = new FileStream(Source, FileMode.Create);
             Serializer.Serialize(stream, this);
             stream.Close();
+        }
+
+        public void Reset()
+        {
+            if (!File.Exists(Source))
+                File.Delete(Source);
         }
 
         public static Configuration Load()

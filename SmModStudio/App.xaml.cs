@@ -23,7 +23,7 @@ namespace SmModStudio
             FeatureRichPresence = new RichPresence();
             if (Settings.EnableRichPresence)
                 FeatureRichPresence.Activate();
-            Utilities.SetAppTheme(Utilities.GetRandomAccent());
+            Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
             WindowPreferences = new WnPreferences();
             WindowStudio = new WnStudio();
