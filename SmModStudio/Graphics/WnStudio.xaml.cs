@@ -19,7 +19,7 @@ namespace SmModStudio.Graphics
             // TODO: Load Project
         }
 
-        public void OpenSpecificFile(string filePath)
+        private void OpenSpecificFile(string filePath)
         {
             PageView.Navigate(App.PageEditor);
             App.PageEditor.EditFile(filePath);
@@ -28,11 +28,6 @@ namespace SmModStudio.Graphics
         private void StudioClosing(object sender, CancelEventArgs args)
         {
             // TODO: Add unsaved project safety
-        }
-
-        private void StudioClosed(object sender, EventArgs args)
-        {
-            Application.Current.Shutdown();
         }
 
         private void NewProject(object sender, RoutedEventArgs args)
@@ -122,7 +117,7 @@ namespace SmModStudio.Graphics
         
         private void ShowPreferences(object sender, RoutedEventArgs args)
         {
-            App.WindowPreferences.ShowDialog();
+            new WnPreferences { Owner = this }.Show();
         }
         
         private void ShowAbout(object sender, RoutedEventArgs args)

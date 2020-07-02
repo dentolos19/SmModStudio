@@ -22,12 +22,6 @@ namespace SmModStudio.Graphics
             EnableDarkModeSwitch.IsChecked = App.Settings.EnableDarkMode;
             EnableRichPresenceSwitch.IsChecked = App.Settings.EnableRichPresence;
         }
-        
-        private void PreferencesClosing(object sender, CancelEventArgs args)
-        {
-            Hide();
-            args.Cancel = true;
-        }
 
         private void SaveSettings(object sender, RoutedEventArgs args)
         {
