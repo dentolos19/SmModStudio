@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using SmModStudio.Core;
 
 namespace SmModStudio.Graphics

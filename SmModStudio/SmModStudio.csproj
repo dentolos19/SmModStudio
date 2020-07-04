@@ -26,6 +26,9 @@
       <Page Update="Graphics\WnPreferences.xaml">
         <Generator></Generator>
       </Page>
+      <Page Update="Graphics\WnIntro.xaml">
+        <Generator></Generator>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
@@ -38,6 +41,9 @@
       <Compile Update="Graphics\WnPreferences.xaml.cs">
         <DependentUpon>WnPreferences.xaml</DependentUpon>
       </Compile>
+      <Compile Update="Graphics\WnIntro.xaml.cs">
+        <DependentUpon>WnIntro.xaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -45,6 +51,7 @@
       <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
       <PackageReference Include="MahApps.Metro" Version="2.1.0" />
       <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
+      <PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0" />
     </ItemGroup>
 
     <ItemGroup>

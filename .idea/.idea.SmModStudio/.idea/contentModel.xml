@@ -24,6 +24,8 @@
         <e p="Graphics" t="Include">
           <e p="PgEditor.xaml" t="Include" />
           <e p="PgEditor.xaml.cs" t="Include" />
+          <e p="WnIntro.xaml" t="Include" />
+          <e p="WnIntro.xaml.cs" t="Include" />
           <e p="WnPreferences.xaml" t="Include" />
           <e p="WnPreferences.xaml.cs" t="Include" />
           <e p="WnStudio.xaml" t="Include" />
@@ -35,6 +37,7 @@
               <e p="App.g.cs" t="Include" />
               <e p="Graphics" t="Include">
                 <e p="PgEditor.g.cs" t="Include" />
+                <e p="WnIntro.g.cs" t="Include" />
                 <e p="WnPreferences.g.cs" t="Include" />
                 <e p="WnStudio.g.cs" t="Include" />
               </e>

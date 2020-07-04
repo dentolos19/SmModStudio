@@ -24,6 +24,16 @@ namespace SmModStudio.Graphics
             PageView.Navigate(App.PageEditor);
             App.PageEditor.EditFile(filePath);
         }
+        
+        private void StudioLoaded(object sender, RoutedEventArgs args)
+        {
+            if (string.IsNullOrEmpty(App.Settings.GameDataPath))
+            {
+                new WnIntro { Owner = this }.ShowDialog();
+                if (string.IsNullOrEmpty(App.Settings.GameDataPath))
+                    Application.Current.Shutdown();
+            }
+        }
 
         private void StudioClosing(object sender, CancelEventArgs args)
         {
@@ -124,7 +134,7 @@ namespace SmModStudio.Graphics
         {
             // TODO: Show about
         }
-        
+
     }
 
 }
