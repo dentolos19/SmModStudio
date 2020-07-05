@@ -20,13 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f13b10-7ce9-4c51-b387-aa05089a00b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,16 +60,17 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Lua.xml" />
         <option value="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Json.xml" />
-        <option value="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperAnalytics.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" />
       </list>
     </option>
   </component>
@@ -131,7 +131,8 @@
       <workItem from="1593505982673" duration="82000" />
       <workItem from="1593676000676" duration="670000" />
       <workItem from="1593767150914" duration="8000" />
-      <workItem from="1593825900604" duration="2718000" />
+      <workItem from="1593825900604" duration="3705000" />
+      <workItem from="1593909206969" duration="604000" />
     </task>
     <servers />
   </component>
@@ -150,6 +151,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -163,22 +165,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="234" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1536.824@0.0.1536.824" timestamp="1593826372686" />
-    <state width="1495" height="206" key="GridCell.Tab.0.bottom" timestamp="1593828508145">
+    <state width="1495" height="206" key="GridCell.Tab.0.bottom" timestamp="1593909632193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593828508145" />
-    <state width="1495" height="206" key="GridCell.Tab.0.center" timestamp="1593828508145">
+    <state width="1495" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593909632193" />
+    <state width="1495" height="206" key="GridCell.Tab.0.center" timestamp="1593909632192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593828508145" />
-    <state width="1495" height="206" key="GridCell.Tab.0.left" timestamp="1593828508145">
+    <state width="1495" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593909632192" />
+    <state width="1495" height="206" key="GridCell.Tab.0.left" timestamp="1593909632192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593828508145" />
-    <state width="1495" height="206" key="GridCell.Tab.0.right" timestamp="1593828508145">
+    <state width="1495" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593909632192" />
+    <state width="1495" height="206" key="GridCell.Tab.0.right" timestamp="1593909632193">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1495" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593828508145" />
+    <state width="1495" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593909632193" />
     <state x="277" y="58" key="SettingsEditor" timestamp="1593826348503">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

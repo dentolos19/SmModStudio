@@ -51,6 +51,8 @@
       <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
       <PackageReference Include="MahApps.Metro" Version="2.1.0" />
       <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
+      <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.2.2" />
+      <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.2.2" />
       <PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0" />
     </ItemGroup>
 

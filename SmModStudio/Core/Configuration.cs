@@ -15,6 +15,7 @@ namespace SmModStudio.Core
         public string AccentName { get; set; } = "Orange";
         public bool EnableDarkMode { get; set; } = true;
         public bool EnableRichPresence { get; set; } = true;
+        public bool EnableDeveloperAnalytics { get; set; } = true;
 
         public void Save()
         {

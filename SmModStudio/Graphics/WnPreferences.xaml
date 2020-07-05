@@ -25,6 +25,9 @@
             <DockPanel Margin="10,10,10,0">
                 <CheckBox x:Name="EnableRichPresenceSwitch" Content="Enable Rich Presence"/>
             </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <CheckBox x:Name="EnableDeveloperAnalyticsSwitch" Content="Enable Developer Analytics"/>
+            </DockPanel>
         </StackPanel>
     </DockPanel>
 </mahApps:MetroWindow>

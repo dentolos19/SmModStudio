@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using SmModStudio.Core;
 using SmModStudio.Core.Features;
 using SmModStudio.Graphics;
@@ -22,6 +25,8 @@ namespace SmModStudio
             FeatureRichPresence = new RichPresence();
             if (Settings.EnableRichPresence)
                 FeatureRichPresence.Activate();
+            if (Settings.EnableDeveloperAnalytics)
+                AppCenter.Start(Constants.AppCenterAppSecret, typeof(Analytics), typeof(Crashes));
             Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
             WindowStudio = new WnStudio();
