@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="870532fb-f444-46e0-b2ee-188891aab629" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Models/SmProject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Properties/AssemblyKey.snk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Assets/Icon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Assets/Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-Retina.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Fonts/FiraCode-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Json.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Resources/Syntax/Lua.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" beforeDir="false" />
-    </list>
+    <list default="true" id="870532fb-f444-46e0-b2ee-188891aab629" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,13 +58,14 @@
       <option name="presentableId" value="Default" />
       <updated>1593918952246</updated>
       <workItem from="1593918954836" duration="112000" />
+      <workItem from="1593919077261" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
