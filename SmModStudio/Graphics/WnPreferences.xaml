@@ -12,7 +12,7 @@
         <StackPanel>
             <DockPanel Margin="10,10,10,0">
                 <Label DockPanel.Dock="Left" Content="Game Data Path" Width="100" Margin="0,0,10,0"/>
-                <Button DockPanel.Dock="Right" Content="Browse" Width="100" Margin="10,0,0,0"/>
+                <Button DockPanel.Dock="Right" Content="Browse" Width="100" Margin="10,0,0,0" Click="BrowseGameDataPath"/>
                 <TextBox x:Name="GameDataPathBox"/>
             </DockPanel>
             <DockPanel Margin="10,10,10,0">

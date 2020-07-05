@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
 
 namespace SmModStudio.Graphics
@@ -41,7 +42,14 @@ namespace SmModStudio.Graphics
             if (MessageBox.Show("All settings has changed to their default settings, do you want to restart this program?", "SmModStudio", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 Utilities.RestartApp();
         }
-        
+
+        private void BrowseGameDataPath(object sender, RoutedEventArgs args)
+        {
+            var dialog = new VistaFolderBrowserDialog();
+            if (dialog.ShowDialog() == true)
+                GameDataPathBox.Text = dialog.SelectedPath;
+        }
+
     }
 
 }

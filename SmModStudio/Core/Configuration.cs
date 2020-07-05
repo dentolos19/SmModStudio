@@ -26,7 +26,7 @@ namespace SmModStudio.Core
 
         public void Reset()
         {
-            if (!File.Exists(Source))
+            if (File.Exists(Source))
                 File.Delete(Source);
         }
 
