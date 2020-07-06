@@ -49,7 +49,7 @@ namespace SmModStudio.Core
 
         public static void RestartApp(string args = null)
         {
-            Process.Start(Application.ResourceAssembly.Location, args);
+            Process.Start(Assembly.GetExecutingAssembly().Location, args);
             Application.Current.Shutdown();
         }
 

@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1eGF9yPhHEkZkygrQj5EV0ekWag" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
@@ -22,5 +79,59 @@
         <option name="Build" />
       </method>
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="" />
+      <created>1593939876296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593939876296</updated>
+      <workItem from="1593939886864" duration="103000" />
+      <workItem from="1593998477221" duration="148000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1495" height="205" key="GridCell.Tab.0.bottom" timestamp="1593998626282">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="205" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593998626282" />
+    <state width="1495" height="205" key="GridCell.Tab.0.center" timestamp="1593998626282">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="205" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593998626282" />
+    <state width="1495" height="205" key="GridCell.Tab.0.left" timestamp="1593998626282">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="205" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593998626282" />
+    <state width="1495" height="205" key="GridCell.Tab.0.right" timestamp="1593998626282">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1495" height="205" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593998626282" />
   </component>
 </project>
