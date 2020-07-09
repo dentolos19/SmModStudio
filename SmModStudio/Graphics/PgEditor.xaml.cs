@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using SmModStudio.Core;
+using SmModStudio.Core.Features;
 
 namespace SmModStudio.Graphics
 {
@@ -13,7 +14,7 @@ namespace SmModStudio.Graphics
             InitializeComponent();
         }
 
-        public void EditFile(string filePath)
+        public void EditFile(string filePath, string projectName = "nothing")
         {
             var extension = Path.GetExtension(filePath);
             switch (extension.ToLower())
@@ -28,9 +29,10 @@ namespace SmModStudio.Graphics
                     CodeEditor.SyntaxHighlighting = null;
                     break;
             }
-
             CurrentFile = filePath;
             CodeEditor.Load(CurrentFile);
+            if (RichPresence.Instance.IsActivated)
+                RichPresence.Instance.SetWorkPresence(projectName, Path.GetFileName(filePath));
         }
 
         public void Save(string filePath = null)
