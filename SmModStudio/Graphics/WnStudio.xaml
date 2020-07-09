@@ -4,7 +4,6 @@
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
                      Title="Scrap Mechanic Mod Studio" Loaded="StudioLoaded" Closing="StudioClosing">
     <Window.CommandBindings>
-        <CommandBinding Command="New" Executed="NewProject"/>
         <CommandBinding Command="Open" Executed="OpenProject"/>
         <CommandBinding Command="Save" Executed="SaveFile"/>
         <CommandBinding Command="SaveAs" Executed="SaveFileAs"/>
@@ -12,7 +11,6 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New Project" InputGestureText="Ctrl+N" Click="NewProject"/>
                 <MenuItem Header="Open Project" InputGestureText="Ctrl+O" Click="OpenProject"/>
                 <MenuItem Header="Open File" Click="OpenFile"/>
                 <Separator/>
@@ -39,7 +37,13 @@
             </MenuItem>
         </Menu>
         <DockPanel>
-            <TreeView DockPanel.Dock="Left" Width="200"/>
+            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" Width="200">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate>
+                        <!-- TODO: Project Listing -->
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
             <Frame x:Name="PageView" NavigationUIVisibility="Hidden"/>
         </DockPanel>
     </DockPanel>

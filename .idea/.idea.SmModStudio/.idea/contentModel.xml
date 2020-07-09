@@ -10,6 +10,10 @@
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Bindings" t="Include">
+          <e p="TvProjectDirectory.cs" t="Include" />
+          <e p="TvProjectFile.cs" t="Include" />
+        </e>
         <e p="Core" t="Include">
           <e p="Configuration.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
@@ -23,6 +27,8 @@
           <e p="PgEditor.xaml.cs" t="Include" />
           <e p="WnIntro.xaml" t="Include" />
           <e p="WnIntro.xaml.cs" t="Include" />
+          <e p="WnOpen.xaml" t="Include" />
+          <e p="WnOpen.xaml.cs" t="Include" />
           <e p="WnPreferences.xaml" t="Include" />
           <e p="WnPreferences.xaml.cs" t="Include" />
           <e p="WnStudio.xaml" t="Include" />

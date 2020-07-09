@@ -1,7 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using Microsoft.Win32;
+using SmModStudio.Core;
+using Application = System.Windows.Application;
+using MessageBox = System.Windows.MessageBox;
 
 namespace SmModStudio.Graphics
 {
@@ -27,6 +29,11 @@ namespace SmModStudio.Graphics
         
         private void StudioLoaded(object sender, RoutedEventArgs args)
         {
+            if (string.IsNullOrEmpty(Constants.GameUserPath))
+            {
+                MessageBox.Show("Scrap Mechanic is not installed or haven't initialized, this program will shut down.");
+                Application.Current.Shutdown();
+            }
             if (string.IsNullOrEmpty(App.Settings.GameDataPath))
             {
                 new WnIntro { Owner = this }.ShowDialog();
@@ -40,11 +47,6 @@ namespace SmModStudio.Graphics
             // TODO: Add unsaved project safety
         }
 
-        private void NewProject(object sender, RoutedEventArgs args)
-        {
-            // TODO: New project
-        }
-        
         private void OpenProject(object sender, RoutedEventArgs args)
         {
             // TODO: Open Project

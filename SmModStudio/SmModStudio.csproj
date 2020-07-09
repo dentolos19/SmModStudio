@@ -29,6 +29,9 @@
       <Page Update="Graphics\WnIntro.xaml">
         <Generator></Generator>
       </Page>
+      <Page Update="Graphics\WnOpen.xaml">
+        <Generator></Generator>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
@@ -43,6 +46,9 @@
       </Compile>
       <Compile Update="Graphics\WnIntro.xaml.cs">
         <DependentUpon>WnIntro.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Graphics\WnOpen.xaml.cs">
+        <DependentUpon>WnOpen.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 

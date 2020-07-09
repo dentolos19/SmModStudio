@@ -49,8 +49,25 @@ namespace SmModStudio.Core
 
         public static void RestartApp(string args = null)
         {
-            Process.Start(Assembly.GetExecutingAssembly().Location, args);
+            var location = Assembly.GetExecutingAssembly().Location;
+            if (location.ToLower().EndsWith(".dll"))
+            {
+                location = location.Substring(location.Length - Path.GetExtension(location).Length);
+                location += ".exe";
+            }
+            Process.Start(location, args);
             Application.Current.Shutdown();
+        }
+
+        public static string GetGameUserPath()
+        {
+            var usersPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Axolot Games", "Scrap Mechanic", "User");
+            if (!Directory.Exists(usersPath))
+                return null;
+            var usersPaths = Directory.GetDirectories(usersPath);
+            if (!(usersPath.Length > 0))
+                return null;
+            return usersPaths[0];
         }
 
     }
