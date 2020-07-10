@@ -1,9 +1,12 @@
 ﻿using System.IO;
+using System.Windows;
+using System.Windows.Controls;
 using SmModStudio.Core;
 using SmModStudio.Core.Features;
 
 namespace SmModStudio.Graphics
 {
+    
     public partial class PgEditor
     {
 
@@ -43,4 +46,5 @@ namespace SmModStudio.Graphics
         }
 
     }
+    
 }

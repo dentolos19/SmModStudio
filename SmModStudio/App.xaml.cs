@@ -27,8 +27,6 @@ namespace SmModStudio
             Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
             WindowStudio = new WnStudio();
-            if (args.Args.Length == 1)
-                WindowStudio.LoadProject(args.Args[0]);
             WindowStudio.Show();
         }
 

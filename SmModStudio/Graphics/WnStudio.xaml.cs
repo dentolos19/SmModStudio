@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using Microsoft.Win32;
 using SmModStudio.Core;
-using Application = System.Windows.Application;
-using MessageBox = System.Windows.MessageBox;
 
 namespace SmModStudio.Graphics
 {
@@ -11,14 +10,17 @@ namespace SmModStudio.Graphics
     public partial class WnStudio
     {
 
+        private string _selectedPath;
+
         public WnStudio()
         {
             InitializeComponent();
+            
         }
 
-        public void LoadProject(string filePath)
+        private void SetHierarchy(string path)
         {
-            // TODO: Load Project
+            ProjectListing.DataContext = new[] { new DirectoryInfo(path) };
         }
 
         private void OpenSpecificFile(string filePath)
@@ -49,7 +51,11 @@ namespace SmModStudio.Graphics
 
         private void OpenProject(object sender, RoutedEventArgs args)
         {
-            // TODO: Open Project
+            var dialog = new WnOpen(Path.Combine(Constants.GameUserPath, "Mods")) { Owner = this };
+            if (dialog.ShowDialog() != true)
+                return;
+            _selectedPath = dialog.SelectedPath;
+            SetHierarchy(_selectedPath);
         }
         
         private void OpenFile(object sender, RoutedEventArgs args)

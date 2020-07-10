@@ -2,6 +2,8 @@
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+                     xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
+                     xmlns:converters="clr-namespace:SmModStudio.Converters"
                      Title="Scrap Mechanic Mod Studio" Loaded="StudioLoaded" Closing="StudioClosing">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenProject"/>
@@ -37,10 +39,17 @@
             </MenuItem>
         </Menu>
         <DockPanel>
-            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" Width="200">
+            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" Width="200" ItemsSource="{Binding}">
                 <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate>
-                        <!-- TODO: Project Listing -->
+                    <HierarchicalDataTemplate DataType="{x:Type io:DirectoryInfo}">
+                        <HierarchicalDataTemplate.ItemsSource>
+                            <Binding Path='.'>
+                                <Binding.Converter>
+                                    <converters:FileSystemInfoConverter/>
+                                </Binding.Converter>
+                            </Binding>
+                        </HierarchicalDataTemplate.ItemsSource>
+                        <TextBlock Text='{Binding Path=Name}'/>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
