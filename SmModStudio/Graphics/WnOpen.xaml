@@ -8,11 +8,11 @@
                         <Button DockPanel.Dock="Right" Content="Open" Width="100" Margin="10,10,10,10" Click="OpenProject"/>
                         <Label Content="Created by Dennise Catolos (@dentolos19)" Margin="10,10,10,10" VerticalContentAlignment="Center"/>
                 </DockPanel>
-                <ListView x:Name="ProjectList" MouseDoubleClick="OpenProject" Margin="10,10,10,0">
+                <ListView x:Name="ProjectList" MouseDoubleClick="OpenProject">
                         <ListView.View>
                                 <GridView>
-                                        <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                                        <GridViewColumn Header="Path" Width="200" DisplayMemberBinding="{Binding Path}"/>
+                                        <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                                        <GridViewColumn Header="Path" Width="250" DisplayMemberBinding="{Binding Path}"/>
                                 </GridView>
                         </ListView.View>
                         <ListView.ContextMenu>

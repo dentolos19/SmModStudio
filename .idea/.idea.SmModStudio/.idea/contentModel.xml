@@ -40,6 +40,7 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="App.g.cs" t="Include" />
+              <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
               <e p="Graphics" t="Include">
                 <e p="PgEditor.g.cs" t="Include" />
                 <e p="WnIntro.g.cs" t="Include" />

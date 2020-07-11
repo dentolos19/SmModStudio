@@ -42,16 +42,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SmModStudio/Bindings/ProjectListItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SmModStudio/Converters/FileSystemInfoConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Bindings/TvProjectDirectory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Bindings/TvProjectFile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" afterDir="false" />
     </list>
@@ -95,13 +88,13 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Converters/FileSystemInfoConverter.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Converters/FileSystemInfoConverter.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/ProjectListItem.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
       </list>
     </option>
   </component>
@@ -164,6 +157,10 @@
       <workItem from="1594292397545" duration="2140000" />
       <workItem from="1594338014137" duration="637000" />
       <workItem from="1594351858960" duration="3871000" />
+      <workItem from="1594368063225" duration="979000" />
+      <workItem from="1594375877451" duration="679000" />
+      <workItem from="1594376928501" duration="112000" />
+      <workItem from="1594446580208" duration="1531000" />
     </task>
     <servers />
   </component>
@@ -189,22 +186,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1594355778450">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1594448128222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594355778450" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1594355778449">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594448128222" />
+    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1594448128222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594355778449" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1594355778449">
+    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594448128222" />
+    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1594448128222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594355778449" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1594355778449">
+    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594448128222" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1594448128222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594355778449" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594448128222" />
     <state x="467" y="27" key="RiderGenerateDialog" timestamp="1594352732340">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -21,7 +21,7 @@
                 <Separator/>
                 <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="ExitStudio"/>
             </MenuItem>
-            <MenuItem Header="Edit">
+            <MenuItem x:Name="EditMenu" Header="Edit">
                 <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="UndoText"/>
                 <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="RedoText"/>
                 <Separator/>
@@ -32,14 +32,22 @@
                 <Separator/>
                 <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
             </MenuItem>
+            <MenuItem x:Name="ProjectMenu" Header="Project">
+                <MenuItem Header="Properties"/>
+            </MenuItem>
             <MenuItem Header="Options">
                 <MenuItem Header="Preferences" Click="ShowPreferences"/>
                 <Separator/>
                 <MenuItem Header="About SmModStudio" Click="ShowAbout"/>
             </MenuItem>
         </Menu>
-        <DockPanel>
-            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" Width="200" ItemsSource="{Binding}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" ItemsSource="{Binding}">
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate DataType="{x:Type io:DirectoryInfo}">
                         <HierarchicalDataTemplate.ItemsSource>
@@ -53,7 +61,8 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
-            <Frame x:Name="PageView" NavigationUIVisibility="Hidden"/>
-        </DockPanel>
+            <GridSplitter Grid.Column="1"/>
+            <Frame Grid.Column="2" x:Name="PageView" NavigationUIVisibility="Hidden"/>
+        </Grid>
     </DockPanel>
 </mahApps:MetroWindow>
