@@ -80,15 +80,6 @@ namespace SmModStudio.Core
             return true;
         }
 
-        public static BitmapImage CreateBitmapFromUri(Uri uri)
-        {
-            var image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = uri;
-            image.EndInit();
-            return image;
-        }
-
     }
 
 }

@@ -76,7 +76,6 @@
     <ItemGroup>
       <Resource Include="Resources\Assets\Logo.png" />
       <None Remove="Resources\Assets\Unknown.png" />
-      <Resource Include="Resources\Assets\Unknown.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -84,7 +83,6 @@
       <None Remove="Resources\Syntax\Json.xml" />
       <EmbeddedResource Include="Resources\Syntax\Json.xml" />
       <None Remove="Resources\Assets\Folder.png" />
-      <Resource Include="Resources\Assets\Folder.png" />
     </ItemGroup>
 
 </Project>

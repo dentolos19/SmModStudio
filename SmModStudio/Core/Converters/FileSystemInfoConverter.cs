@@ -13,12 +13,9 @@ namespace SmModStudio.Core.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is DirectoryInfo info))
-                return null;
-            var list = new List<ProjectListItemBinding>();
-            foreach (var item in info.GetFileSystemInfos())
-                list.Add(new ProjectListItemBinding(item));
-            return list.ToArray();
+            if (value is DirectoryInfo info)
+                return info.GetFileSystemInfos();
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

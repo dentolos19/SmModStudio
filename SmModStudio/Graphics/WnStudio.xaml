@@ -2,7 +2,6 @@
                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
-                     xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
                      xmlns:converters="clr-namespace:SmModStudio.Core.Converters"
                      xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
                      Title="Scrap Mechanic Mod Studio" Loaded="StudioLoaded" Closing="StudioClosing">
@@ -53,18 +52,30 @@
                     <HierarchicalDataTemplate DataType="{x:Type io:FileSystemInfo}">
                         <HierarchicalDataTemplate.ItemsSource>
                             <Binding Path=".">
-                                <!-- TODO: Fix directory listing by setting inheritance in ProjectListItemBinding.cs -->
                                 <Binding.Converter>
                                     <converters:FileSystemInfoConverter/>
                                 </Binding.Converter>
                             </Binding>
                         </HierarchicalDataTemplate.ItemsSource>
                         <DockPanel Height="28" ToolTip="{Binding Path=FullName}">
-                            <Image Source="{Binding Path=Image}" Margin="2,2,2,2"/>
                             <Label Content="{Binding Path=Name}" VerticalContentAlignment="Center"/>
                         </DockPanel>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
+                <TreeView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="New">
+                            <MenuItem Header="JSON Source File"/>
+                            <MenuItem Header="Lua Source File"/>
+                        </MenuItem>
+                        <MenuItem Header="Import File"/>
+                        <MenuItem Header="Import Directory"/>
+                        <MenuItem Header="Export File"/>
+                        <Separator/>
+                        <MenuItem Header="Rename"/>
+                        <MenuItem Header="Delete"/>
+                    </ContextMenu>
+                </TreeView.ContextMenu>
             </TreeView>
             <GridSplitter Grid.Column="1"/>
             <Frame Grid.Column="2" x:Name="PageView" NavigationUIVisibility="Hidden"/>

@@ -134,16 +134,6 @@ namespace SmModStudio.Graphics
                 App.PageEditor.CodeEditor.SelectAll();
         }
         
-        private void ShowPreferences(object sender, RoutedEventArgs args)
-        {
-            new WnPreferences { Owner = this }.Show();
-        }
-        
-        private void ShowAbout(object sender, RoutedEventArgs args)
-        {
-            // TODO: Show about
-        }
-
         private void OpenFileInListing(object sender, MouseButtonEventArgs args)
         {
             if (!(ProjectListing.SelectedItem is FileSystemInfo item))
@@ -154,6 +144,16 @@ namespace SmModStudio.Graphics
                 OpenSpecificFile(item.FullName);
             else
                 MessageBox.Show("This file isn't editable!");
+        }
+        
+        private void ShowPreferences(object sender, RoutedEventArgs args)
+        {
+            new WnPreferences { Owner = this }.Show();
+        }
+        
+        private void ShowAbout(object sender, RoutedEventArgs args)
+        {
+            // TODO: Show about
         }
 
     }
