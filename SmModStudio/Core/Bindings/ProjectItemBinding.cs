@@ -1,12 +1,12 @@
 ﻿using System.IO;
 
-namespace SmModStudio.Bindings
+namespace SmModStudio.Core.Bindings
 {
 
-    public class ProjectListItem
+    public class ProjectItemBinding
     {
 
-        public ProjectListItem(string path)
+        public ProjectItemBinding(string path)
         {
             Path = path;
             Name = new DirectoryInfo(path).Name;

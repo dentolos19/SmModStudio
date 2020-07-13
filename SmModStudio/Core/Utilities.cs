@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using System.Xml;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
@@ -68,6 +69,24 @@ namespace SmModStudio.Core
             if (!(usersPath.Length > 0))
                 return null;
             return usersPaths[0];
+        }
+
+        public static bool IsFileEditable(string path)
+        {
+            var content = File.ReadAllBytes(path);
+            for (var index = 1; index < 512 && index < content.Length; index++)
+                if (content[index] == 0x00 && content[index-1] == 0x00)
+                    return false;
+            return true;
+        }
+
+        public static BitmapImage CreateBitmapFromUri(Uri uri)
+        {
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = uri;
+            image.EndInit();
+            return image;
         }
 
     }

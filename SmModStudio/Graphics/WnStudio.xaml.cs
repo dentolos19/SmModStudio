@@ -144,6 +144,18 @@ namespace SmModStudio.Graphics
             // TODO: Show about
         }
 
+        private void OpenFileInListing(object sender, MouseButtonEventArgs args)
+        {
+            if (!(ProjectListing.SelectedItem is FileSystemInfo item))
+                return;
+            if (item.Attributes.HasFlag(FileAttributes.Directory) || item.Attributes.HasFlag(FileAttributes.Hidden))
+                return;
+            if (Utilities.IsFileEditable(item.FullName))
+                OpenSpecificFile(item.FullName);
+            else
+                MessageBox.Show("This file isn't editable!");
+        }
+
     }
 
 }

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
-using SmModStudio.Bindings;
+using SmModStudio.Core.Bindings;
 
 namespace SmModStudio.Graphics
 {
@@ -15,7 +15,7 @@ namespace SmModStudio.Graphics
             InitializeComponent();
             var projects = Directory.GetDirectories(path);
             foreach (var project in projects)
-                ProjectList.Items.Add(new ProjectListItem(project));
+                ProjectList.Items.Add(new ProjectItemBinding(project));
         }
 
         private void OpenProject(object sender, RoutedEventArgs args)
@@ -25,7 +25,7 @@ namespace SmModStudio.Graphics
                 MessageBox.Show("Please select a project before continuing!");
                 return;
             }
-            var item = (ProjectListItem) ProjectList.SelectedItem;
+            var item = (ProjectItemBinding) ProjectList.SelectedItem;
             SelectedPath = item.Path;
             DialogResult = true;
             Close();
@@ -35,7 +35,7 @@ namespace SmModStudio.Graphics
         {
             if (ProjectList.SelectedItem == null)
                 return;
-            var item = (ProjectListItem) ProjectList.SelectedItem;
+            var item = (ProjectItemBinding) ProjectList.SelectedItem;
             Clipboard.SetText(item.Path);
         }
 

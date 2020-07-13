@@ -10,15 +10,17 @@
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Bindings" t="Include">
-          <e p="ProjectListItem.cs" t="Include" />
-        </e>
-        <e p="Converters" t="Include">
-          <e p="FileSystemInfoConverter.cs" t="Include" />
-        </e>
         <e p="Core" t="Include">
+          <e p="Bindings" t="Include">
+            <e p="ProjectItemBinding.cs" t="Include" />
+            <e p="ProjectListItemBinding.cs" t="Include" />
+          </e>
           <e p="Configuration.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
+          <e p="Converters" t="Include">
+            <e p="FileSystemInfoConverter.cs" t="Include" />
+          </e>
+          <e p="Extensions.cs" t="Include" />
           <e p="Features" t="Include">
             <e p="RichPresence.cs" t="Include" />
           </e>
@@ -58,8 +60,10 @@
         </e>
         <e p="Resources" t="Include">
           <e p="Assets" t="Include">
+            <e p="Folder.png" t="Include" />
             <e p="Icon.ico" t="Include" />
             <e p="Logo.png" t="Include" />
+            <e p="Unknown.png" t="Include" />
           </e>
           <e p="Fonts" t="Include">
             <e p="FiraCode-Bold.ttf" t="Include" />
