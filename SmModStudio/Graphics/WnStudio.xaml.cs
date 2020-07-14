@@ -2,6 +2,8 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Navigation;
+using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Win32;
 using SmModStudio.Core;
 
@@ -57,6 +59,7 @@ namespace SmModStudio.Graphics
                 return;
             _selectedPath = dialog.SelectedPath;
             SetHierarchy(_selectedPath);
+            ProjectMenu.IsEnabled = true;
         }
         
         private void OpenFile(object sender, RoutedEventArgs args)
@@ -94,43 +97,43 @@ namespace SmModStudio.Graphics
 
         private void UndoText(object sender, RoutedEventArgs args)
         {
-            if (App.PageEditor.CodeEditor.CanUndo && PageView.Content.Equals(App.PageEditor))
+            if (App.PageEditor.CodeEditor.CanUndo && EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Undo();
         }
         
         private void RedoText(object sender, RoutedEventArgs args)
         {
-            if (App.PageEditor.CodeEditor.CanRedo && PageView.Content.Equals(App.PageEditor))
+            if (App.PageEditor.CodeEditor.CanRedo && EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Redo();
         }
         
         private void CutText(object sender, RoutedEventArgs args)
         {
-            if (PageView.Content.Equals(App.PageEditor))
+            if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Cut();
         }
         
         private void CopyText(object sender, RoutedEventArgs args)
         {
-            if (PageView.Content.Equals(App.PageEditor))
+            if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Copy();
         }
         
         private void PasteText(object sender, RoutedEventArgs args)
         {
-            if (PageView.Content.Equals(App.PageEditor))
+            if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Paste();
         }
         
         private void DeleteText(object sender, RoutedEventArgs args)
         {
-            if (PageView.Content.Equals(App.PageEditor))
+            if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Delete();
         }
         
         private void SelectAllText(object sender, RoutedEventArgs args)
         {
-            if (PageView.Content.Equals(App.PageEditor))
+            if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.SelectAll();
         }
         
@@ -143,7 +146,127 @@ namespace SmModStudio.Graphics
             if (Utilities.IsFileEditable(item.FullName))
                 OpenSpecificFile(item.FullName);
             else
-                MessageBox.Show("This file isn't editable!");
+                MessageBox.Show("This file isn't editable!", "SmModStudio");
+        }
+        
+        private void ContextOpenedInListing(object sender, RoutedEventArgs args)
+        {
+            ContextNew.IsEnabled = false;
+            ContextImportDirectory.IsEnabled = false;
+            ContextImportFile.IsEnabled = false;
+            ContextExportFile.IsEnabled = false;
+            ContextCopyPath.IsEnabled = false;
+            ContextDelete.IsEnabled = false;
+            ContextRename.IsEnabled = false;
+            if (!(ProjectListing.SelectedItem is FileSystemInfo item))
+                return;
+            ContextCopyPath.IsEnabled = true;
+            ContextDelete.IsEnabled = true;
+            ContextRename.IsEnabled = true;
+            if (item.Attributes.HasFlag(FileAttributes.Directory))
+            {
+                ContextNew.IsEnabled = true;
+                ContextImportDirectory.IsEnabled = true;
+                ContextImportFile.IsEnabled = true;
+            }
+            else
+            {
+                ContextExportFile.IsEnabled = true;
+            }
+        }
+        
+        private void CreateJsonSourceFile(object sender, RoutedEventArgs args)
+        {
+            if (ContextNew.IsEnabled == false)
+                return;
+            // TODO
+        }
+        
+        private void CreateLuaSourceFile(object sender, RoutedEventArgs args)
+        {
+            if (ContextNew.IsEnabled == false)
+                return;
+            // TODO
+        }
+        
+        private void ImportDirectory(object sender, RoutedEventArgs args)
+        {
+            if (ContextImportDirectory.IsEnabled == false)
+                return;
+            // TODO
+        }
+        
+        private void ImportFile(object sender, RoutedEventArgs args)
+        {
+            if (ContextImportFile.IsEnabled == false)
+                return;
+            // TODO
+        }
+        
+        private void ExportFile(object sender, RoutedEventArgs args)
+        {
+            if (ContextExportFile.IsEnabled == false)
+                return; 
+            // TODO
+        }
+        
+        private void CopyPath(object sender, RoutedEventArgs args)
+        {
+            if (ContextCopyPath.IsEnabled == false)
+                return;
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            Clipboard.SetText(info.FullName);
+            MessageBox.Show("Copied file's or directory's full path successfully!", "SmModStudio");
+        }
+        
+        private async void RenameItem(object sender, RoutedEventArgs args)
+        {
+            if (ContextRename.IsEnabled == false)
+                return;
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            var input = await this.ShowInputAsync("SmModStudio", "Enter the new name for this file or directory.", new MetroDialogSettings
+            {
+                AffirmativeButtonText = "Rename",
+                DefaultText = info.Name
+            });
+            if (string.IsNullOrEmpty(input))
+                return;
+            if (info.Attributes.HasFlag(FileAttributes.Directory))
+            {
+                Directory.Move(info.FullName, Path.Combine(Path.GetDirectoryName(info.FullName)!, input));
+            }
+            else
+            {
+                if (!input.Contains("."))
+                {
+                    if (MessageBox.Show("Your file name must have an extension, but do you still want to continue?", "SmModStudio", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+                        return;
+                    File.Move(info.FullName, Path.Combine(Path.GetDirectoryName(info.FullName)!, input));
+                }
+            }
+            SetHierarchy(_selectedPath);
+        }
+        
+        private void DeleteItem(object sender, RoutedEventArgs args)
+        {
+            if (ContextDelete.IsEnabled == false)
+                return;
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            if (MessageBox.Show("Are you sure that you want to delete this file or directory?", "SmModStudio", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+                return;
+            if (info.Attributes.HasFlag(FileAttributes.Directory))
+                Directory.Delete(info.FullName);
+            else
+                File.Delete(info.FullName);
+            SetHierarchy(_selectedPath);
+        }
+        
+        private void PageViewNavigated(object sender, NavigationEventArgs args)
+        {
+            EditMenu.IsEnabled = PageView.Content.Equals(App.PageEditor);
         }
         
         private void ShowPreferences(object sender, RoutedEventArgs args)

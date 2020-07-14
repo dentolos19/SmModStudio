@@ -52,10 +52,7 @@ namespace SmModStudio.Core
         {
             var location = Assembly.GetExecutingAssembly().Location;
             if (location.ToLower().EndsWith(".dll"))
-            {
-                location = location.Substring(location.Length - Path.GetExtension(location).Length);
-                location += ".exe";
-            }
+                location = Path.Combine(Path.GetDirectoryName(location)!, Path.GetFileNameWithoutExtension(location) + ".exe");
             Process.Start(location, args);
             Application.Current.Shutdown();
         }

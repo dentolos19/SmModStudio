@@ -20,7 +20,7 @@ namespace SmModStudio.Graphics
                 return;
             if (!File.Exists(Path.Combine(dialog.SelectedPath, "Release", "ScrapMechanic.exe")))
             {
-                MessageBox.Show("The selected game data path doesn't contain the game executable!");
+                MessageBox.Show("The selected game data path doesn't contain the game executable!", "SmModStudio");
                 return;
             }
             GameDataPathBox.Text = dialog.SelectedPath;
@@ -30,7 +30,7 @@ namespace SmModStudio.Graphics
         {
             if (string.IsNullOrEmpty(GameDataPathBox.Text))
             {
-                MessageBox.Show("Please enter the game data path before continuing!");
+                MessageBox.Show("Please enter the game data path before continuing!", "SmModStudio");
                 return;
             }
             App.Settings.GameDataPath = GameDataPathBox.Text;

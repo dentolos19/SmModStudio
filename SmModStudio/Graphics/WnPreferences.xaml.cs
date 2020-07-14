@@ -39,8 +39,8 @@ namespace SmModStudio.Graphics
         private void ResetSettings(object sender, RoutedEventArgs args)
         {
             App.Settings.Reset();
-            if (MessageBox.Show("All settings has changed to their default settings, do you want to restart this program?", "SmModStudio", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                Utilities.RestartApp();
+            MessageBox.Show("All settings has changed to their default settings, after closing this window this program will restart.", "SmModStudio");
+            Utilities.RestartApp();
         }
 
         private void BrowseGameDataPath(object sender, RoutedEventArgs args)

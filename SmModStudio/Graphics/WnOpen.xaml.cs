@@ -22,7 +22,7 @@ namespace SmModStudio.Graphics
         {
             if (ProjectList.SelectedItem == null)
             {
-                MessageBox.Show("Please select a project before continuing!");
+                MessageBox.Show("Please select a project before continuing!", "SmModStudio");
                 return;
             }
             var item = (ProjectItemBinding) ProjectList.SelectedItem;

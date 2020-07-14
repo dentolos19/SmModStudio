@@ -4,7 +4,7 @@
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
                      xmlns:converters="clr-namespace:SmModStudio.Core.Converters"
                      xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
-                     Title="Scrap Mechanic Mod Studio" Loaded="StudioLoaded" Closing="StudioClosing">
+                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" Loaded="StudioLoaded" Closing="StudioClosing">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenProject"/>
         <CommandBinding Command="Save" Executed="SaveFile"/>
@@ -21,7 +21,7 @@
                 <Separator/>
                 <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="ExitStudio"/>
             </MenuItem>
-            <MenuItem x:Name="EditMenu" Header="Edit">
+            <MenuItem x:Name="EditMenu" Header="Edit" IsEnabled="False">
                 <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="UndoText"/>
                 <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="RedoText"/>
                 <Separator/>
@@ -32,7 +32,7 @@
                 <Separator/>
                 <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
             </MenuItem>
-            <MenuItem x:Name="ProjectMenu" Header="Project">
+            <MenuItem x:Name="ProjectMenu" Header="Project" IsEnabled="False">
                 <MenuItem Header="Properties"/>
             </MenuItem>
             <MenuItem Header="Options">
@@ -63,22 +63,27 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
                 <TreeView.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Header="New">
-                            <MenuItem Header="JSON Source File"/>
-                            <MenuItem Header="Lua Source File"/>
+                    <ContextMenu Opened="ContextOpenedInListing">
+                        <MenuItem x:Name="ContextNew" Header="New">
+                            <MenuItem Header="JSON Source File" Click="CreateJsonSourceFile"/>
+                            <MenuItem Header="Lua Source File" Click="CreateLuaSourceFile"/>
                         </MenuItem>
-                        <MenuItem Header="Import File"/>
-                        <MenuItem Header="Import Directory"/>
-                        <MenuItem Header="Export File"/>
+                        <MenuItem x:Name="ContextImportFile" Header="Import File" Click="ImportFile"/>
+                        <MenuItem x:Name="ContextImportDirectory" Header="Import Directory" Click="ImportDirectory"/>
+                        <MenuItem x:Name="ContextExportFile" Header="Export File" Click="ExportFile"/>
                         <Separator/>
-                        <MenuItem Header="Rename"/>
-                        <MenuItem Header="Delete"/>
+                        <MenuItem x:Name="ContextCopyPath" Header="Copy Path" InputGestureText="Ctrl+C" Click="CopyPath"/>
+                        <MenuItem x:Name="ContextRename" Header="Rename" Click="RenameItem"/>
+                        <MenuItem x:Name="ContextDelete" Header="Delete" InputGestureText="Del" Click="DeleteItem"/>
                     </ContextMenu>
                 </TreeView.ContextMenu>
+                <TreeView.CommandBindings>
+                    <CommandBinding Command="Copy" Executed="CopyPath"/>
+                    <CommandBinding Command="Delete" Executed="DeleteItem"/>
+                </TreeView.CommandBindings>
             </TreeView>
             <GridSplitter Grid.Column="1"/>
-            <Frame Grid.Column="2" x:Name="PageView" NavigationUIVisibility="Hidden"/>
+            <Frame Grid.Column="2" x:Name="PageView" NavigationUIVisibility="Hidden" Navigated="PageViewNavigated"/>
         </Grid>
     </DockPanel>
 </mahApps:MetroWindow>
