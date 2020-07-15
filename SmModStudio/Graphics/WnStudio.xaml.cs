@@ -151,7 +151,8 @@ namespace SmModStudio.Graphics
         
         private void ContextOpenedInListing(object sender, RoutedEventArgs args)
         {
-            ContextNew.IsEnabled = false;
+            ContextNewFile.IsEnabled = false;
+            ContextNewDirectory.IsEnabled = false;
             ContextImportDirectory.IsEnabled = false;
             ContextImportFile.IsEnabled = false;
             ContextExportFile.IsEnabled = false;
@@ -165,7 +166,8 @@ namespace SmModStudio.Graphics
             ContextRename.IsEnabled = true;
             if (item.Attributes.HasFlag(FileAttributes.Directory))
             {
-                ContextNew.IsEnabled = true;
+                ContextNewFile.IsEnabled = true;
+                ContextNewDirectory.IsEnabled = true;
                 ContextImportDirectory.IsEnabled = true;
                 ContextImportFile.IsEnabled = true;
             }
@@ -175,20 +177,40 @@ namespace SmModStudio.Graphics
             }
         }
         
-        private void CreateJsonSourceFile(object sender, RoutedEventArgs args)
+        private async void NewFile(object sender, RoutedEventArgs args)
         {
-            if (ContextNew.IsEnabled == false)
+            if (ContextNewFile.IsEnabled == false)
                 return;
-            // TODO
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            var input = await this.ShowInputAsync("SmModStudio", "Enter the name for the new file.", new MetroDialogSettings
+            {
+                AffirmativeButtonText = "Create",
+                DefaultText = "source.lua"
+            });
+            if (string.IsNullOrEmpty(input))
+                return;
+            File.WriteAllText(Path.Combine(info.FullName, input), "Hello world! Write your code here.");
+            SetHierarchy(_selectedPath);
         }
         
-        private void CreateLuaSourceFile(object sender, RoutedEventArgs args)
+        private async void NewDirectory(object sender, RoutedEventArgs args)
         {
-            if (ContextNew.IsEnabled == false)
+            if (ContextNewFile.IsEnabled == false)
                 return;
-            // TODO
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            var input = await this.ShowInputAsync("SmModStudio", "Enter the name for the new directory.", new MetroDialogSettings
+            {
+                AffirmativeButtonText = "Create",
+                DefaultText = "Sources"
+            });
+            if (string.IsNullOrEmpty(input))
+                return;
+            Directory.CreateDirectory(Path.Combine(info.FullName, input));
+            SetHierarchy(_selectedPath);
         }
-        
+
         private void ImportDirectory(object sender, RoutedEventArgs args)
         {
             if (ContextImportDirectory.IsEnabled == false)
@@ -206,8 +228,12 @@ namespace SmModStudio.Graphics
         private void ExportFile(object sender, RoutedEventArgs args)
         {
             if (ContextExportFile.IsEnabled == false)
-                return; 
-            // TODO
+                return;
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            var dialog = new SaveFileDialog { Filter = "All Files|*.*" };
+            if (dialog.ShowDialog() == true)
+                File.Copy(info.FullName, dialog.FileName);
         }
         
         private void CopyPath(object sender, RoutedEventArgs args)
@@ -217,7 +243,6 @@ namespace SmModStudio.Graphics
             if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
             Clipboard.SetText(info.FullName);
-            MessageBox.Show("Copied file's or directory's full path successfully!", "SmModStudio");
         }
         
         private async void RenameItem(object sender, RoutedEventArgs args)

@@ -4,7 +4,7 @@
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
                      xmlns:converters="clr-namespace:SmModStudio.Core.Converters"
                      xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
-                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" Loaded="StudioLoaded" Closing="StudioClosing">
+                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" SaveWindowPosition="True" Loaded="StudioLoaded" Closing="StudioClosing">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenProject"/>
         <CommandBinding Command="Save" Executed="SaveFile"/>
@@ -64,10 +64,9 @@
                 </TreeView.ItemTemplate>
                 <TreeView.ContextMenu>
                     <ContextMenu Opened="ContextOpenedInListing">
-                        <MenuItem x:Name="ContextNew" Header="New">
-                            <MenuItem Header="JSON Source File" Click="CreateJsonSourceFile"/>
-                            <MenuItem Header="Lua Source File" Click="CreateLuaSourceFile"/>
-                        </MenuItem>
+                        <MenuItem x:Name="ContextNewFile" Header="New File" Click="NewFile"/>
+                        <MenuItem x:Name="ContextNewDirectory" Header="New Directory" Click="NewDirectory"/>
+                        <Separator/>
                         <MenuItem x:Name="ContextImportFile" Header="Import File" Click="ImportFile"/>
                         <MenuItem x:Name="ContextImportDirectory" Header="Import Directory" Click="ImportDirectory"/>
                         <MenuItem x:Name="ContextExportFile" Header="Export File" Click="ExportFile"/>
