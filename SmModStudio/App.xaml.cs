@@ -16,6 +16,7 @@ namespace SmModStudio
 
         public static WnStudio WindowStudio { get; private set; }
         public static PgEditor PageEditor { get; private set; }
+        public static PgImagePreviewer PageImagePreviewer { get; private set; }
 
         private void Initialize(object sender, StartupEventArgs args)
         {
@@ -26,6 +27,7 @@ namespace SmModStudio
                 AppCenter.Start(Constants.AppCenterAppSecret, typeof(Analytics), typeof(Crashes));
             Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
+            PageImagePreviewer = new PgImagePreviewer();
             WindowStudio = new WnStudio();
             WindowStudio.Show();
         }

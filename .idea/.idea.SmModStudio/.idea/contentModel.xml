@@ -27,6 +27,8 @@
         <e p="Graphics" t="Include">
           <e p="PgEditor.xaml" t="Include" />
           <e p="PgEditor.xaml.cs" t="Include" />
+          <e p="PgImagePreviewer.xaml" t="Include" />
+          <e p="PgImagePreviewer.xaml.cs" t="Include" />
           <e p="WnIntro.xaml" t="Include" />
           <e p="WnIntro.xaml.cs" t="Include" />
           <e p="WnOpen.xaml" t="Include" />

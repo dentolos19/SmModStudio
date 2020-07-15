@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -74,6 +76,19 @@ namespace SmModStudio.Core
             for (var index = 1; index < 512 && index < content.Length; index++)
                 if (content[index] == 0x00 && content[index-1] == 0x00)
                     return false;
+            return true;
+        }
+
+        public static bool IsFileAnImage(string path)
+        {
+            try
+            {
+                var unused = new BitmapImage(new Uri(path));
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
 

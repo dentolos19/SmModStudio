@@ -32,6 +32,9 @@
       <Page Update="Graphics\WnOpen.xaml">
         <Generator></Generator>
       </Page>
+      <Page Update="Graphics\PgImagePreviewer.xaml">
+        <Generator></Generator>
+      </Page>
     </ItemGroup>
 
     <ItemGroup>
@@ -49,6 +52,9 @@
       </Compile>
       <Compile Update="Graphics\WnOpen.xaml.cs">
         <DependentUpon>WnOpen.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Graphics\PgImagePreviewer.xaml.cs">
+        <DependentUpon>PgPreviewer.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 

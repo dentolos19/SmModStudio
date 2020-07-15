@@ -26,10 +26,16 @@ namespace SmModStudio.Graphics
             ProjectListing.DataContext = new[] { new DirectoryInfo(path) };
         }
 
-        private void OpenSpecificFile(string filePath)
+        private void OpenEditableFile(string path)
         {
             PageView.Navigate(App.PageEditor);
-            App.PageEditor.EditFile(filePath);
+            App.PageEditor.EditFile(path);
+        }
+
+        private void OpenPreviewableFile(string path)
+        {
+            PageView.Navigate(App.PageImagePreviewer);
+            App.PageImagePreviewer.SetPreview(path);
         }
         
         private void StudioLoaded(object sender, RoutedEventArgs args)
@@ -66,7 +72,7 @@ namespace SmModStudio.Graphics
         {
             var dialog = new OpenFileDialog { Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*" };
             if (dialog.ShowDialog() == true)
-                OpenSpecificFile(dialog.FileName);
+                OpenEditableFile(dialog.FileName);
         }
         
         private void SaveFile(object sender, RoutedEventArgs args)
@@ -144,9 +150,17 @@ namespace SmModStudio.Graphics
             if (item.Attributes.HasFlag(FileAttributes.Directory) || item.Attributes.HasFlag(FileAttributes.Hidden))
                 return;
             if (Utilities.IsFileEditable(item.FullName))
-                OpenSpecificFile(item.FullName);
+            {
+                OpenEditableFile(item.FullName);
+            }
+            else if (Utilities.IsFileAnImage(item.FullName))
+            {
+                OpenPreviewableFile(item.FullName);
+            }
             else
-                MessageBox.Show("This file isn't editable!", "SmModStudio");
+            {
+                MessageBox.Show("This file isn't viewable", "SmModStudio");
+            }
         }
         
         private void ContextOpenedInListing(object sender, RoutedEventArgs args)
