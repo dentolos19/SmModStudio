@@ -42,14 +42,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,9 +60,9 @@
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" root0="FORCE_HIGHLIGHTING" />
@@ -112,8 +106,10 @@
         <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -186,7 +182,7 @@
       <workItem from="1594708628188" duration="3674000" />
       <workItem from="1594721844014" duration="1346000" />
       <workItem from="1594723301465" duration="47000" />
-      <workItem from="1594805352146" duration="1438000" />
+      <workItem from="1594805352146" duration="2284000" />
     </task>
     <servers />
   </component>
@@ -216,22 +212,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594805887113" />
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1594806797996">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1594807653560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594806797996" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1594806797996">
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594807653560" />
+    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1594807653560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594806797996" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1594806797995">
+    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594807653560" />
+    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1594807653560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594806797995" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1594806797996">
+    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594807653560" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1594807653560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594806797996" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594807653560" />
     <state x="467" y="27" key="RiderGenerateDialog" timestamp="1594638743320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -244,9 +240,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594109455594" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1594294509726">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1594807441964">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594294509726" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594807441964" />
   </component>
 </project>
