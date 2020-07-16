@@ -92,6 +92,32 @@ namespace SmModStudio.Core
             return true;
         }
 
+        public static bool IsFileAn3DObject(string path)
+        {
+            var extension = Path.GetExtension(path).ToLower();
+            if (extension.Equals(".3ds"))
+            {
+                return true;
+            }
+            if (extension.Equals(".lwo"))
+            {
+                return true;
+            }
+            if (extension.Equals(".off"))
+            {
+                return true;
+            }
+            if (extension.Equals(".obj"))
+            {
+                return true;
+            }
+            if (extension.Equals(".stl"))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 
 }

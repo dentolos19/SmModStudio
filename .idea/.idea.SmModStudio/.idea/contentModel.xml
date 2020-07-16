@@ -29,6 +29,8 @@
           <e p="PgEditor.xaml.cs" t="Include" />
           <e p="PgImagePreviewer.xaml" t="Include" />
           <e p="PgImagePreviewer.xaml.cs" t="Include" />
+          <e p="PgObjectPreviewer.xaml" t="Include" />
+          <e p="PgObjectPreviewer.xaml.cs" t="Include" />
           <e p="WnIntro.xaml" t="Include" />
           <e p="WnIntro.xaml.cs" t="Include" />
           <e p="WnOpen.xaml" t="Include" />
@@ -45,6 +47,8 @@
               <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
               <e p="Graphics" t="Include">
                 <e p="PgEditor.g.cs" t="Include" />
+                <e p="PgImagePreviewer.g.cs" t="Include" />
+                <e p="PgObjectPreviewer.g.cs" t="Include" />
                 <e p="WnIntro.g.cs" t="Include" />
                 <e p="WnOpen.g.cs" t="Include" />
                 <e p="WnPreferences.g.cs" t="Include" />

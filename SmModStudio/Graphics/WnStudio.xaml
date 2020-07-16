@@ -33,6 +33,7 @@
                 <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
             </MenuItem>
             <MenuItem x:Name="ProjectMenu" Header="Project" IsEnabled="False">
+                <!-- TODO: Add some stuff to project properties -->
                 <MenuItem Header="Properties"/>
             </MenuItem>
             <MenuItem Header="Options">

@@ -4,16 +4,14 @@ I made this just for fun. This is my hobby project work which is currently work 
 
 ### Todo List
 
-* [X] Syntax Highlighting (for JSON & Lua)
+* [X] Syntax Highlighting **(Needs Improvements)**
 * [X] Metro Design + Many Accents
-* [X] Project Management + Properties
 * [X] Rich Presence Integration
-* [X] Developer Analytics (App Center)
+* [X] Developer Analytics
 * [X] Image Previewer
-* [ ] Object Previewer
+* [X] Object Previewer **(Needs Improvements)**
 * [ ] Recipe Editor
-* [ ] Code Intellisense (for Lua)
-* [ ] SM's Mod Manual References Book
+* [ ] Code Intellisense
+* [ ] Mod Manual Integration
 * [ ] Steam Workshop Integration
-* [ ] Optimize Syntax Highlighting
-* [ ] Optimize Metro Design Light Mode
+* [ ] Project Management + Properties

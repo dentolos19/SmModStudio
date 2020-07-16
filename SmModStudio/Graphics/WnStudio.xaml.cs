@@ -26,18 +26,29 @@ namespace SmModStudio.Graphics
             ProjectListing.DataContext = new[] { new DirectoryInfo(path) };
         }
 
-        private void OpenEditableFile(string path)
+        private bool OpenAnyFile(string path)
         {
-            PageView.Navigate(App.PageEditor);
-            App.PageEditor.EditFile(path);
+            if (Utilities.IsFileAn3DObject(path))
+            {
+                PageView.Navigate(App.PageObjectPreviewer);
+                App.PageObjectPreviewer.SetPreview(path);
+                return true;
+            }
+            if (Utilities.IsFileEditable(path))
+            {
+                PageView.Navigate(App.PageEditor);
+                App.PageEditor.EditFile(path);
+                return true;
+            }
+            if (Utilities.IsFileAnImage(path))
+            {
+                PageView.Navigate(App.PageImagePreviewer);
+                App.PageImagePreviewer.SetPreview(path);
+                return true;
+            }
+            return false;
         }
 
-        private void OpenPreviewableFile(string path)
-        {
-            PageView.Navigate(App.PageImagePreviewer);
-            App.PageImagePreviewer.SetPreview(path);
-        }
-        
         private void StudioLoaded(object sender, RoutedEventArgs args)
         {
             if (string.IsNullOrEmpty(Constants.GameUserPath))
@@ -72,7 +83,7 @@ namespace SmModStudio.Graphics
         {
             var dialog = new OpenFileDialog { Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*" };
             if (dialog.ShowDialog() == true)
-                OpenEditableFile(dialog.FileName);
+                OpenAnyFile(dialog.FileName);
         }
         
         private void SaveFile(object sender, RoutedEventArgs args)
@@ -145,22 +156,12 @@ namespace SmModStudio.Graphics
         
         private void OpenFileInListing(object sender, MouseButtonEventArgs args)
         {
-            if (!(ProjectListing.SelectedItem is FileSystemInfo item))
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
-            if (item.Attributes.HasFlag(FileAttributes.Directory) || item.Attributes.HasFlag(FileAttributes.Hidden))
+            if (info.Attributes.HasFlag(FileAttributes.Directory) || info.Attributes.HasFlag(FileAttributes.Hidden))
                 return;
-            if (Utilities.IsFileEditable(item.FullName))
-            {
-                OpenEditableFile(item.FullName);
-            }
-            else if (Utilities.IsFileAnImage(item.FullName))
-            {
-                OpenPreviewableFile(item.FullName);
-            }
-            else
-            {
-                MessageBox.Show("This file isn't viewable", "SmModStudio");
-            }
+            if (!OpenAnyFile(info.FullName))
+                MessageBox.Show("This file is not viewable by any previewers or editors!", "SmModStudio");
         }
         
         private void ContextOpenedInListing(object sender, RoutedEventArgs args)
