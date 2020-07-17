@@ -6,6 +6,7 @@ using System.Windows.Navigation;
 using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Win32;
 using SmModStudio.Core;
+using SmModStudio.Core.Features;
 
 namespace SmModStudio.Graphics
 {
@@ -18,7 +19,7 @@ namespace SmModStudio.Graphics
         public WnStudio()
         {
             InitializeComponent();
-            
+            DeveloperConsole.Instance.Log("test test test");
         }
 
         private void SetHierarchy(string path)

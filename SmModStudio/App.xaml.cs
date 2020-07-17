@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -26,6 +27,12 @@ namespace SmModStudio
                 RichPresence.Instance.Activate();
             if (Settings.EnableDeveloperAnalytics)
                 AppCenter.Start(Constants.AppCenterAppSecret, typeof(Analytics), typeof(Crashes));
+            if (Settings.EnableDeveloperConsole)
+            {
+                DeveloperConsole.Instance.Activate();
+                if (Debugger.IsAttached)
+                    DeveloperConsole.Instance.AlsoUseDebug = true;
+            }
             Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
             PageImagePreviewer = new PgImagePreviewer();

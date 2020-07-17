@@ -6,17 +6,12 @@ namespace SmModStudio.Core.Features
     public class RichPresence
     {
 
-        private readonly DiscordRpcClient _client;
+        private readonly DiscordRpcClient _client = new DiscordRpcClient(Constants.DiscordClientId);
         private Timestamps _currentTimestamp;
         
         public static RichPresence Instance { get; } = new RichPresence();
         
         public bool IsActivated { get; private set; }
-
-        public RichPresence()
-        {
-            _client = new DiscordRpcClient(Constants.DiscordClientId);
-        }
 
         public void Activate()
         {
@@ -41,7 +36,7 @@ namespace SmModStudio.Core.Features
         {
             if (!IsActivated)
                 return;
-            if (resetTimestamp)
+            if (resetTimestamp || _currentTimestamp == null)
                 _currentTimestamp = Timestamps.Now;
             var presence = new DiscordRPC.RichPresence
             {
@@ -61,7 +56,7 @@ namespace SmModStudio.Core.Features
         {
             if (!IsActivated)
                 return;
-            if (resetTimestamp)
+            if (resetTimestamp || _currentTimestamp == null)
                 _currentTimestamp = Timestamps.Now;
             var presence = new DiscordRPC.RichPresence
             {
@@ -81,7 +76,7 @@ namespace SmModStudio.Core.Features
         {
             if (!IsActivated)
                 return;
-            if (resetTimestamp)
+            if (resetTimestamp || _currentTimestamp == null)
                 _currentTimestamp = Timestamps.Now;
             var presence = new DiscordRPC.RichPresence
             {

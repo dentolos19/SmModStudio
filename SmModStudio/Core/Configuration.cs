@@ -16,6 +16,7 @@ namespace SmModStudio.Core
         public bool EnableDarkMode { get; set; } = true;
         public bool EnableRichPresence { get; set; } = true;
         public bool EnableDeveloperAnalytics { get; set; } = true;
+        public bool EnableDeveloperConsole { get; set; }
 
         public void Save()
         {

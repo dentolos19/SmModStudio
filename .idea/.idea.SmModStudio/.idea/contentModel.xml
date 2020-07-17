@@ -20,8 +20,10 @@
             <e p="FileSystemInfoConverter.cs" t="Include" />
           </e>
           <e p="Features" t="Include">
+            <e p="DeveloperConsole.cs" t="Include" />
             <e p="RichPresence.cs" t="Include" />
           </e>
+          <e p="Native.cs" t="Include" />
           <e p="Utilities.cs" t="Include" />
         </e>
         <e p="Graphics" t="Include">

@@ -28,6 +28,9 @@
             <DockPanel Margin="10,10,10,0">
                 <CheckBox x:Name="EnableDeveloperAnalyticsSwitch" Content="Enable Developer Analytics"/>
             </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <CheckBox x:Name="EnableDeveloperConsoleSwitch" Content="Enable Developer Console"/>
+            </DockPanel>
         </StackPanel>
     </DockPanel>
 </mahApps:MetroWindow>

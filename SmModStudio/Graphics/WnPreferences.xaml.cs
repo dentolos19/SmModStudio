@@ -22,6 +22,7 @@ namespace SmModStudio.Graphics
             EnableDarkModeSwitch.IsChecked = App.Settings.EnableDarkMode;
             EnableRichPresenceSwitch.IsChecked = App.Settings.EnableRichPresence;
             EnableDeveloperAnalyticsSwitch.IsChecked = App.Settings.EnableDeveloperAnalytics;
+            EnableDeveloperConsoleSwitch.IsChecked = App.Settings.EnableDeveloperConsole;
         }
 
         private void SaveSettings(object sender, RoutedEventArgs args)
@@ -31,6 +32,7 @@ namespace SmModStudio.Graphics
             App.Settings.EnableDarkMode = EnableDarkModeSwitch.IsChecked == true;
             App.Settings.EnableRichPresence = EnableRichPresenceSwitch.IsChecked == true;
             App.Settings.EnableDeveloperAnalytics = EnableDeveloperAnalyticsSwitch.IsChecked == true;
+            App.Settings.EnableDeveloperConsole = EnableDeveloperConsoleSwitch.IsChecked == true;
             App.Settings.Save();
             if (MessageBox.Show("All settings has been saved, do you want to restart this program?", "SmModStudio", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 Utilities.RestartApp();
