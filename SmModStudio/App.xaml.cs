@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
@@ -23,6 +24,8 @@ namespace SmModStudio
         private void Initialize(object sender, StartupEventArgs args)
         {
             Settings = Configuration.Load();
+            if (Debugger.IsAttached)
+                Settings.EnableDeveloperConsole = true;
             if (Settings.EnableRichPresence)
                 RichPresence.Instance.Activate();
             if (Settings.EnableDeveloperAnalytics)
@@ -39,6 +42,12 @@ namespace SmModStudio
             PageObjectPreviewer = new PgObjectPreviewer();
             WindowStudio = new WnStudio();
             WindowStudio.Show();
+        }
+
+        private void Deinitialize(object sender, ExitEventArgs args)
+        {
+            RichPresence.Instance.Deactivate();
+            DeveloperConsole.Instance.Deactivate();
         }
 
     }

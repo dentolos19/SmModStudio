@@ -8,6 +8,7 @@ I made this just for fun. This is my hobby project work which is currently work 
 * [X] Metro Design + Many Accents
 * [X] Rich Presence Integration
 * [X] Developer Analytics
+* [X] Developer Console
 * [X] Image Previewer
 * [X] Object Previewer **(Needs Improvements)**
 * [ ] Recipe Editor

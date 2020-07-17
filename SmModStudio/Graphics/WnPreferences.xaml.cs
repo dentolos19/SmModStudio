@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
 
@@ -23,6 +24,11 @@ namespace SmModStudio.Graphics
             EnableRichPresenceSwitch.IsChecked = App.Settings.EnableRichPresence;
             EnableDeveloperAnalyticsSwitch.IsChecked = App.Settings.EnableDeveloperAnalytics;
             EnableDeveloperConsoleSwitch.IsChecked = App.Settings.EnableDeveloperConsole;
+            if (Debugger.IsAttached)
+            {
+                EnableDeveloperConsoleSwitch.IsEnabled = false;
+                EnableDeveloperConsoleSwitch.Content += " (Required For Debugging Purposes)";
+            }
         }
 
         private void SaveSettings(object sender, RoutedEventArgs args)

@@ -19,7 +19,6 @@ namespace SmModStudio.Graphics
         public WnStudio()
         {
             InitializeComponent();
-            DeveloperConsole.Instance.Log("test test test");
         }
 
         private void SetHierarchy(string path)
