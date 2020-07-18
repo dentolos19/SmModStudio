@@ -1,8 +1,6 @@
-# Scrap Mechanic Mod Studio [![Code Quantity](https://app.codacy.com/project/badge/Grade/378d7e2450fe45d08025e40e0a2de21f)](https://www.codacy.com/manual/dentolos19/SmModStudio?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dentolos19/SmModStudio&amp;utm_campaign=Badge_Grade)
+# Scrap Mechanic Mod Studio [![Code Quality](https://app.codacy.com/project/badge/Grade/378d7e2450fe45d08025e40e0a2de21f)](https://www.codacy.com/manual/dentolos19/SmModStudio?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dentolos19/SmModStudio&amp;utm_campaign=Badge_Grade)
 
-I made this just for fun. This is my hobby project work which is currently work in progress, if you want to help then go for it!
-
-### Todo List
+I made this just for fun.
 
 * [X] Syntax Highlighting **(Needs Improvements)**
 * [X] Metro Design + Many Accents
@@ -11,8 +9,10 @@ I made this just for fun. This is my hobby project work which is currently work 
 * [X] Developer Console
 * [X] Image Previewer
 * [X] Object Previewer **(Needs Improvements)**
+* [X] Project Management + Properties
 * [ ] Recipe Editor
 * [ ] Code Intellisense
 * [ ] Mod Manual Integration
 * [ ] Steam Workshop Integration
-* [ ] Project Management + Properties
+
+![Preview](https://dentolos19.github.io/previews/smmodstudio.png)

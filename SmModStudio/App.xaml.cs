@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
@@ -14,17 +13,23 @@ namespace SmModStudio
     public partial class App
     {
 
+        public static bool OnDebugMode { get; private set; }
+
         public static Configuration Settings { get; private set; }
 
-        public static WnStudio WindowStudio { get; private set; }
         public static PgEditor PageEditor { get; private set; }
         public static PgImagePreviewer PageImagePreviewer { get; private set; }
         public static PgObjectPreviewer PageObjectPreviewer { get; private set; }
 
         private void Initialize(object sender, StartupEventArgs args)
         {
-            Settings = Configuration.Load();
+#if DEBUG
+            OnDebugMode = true;
+#endif
             if (Debugger.IsAttached)
+                OnDebugMode = true;
+            Settings = Configuration.Load();
+            if (OnDebugMode)
                 Settings.EnableDeveloperConsole = true;
             if (Settings.EnableRichPresence)
                 RichPresence.Instance.Activate();
@@ -33,15 +38,14 @@ namespace SmModStudio
             if (Settings.EnableDeveloperConsole)
             {
                 DeveloperConsole.Instance.Activate();
-                if (Debugger.IsAttached)
+                if (OnDebugMode)
                     DeveloperConsole.Instance.AlsoUseDebug = true;
             }
             Utilities.SetAppTheme(Settings.AccentName, Settings.EnableDarkMode);
             PageEditor = new PgEditor();
             PageImagePreviewer = new PgImagePreviewer();
             PageObjectPreviewer = new PgObjectPreviewer();
-            WindowStudio = new WnStudio();
-            WindowStudio.Show();
+            new WnStudio().Show();
         }
 
         private void Deinitialize(object sender, ExitEventArgs args)

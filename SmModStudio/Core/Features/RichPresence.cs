@@ -8,9 +8,9 @@ namespace SmModStudio.Core.Features
 
         private readonly DiscordRpcClient _client = new DiscordRpcClient(Constants.DiscordClientId);
         private Timestamps _currentTimestamp;
-        
+
         public static RichPresence Instance { get; } = new RichPresence();
-        
+
         public bool IsActivated { get; private set; }
 
         public void Activate()
@@ -51,7 +51,7 @@ namespace SmModStudio.Core.Features
             };
             _client.SetPresence(presence);
         }
-        
+
         public void SetWorkPresence(string projectName, string fileName, bool resetTimestamp = false)
         {
             if (!IsActivated)
@@ -65,8 +65,8 @@ namespace SmModStudio.Core.Features
                 Timestamps = _currentTimestamp,
                 Assets = new Assets
                 {
-                LargeImageKey = "default",
-                LargeImageText = "Scrap Mechanic Mod Studio"
+                    LargeImageKey = "default",
+                    LargeImageText = "Scrap Mechanic Mod Studio"
                 }
             };
             _client.SetPresence(presence);
@@ -85,8 +85,8 @@ namespace SmModStudio.Core.Features
                 Timestamps = _currentTimestamp,
                 Assets = new Assets
                 {
-                LargeImageKey = "default",
-                LargeImageText = "Scrap Mechanic Mod Studio"
+                    LargeImageKey = "default",
+                    LargeImageText = "Scrap Mechanic Mod Studio"
                 }
             };
             _client.SetPresence(presence);

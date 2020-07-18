@@ -8,13 +8,13 @@ namespace SmModStudio.Core.Features
     public class DeveloperConsole
     {
 
-        private string _writerOutput;
+        private static readonly Random Generator = new Random();
         private StreamWriter _writer;
-        
+
+        private string _writerOutput;
+
         public bool IsActivated { get; private set; }
         public bool AlsoUseDebug { get; set; }
-        
-        private static Random Generator = new Random();
         public static DeveloperConsole Instance { get; } = new DeveloperConsole();
 
         private string AddZeroIfNeeded(int value)
@@ -23,7 +23,7 @@ namespace SmModStudio.Core.Features
                 return "0" + value;
             return value.ToString();
         }
-        
+
         public void Activate()
         {
             if (IsActivated)

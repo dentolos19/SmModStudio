@@ -8,8 +8,6 @@ namespace SmModStudio.Graphics
     public partial class WnOpen
     {
 
-        public string SelectedPath { get; private set; }
-
         public WnOpen(string path)
         {
             InitializeComponent();
@@ -17,6 +15,8 @@ namespace SmModStudio.Graphics
             foreach (var project in projects)
                 ProjectList.Items.Add(new ProjectItemBinding(project));
         }
+
+        public string SelectedPath { get; private set; }
 
         private void OpenProject(object sender, RoutedEventArgs args)
         {
@@ -40,5 +40,5 @@ namespace SmModStudio.Graphics
         }
 
     }
-    
+
 }

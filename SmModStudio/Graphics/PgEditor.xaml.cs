@@ -4,16 +4,16 @@ using SmModStudio.Core.Features;
 
 namespace SmModStudio.Graphics
 {
-    
+
     public partial class PgEditor
     {
-
-        public string CurrentFile { get; private set; }
 
         public PgEditor()
         {
             InitializeComponent();
         }
+
+        public string CurrentFile { get; private set; }
 
         public void EditFile(string filePath, string projectName = "nothing")
         {
@@ -44,5 +44,5 @@ namespace SmModStudio.Graphics
         }
 
     }
-    
+
 }

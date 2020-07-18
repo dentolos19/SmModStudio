@@ -5,8 +5,8 @@ using System.Windows.Input;
 using System.Windows.Navigation;
 using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Win32;
+using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
-using SmModStudio.Core.Features;
 
 namespace SmModStudio.Graphics
 {
@@ -15,6 +15,7 @@ namespace SmModStudio.Graphics
     {
 
         private string _selectedPath;
+        private string _modDescPath => Path.Combine(_selectedPath, "description.json");
 
         public WnStudio()
         {
@@ -28,6 +29,11 @@ namespace SmModStudio.Graphics
 
         private bool OpenAnyFile(string path)
         {
+            if (path == _modDescPath)
+            {
+                ShowProjectProperties(null, null);
+                return true;
+            }
             if (Utilities.IsFileAn3DObject(path))
             {
                 PageView.Navigate(App.PageObjectPreviewer);
@@ -64,11 +70,6 @@ namespace SmModStudio.Graphics
             }
         }
 
-        private void StudioClosing(object sender, CancelEventArgs args)
-        {
-            // TODO: Add unsaved project safety
-        }
-
         private void OpenProject(object sender, RoutedEventArgs args)
         {
             var dialog = new WnOpen(Path.Combine(Constants.GameUserPath, "Mods")) { Owner = this };
@@ -78,14 +79,14 @@ namespace SmModStudio.Graphics
             SetHierarchy(_selectedPath);
             ProjectMenu.IsEnabled = true;
         }
-        
+
         private void OpenFile(object sender, RoutedEventArgs args)
         {
             var dialog = new OpenFileDialog { Filter = "Lua Source File|*.lua|JSON Source File|*.json|All Files|*.*" };
             if (dialog.ShowDialog() == true)
                 OpenAnyFile(dialog.FileName);
         }
-        
+
         private void SaveFile(object sender, RoutedEventArgs args)
         {
             if (!PageView.Content.Equals(App.PageEditor))
@@ -97,7 +98,7 @@ namespace SmModStudio.Graphics
             }
             App.PageEditor.Save();
         }
-        
+
         private void SaveFileAs(object sender, RoutedEventArgs args)
         {
             if (!PageView.Content.Equals(App.PageEditor))
@@ -117,43 +118,43 @@ namespace SmModStudio.Graphics
             if (App.PageEditor.CodeEditor.CanUndo && EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Undo();
         }
-        
+
         private void RedoText(object sender, RoutedEventArgs args)
         {
             if (App.PageEditor.CodeEditor.CanRedo && EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Redo();
         }
-        
+
         private void CutText(object sender, RoutedEventArgs args)
         {
             if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Cut();
         }
-        
+
         private void CopyText(object sender, RoutedEventArgs args)
         {
             if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Copy();
         }
-        
+
         private void PasteText(object sender, RoutedEventArgs args)
         {
             if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Paste();
         }
-        
+
         private void DeleteText(object sender, RoutedEventArgs args)
         {
             if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.Delete();
         }
-        
+
         private void SelectAllText(object sender, RoutedEventArgs args)
         {
             if (EditMenu.IsEnabled)
                 App.PageEditor.CodeEditor.SelectAll();
         }
-        
+
         private void OpenFileInListing(object sender, MouseButtonEventArgs args)
         {
             if (!(ProjectListing.SelectedItem is FileSystemInfo info))
@@ -163,7 +164,7 @@ namespace SmModStudio.Graphics
             if (!OpenAnyFile(info.FullName))
                 MessageBox.Show("This file is not viewable by any previewers or editors!", "SmModStudio");
         }
-        
+
         private void ContextOpenedInListing(object sender, RoutedEventArgs args)
         {
             ContextNewFile.IsEnabled = false;
@@ -174,12 +175,12 @@ namespace SmModStudio.Graphics
             ContextCopyPath.IsEnabled = false;
             ContextDelete.IsEnabled = false;
             ContextRename.IsEnabled = false;
-            if (!(ProjectListing.SelectedItem is FileSystemInfo item))
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
             ContextCopyPath.IsEnabled = true;
             ContextDelete.IsEnabled = true;
             ContextRename.IsEnabled = true;
-            if (item.Attributes.HasFlag(FileAttributes.Directory))
+            if (info.Attributes.HasFlag(FileAttributes.Directory))
             {
                 ContextNewFile.IsEnabled = true;
                 ContextNewDirectory.IsEnabled = true;
@@ -190,32 +191,37 @@ namespace SmModStudio.Graphics
             {
                 ContextExportFile.IsEnabled = true;
             }
+            if (info.FullName == _modDescPath || info.FullName == _selectedPath)
+            {
+                ContextRename.IsEnabled = false;
+                ContextDelete.IsEnabled = false;
+            }
         }
-        
+
         private async void NewFile(object sender, RoutedEventArgs args)
         {
             if (ContextNewFile.IsEnabled == false)
                 return;
             if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
-            var input = await this.ShowInputAsync("SmModStudio", "Enter the name for the new file.", new MetroDialogSettings
+            var input = await this.ShowInputAsync("Creating a new file", "Enter the name for the new file.", new MetroDialogSettings
             {
                 AffirmativeButtonText = "Create",
                 DefaultText = "source.lua"
             });
             if (string.IsNullOrEmpty(input))
                 return;
-            File.WriteAllText(Path.Combine(info.FullName, input), "Hello world! Write your code here.");
+            await File.WriteAllTextAsync(Path.Combine(info.FullName, input), "Hello world! Write your code here.");
             SetHierarchy(_selectedPath);
         }
-        
+
         private async void NewDirectory(object sender, RoutedEventArgs args)
         {
             if (ContextNewFile.IsEnabled == false)
                 return;
             if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
-            var input = await this.ShowInputAsync("SmModStudio", "Enter the name for the new directory.", new MetroDialogSettings
+            var input = await this.ShowInputAsync("Creating a new directory", "Enter the name for the new directory.", new MetroDialogSettings
             {
                 AffirmativeButtonText = "Create",
                 DefaultText = "Sources"
@@ -230,16 +236,34 @@ namespace SmModStudio.Graphics
         {
             if (ContextImportDirectory.IsEnabled == false)
                 return;
-            // TODO
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            if (info.Attributes.HasFlag(FileAttributes.Directory))
+                return;
+            var dialog = new VistaFolderBrowserDialog();
+            if (dialog.ShowDialog() == true)
+            {
+                Utilities.CopyDirectory(dialog.SelectedPath, Path.Combine(info.FullName, new DirectoryInfo(dialog.SelectedPath).Name));
+                SetHierarchy(_selectedPath);
+            }
         }
-        
+
         private void ImportFile(object sender, RoutedEventArgs args)
         {
             if (ContextImportFile.IsEnabled == false)
                 return;
-            // TODO
+            if (!(ProjectListing.SelectedItem is FileSystemInfo info))
+                return;
+            if (info.Attributes.HasFlag(FileAttributes.Directory))
+                return;
+            var dialog = new OpenFileDialog { Filter = "All Files|*.*"};
+            if (dialog.ShowDialog() == true)
+            {
+                File.Copy(dialog.FileName, Path.Combine(info.FullName, Path.GetFileName(dialog.FileName)));
+                SetHierarchy(_selectedPath);
+            }
         }
-        
+
         private void ExportFile(object sender, RoutedEventArgs args)
         {
             if (ContextExportFile.IsEnabled == false)
@@ -250,7 +274,7 @@ namespace SmModStudio.Graphics
             if (dialog.ShowDialog() == true)
                 File.Copy(info.FullName, dialog.FileName);
         }
-        
+
         private void CopyPath(object sender, RoutedEventArgs args)
         {
             if (ContextCopyPath.IsEnabled == false)
@@ -259,14 +283,14 @@ namespace SmModStudio.Graphics
                 return;
             Clipboard.SetText(info.FullName);
         }
-        
+
         private async void RenameItem(object sender, RoutedEventArgs args)
         {
             if (ContextRename.IsEnabled == false)
                 return;
             if (!(ProjectListing.SelectedItem is FileSystemInfo info))
                 return;
-            var input = await this.ShowInputAsync("SmModStudio", "Enter the new name for this file or directory.", new MetroDialogSettings
+            var input = await this.ShowInputAsync("Renaming something", "Enter the new name for this file or directory.", new MetroDialogSettings
             {
                 AffirmativeButtonText = "Rename",
                 DefaultText = info.Name
@@ -288,7 +312,7 @@ namespace SmModStudio.Graphics
             }
             SetHierarchy(_selectedPath);
         }
-        
+
         private void DeleteItem(object sender, RoutedEventArgs args)
         {
             if (ContextDelete.IsEnabled == false)
@@ -303,20 +327,25 @@ namespace SmModStudio.Graphics
                 File.Delete(info.FullName);
             SetHierarchy(_selectedPath);
         }
-        
+
+        private void ShowProjectProperties(object sender, RoutedEventArgs args)
+        {
+            new WnProperties(_modDescPath) { Owner = this }.ShowDialog();
+        }
+
         private void PageViewNavigated(object sender, NavigationEventArgs args)
         {
             EditMenu.IsEnabled = PageView.Content.Equals(App.PageEditor);
         }
-        
+
         private void ShowPreferences(object sender, RoutedEventArgs args)
         {
             new WnPreferences { Owner = this }.Show();
         }
-        
-        private void ShowAbout(object sender, RoutedEventArgs args)
+
+        private async void ShowAbout(object sender, RoutedEventArgs args)
         {
-            // TODO: Show about
+            await this.ShowMessageAsync("About this program", "This program was created by Dennise Catolos.\n\nContact me on Discord, @dentolos19#6996.\nFind me on GitHub, @dentolos19.\nFind me on Twitter, @dentolos19.");
         }
 
     }

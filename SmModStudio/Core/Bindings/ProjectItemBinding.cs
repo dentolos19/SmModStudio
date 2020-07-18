@@ -11,7 +11,7 @@ namespace SmModStudio.Core.Bindings
             Path = path;
             Name = new DirectoryInfo(path).Name;
         }
-        
+
         public string Name { get; }
         public string Path { get; }
 

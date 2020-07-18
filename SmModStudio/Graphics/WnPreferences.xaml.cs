@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Windows;
+﻿using System.Windows;
 using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
 
@@ -16,15 +15,13 @@ namespace SmModStudio.Graphics
 
         private void PreferencesLoaded(object sender, RoutedEventArgs args)
         {
-            foreach (var accent in Constants.AccentNames)
-                AccentNameBox.Items.Add(accent);
             GameDataPathBox.Text = App.Settings.GameDataPath;
             AccentNameBox.Text = App.Settings.AccentName;
             EnableDarkModeSwitch.IsChecked = App.Settings.EnableDarkMode;
             EnableRichPresenceSwitch.IsChecked = App.Settings.EnableRichPresence;
             EnableDeveloperAnalyticsSwitch.IsChecked = App.Settings.EnableDeveloperAnalytics;
             EnableDeveloperConsoleSwitch.IsChecked = App.Settings.EnableDeveloperConsole;
-            if (Debugger.IsAttached)
+            if (App.OnDebugMode)
             {
                 EnableDeveloperConsoleSwitch.IsEnabled = false;
                 EnableDeveloperConsoleSwitch.Content += " (Required For Debugging Purposes)";

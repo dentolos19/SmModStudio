@@ -4,7 +4,7 @@
                      xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
                      xmlns:converters="clr-namespace:SmModStudio.Core.Converters"
                      xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
-                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" SaveWindowPosition="True" Loaded="StudioLoaded" Closing="StudioClosing">
+                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" SaveWindowPosition="True" Loaded="StudioLoaded">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenProject"/>
         <CommandBinding Command="Save" Executed="SaveFile"/>
@@ -33,8 +33,7 @@
                 <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
             </MenuItem>
             <MenuItem x:Name="ProjectMenu" Header="Project" IsEnabled="False">
-                <!-- TODO: Add some stuff to project properties -->
-                <MenuItem Header="Properties"/>
+                <MenuItem Header="Properties" Click="ShowProjectProperties"/>
             </MenuItem>
             <MenuItem Header="Options">
                 <MenuItem Header="Preferences" Click="ShowPreferences"/>

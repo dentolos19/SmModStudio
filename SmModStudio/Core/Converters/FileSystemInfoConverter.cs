@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
-using SmModStudio.Core.Bindings;
 
 namespace SmModStudio.Core.Converters
 {

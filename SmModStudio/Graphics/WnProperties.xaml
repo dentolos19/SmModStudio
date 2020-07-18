@@ -1,0 +1,38 @@
+﻿<mahApps:MetroWindow x:Class="SmModStudio.Graphics.WnProperties"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+                     Title="Project Properties" TitleCharacterCasing="Normal" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <DockPanel Width="600" Height="350">
+        <DockPanel DockPanel.Dock="Bottom" Height="50">
+            <Button DockPanel.Dock="Right" Content="Save" Width="100" Margin="10,10,10,10" Click="SaveProperties"/>
+            <Label Content="Created by Dennise Catolos (@dentolos19)" Margin="10,10,10,10" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <StackPanel>
+            <DockPanel Margin="10,10,10,0">
+                <Label DockPanel.Dock="Left" Content="Title" Width="75" Margin="0,0,10,0"/>
+                <TextBox x:Name="TitleBox" mahApps:TextBoxHelper.Watermark="Title"/>
+            </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <Label DockPanel.Dock="Left" Content="Type" Width="75" Margin="0,0,10,0"/>
+                <ComboBox x:Name="TypeBox">
+                    <ComboBoxItem Content="Blocks and Parts"/>
+                    <ComboBoxItem Content="Terrain Assets"/>
+                </ComboBox>
+            </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <Label DockPanel.Dock="Left" Content="Version" Width="75" Margin="0,0,10,0"/>
+                <mahApps:NumericUpDown x:Name="VersionBox"/>
+            </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <Label DockPanel.Dock="Left" Content="ID" Width="75" Margin="0,0,10,0"/>
+                <Button DockPanel.Dock="Right" Content="Renew" Width="75" Margin="10,0,0,0" Click="RenewId"/>
+                <TextBox x:Name="IdBox" IsReadOnly="True" VerticalContentAlignment="Center"/>
+            </DockPanel>
+            <DockPanel Margin="10,10,10,0">
+                <Label DockPanel.Dock="Left" Content="Description" Width="75" Margin="0,0,10,0"/>
+                <TextBox x:Name="DescriptionBox" mahApps:TextBoxHelper.Watermark="Description" Height="100" AcceptsReturn="True"/>
+            </DockPanel>
+        </StackPanel>
+    </DockPanel>
+</mahApps:MetroWindow>

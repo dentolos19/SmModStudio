@@ -42,13 +42,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SmModStudio/Core/Models/ModDescription.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Bindings/ProjectItemBinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Bindings/ProjectItemBinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Converters/FileSystemInfoConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Converters/FileSystemInfoConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperConsole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperConsole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Native.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Native.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,27 +80,30 @@
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Converters/FileSystemInfoConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/App.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/C7A5D9BF-ACB6-4421-8BA5-6BF05684160C/b0/1e588b34/Binding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/DecompilerCache/decompiler/C7A5D9BF-ACB6-4421-8BA5-6BF05684160C/b0/1e588b34/Binding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Constants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Models/ModDescription.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Bindings/ProjectItemBinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Native.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SmModStudio/Core/Bindings/ProjectItemBinding.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -91,7 +111,6 @@
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/TvDirectory.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/TvProjectFile.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/TvProjectDirectory.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/ProjectListItem.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Bindings/ProjectListingItemBinding.cs" />
@@ -105,30 +124,33 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgEditor.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" />
-        <option value="$PROJECT_DIR$/SmModStudio/Core/Models/ModDescription.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgPreviewer.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgImagePreviewer.xaml" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/SmModStudio.csproj" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Features/ConsoleWindow.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/NativeMethod.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/NativeMethods.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Native.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Features/RichPresence.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Configuration.cs" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/App.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperConsole.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnIntro.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnOpen.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/App.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Models/ModDescription.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml" />
+        <option value="$PROJECT_DIR$/SmModStudio/Core/Utilities.cs" />
+        <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
       </list>
     </option>
   </component>
@@ -151,7 +173,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager">
     <configuration name="SmModStudio" type="DotNetProject" factoryName=".NET Project">
@@ -173,6 +195,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -207,6 +230,15 @@
       <workItem from="1594893883854" duration="40000" />
       <workItem from="1594894867780" duration="2701000" />
       <workItem from="1594967168720" duration="3372000" />
+      <workItem from="1594984061253" duration="20000" />
+      <workItem from="1594984086102" duration="2000" />
+      <workItem from="1595044305872" duration="400000" />
+      <workItem from="1595046302581" duration="595000" />
+      <workItem from="1595047691464" duration="116000" />
+      <workItem from="1595048570512" duration="70000" />
+      <workItem from="1595048815692" duration="66000" />
+      <workItem from="1595061181489" duration="32000" />
+      <workItem from="1595061659949" duration="4620000" />
     </task>
     <servers />
   </component>
@@ -236,30 +268,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594805887113" />
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom" timestamp="1594970562326">
+    <state x="516" y="257" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1595064440979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594970562326" />
-    <state width="1493" height="204" key="GridCell.Tab.0.center" timestamp="1594970562326">
+    <state x="516" y="257" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1536.824@0.0.1536.824" timestamp="1595064440979" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595066322835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594970562326" />
-    <state width="1493" height="204" key="GridCell.Tab.0.left" timestamp="1594970562326">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595066322835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1595066322834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594970562326" />
-    <state width="1493" height="204" key="GridCell.Tab.0.right" timestamp="1594970562326">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595066322834" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1595066322834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594970562326" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595066322834" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1595066322835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595066322835" />
+    <state x="349" y="155" key="IDE.errors.dialog" timestamp="1595048828535">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1595048828535" />
+    <state x="361" y="144" key="Rider.ProjectTemplateDialog.Size" timestamp="1595047772501">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="144" key="Rider.ProjectTemplateDialog.Size/0.0.1536.824@0.0.1536.824" timestamp="1595047772501" />
     <state x="467" y="27" key="RiderGenerateDialog" timestamp="1594638743320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="467" y="27" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1594638743320" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1594293167934">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1595064733287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594293167934" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595064733287" />
     <state x="640" y="257" key="cloudConfig.SelfSettingsDialog" timestamp="1594109455594">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

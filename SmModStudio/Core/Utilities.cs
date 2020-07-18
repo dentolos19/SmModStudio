@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -74,7 +72,7 @@ namespace SmModStudio.Core
         {
             var content = File.ReadAllBytes(path);
             for (var index = 1; index < 512 && index < content.Length; index++)
-                if (content[index] == 0x00 && content[index-1] == 0x00)
+                if (content[index] == 0x00 && content[index - 1] == 0x00)
                     return false;
             return true;
         }
@@ -95,27 +93,31 @@ namespace SmModStudio.Core
         public static bool IsFileAn3DObject(string path)
         {
             var extension = Path.GetExtension(path).ToLower();
-            if (extension.Equals(".3ds"))
-            {
-                return true;
-            }
-            if (extension.Equals(".lwo"))
-            {
-                return true;
-            }
-            if (extension.Equals(".off"))
-            {
-                return true;
-            }
-            if (extension.Equals(".obj"))
-            {
-                return true;
-            }
-            if (extension.Equals(".stl"))
-            {
-                return true;
-            }
+            if (extension.Equals(".3ds")) return true;
+            if (extension.Equals(".lwo")) return true;
+            if (extension.Equals(".off")) return true;
+            if (extension.Equals(".obj")) return true;
+            if (extension.Equals(".stl")) return true;
             return false;
+        }
+
+        public static void CopyDirectory(string inputPath, string outputPath)
+        {
+            var dir = new DirectoryInfo(inputPath);
+            var dirs = dir.GetDirectories();
+            if (!Directory.Exists(outputPath))
+                Directory.CreateDirectory(outputPath);
+            var files = dir.GetFiles();
+            foreach (var file in files)
+            {
+                var tempPath = Path.Combine(outputPath, file.Name);
+                file.CopyTo(tempPath);
+            }
+            foreach (var subdir in dirs)
+            {
+                var tempPath = Path.Combine(outputPath, subdir.Name);
+                CopyDirectory(subdir.FullName, tempPath);
+            }
         }
 
     }

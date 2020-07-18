@@ -1,8 +1,8 @@
 ﻿<mahApps:MetroWindow x:Class="SmModStudio.Graphics.WnPreferences"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
-        Title="Studio Preferences" TitleCharacterCasing="Normal" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="PreferencesLoaded">
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+                     Title="Preferences" TitleCharacterCasing="Normal" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="PreferencesLoaded">
     <DockPanel Width="500" Height="300">
         <DockPanel DockPanel.Dock="Bottom" Height="50">
             <Button DockPanel.Dock="Right" Content="Save" Width="100" Margin="10,10,10,10" Click="SaveSettings"/>
@@ -17,7 +17,31 @@
             </DockPanel>
             <DockPanel Margin="10,10,10,0">
                 <Label DockPanel.Dock="Left" Content="Accent Name" Width="100" Margin="0,0,10,0"/>
-                <ComboBox x:Name="AccentNameBox"/>
+                <ComboBox x:Name="AccentNameBox">
+                    <ComboBoxItem Content="Red"/>
+                    <ComboBoxItem Content="Green"/>
+                    <ComboBoxItem Content="Blue"/>
+                    <ComboBoxItem Content="Purple"/>
+                    <ComboBoxItem Content="Orange"/>
+                    <ComboBoxItem Content="Lime"/>
+                    <ComboBoxItem Content="Emerald"/>
+                    <ComboBoxItem Content="Teal"/>
+                    <ComboBoxItem Content="Cyan"/>
+                    <ComboBoxItem Content="Cobalt"/>
+                    <ComboBoxItem Content="Indigo"/>
+                    <ComboBoxItem Content="Violet"/>
+                    <ComboBoxItem Content="Pink"/>
+                    <ComboBoxItem Content="Magenta"/>
+                    <ComboBoxItem Content="Crimson"/>
+                    <ComboBoxItem Content="Amber"/>
+                    <ComboBoxItem Content="Yellow"/>
+                    <ComboBoxItem Content="Brown"/>
+                    <ComboBoxItem Content="Olive"/>
+                    <ComboBoxItem Content="Steel"/>
+                    <ComboBoxItem Content="Mauve"/>
+                    <ComboBoxItem Content="Taupe"/>
+                    <ComboBoxItem Content="Sienna"/>
+                </ComboBox>
             </DockPanel>
             <DockPanel Margin="10,10,10,0">
                 <CheckBox x:Name="EnableDarkModeSwitch" Content="Enable Dark Mode"/>

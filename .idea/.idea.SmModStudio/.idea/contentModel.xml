@@ -23,6 +23,9 @@
             <e p="DeveloperConsole.cs" t="Include" />
             <e p="RichPresence.cs" t="Include" />
           </e>
+          <e p="Models" t="Include">
+            <e p="ModDescription.cs" t="Include" />
+          </e>
           <e p="Native.cs" t="Include" />
           <e p="Utilities.cs" t="Include" />
         </e>
@@ -39,6 +42,8 @@
           <e p="WnOpen.xaml.cs" t="Include" />
           <e p="WnPreferences.xaml" t="Include" />
           <e p="WnPreferences.xaml.cs" t="Include" />
+          <e p="WnProperties.xaml" t="Include" />
+          <e p="WnProperties.xaml.cs" t="Include" />
           <e p="WnStudio.xaml" t="Include" />
           <e p="WnStudio.xaml.cs" t="Include" />
         </e>
@@ -54,6 +59,7 @@
                 <e p="WnIntro.g.cs" t="Include" />
                 <e p="WnOpen.g.cs" t="Include" />
                 <e p="WnPreferences.g.cs" t="Include" />
+                <e p="WnProperties.g.cs" t="Include" />
                 <e p="WnStudio.g.cs" t="Include" />
               </e>
               <e p="SmModStudio.AssemblyInfo.cs" t="Include" />
