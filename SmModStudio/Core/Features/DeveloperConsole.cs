@@ -28,7 +28,7 @@ namespace SmModStudio.Core.Features
         {
             if (IsActivated)
                 return;
-            Native.AllocConsole();
+            NativeMethods.AllocConsole();
             Console.Title = "Studio Developer Console";
             _writerOutput = Path.Combine(Path.GetTempPath(), "smms-" + Generator.Next(int.MaxValue) + ".log");
             _writer = new StreamWriter(_writerOutput);
@@ -48,7 +48,7 @@ namespace SmModStudio.Core.Features
             _writer.Close();
             File.Delete(_writerOutput);
             Console.Clear();
-            Native.FreeConsole();
+            NativeMethods.FreeConsole();
             IsActivated = false;
         }
 

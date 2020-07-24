@@ -3,7 +3,7 @@
 namespace SmModStudio.Core
 {
 
-    internal static class Native
+    internal static class NativeMethods
     {
 
         [DllImport("kernel32.dll")]

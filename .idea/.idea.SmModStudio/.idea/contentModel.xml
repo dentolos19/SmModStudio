@@ -26,7 +26,7 @@
           <e p="Models" t="Include">
             <e p="ModDescription.cs" t="Include" />
           </e>
-          <e p="Native.cs" t="Include" />
+          <e p="NativeMethods.cs" t="Include" />
           <e p="Utilities.cs" t="Include" />
         </e>
         <e p="Graphics" t="Include">
