@@ -42,11 +42,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66b2f0d5-ad71-439e-9b2a-9a0986c434b7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SmModStudio/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperConsole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/Features/DeveloperConsole.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SmModStudio/Core/Native.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SmModStudio/Core/NativeMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +119,6 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/Constants.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnPreferences.xaml.cs" />
-        <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnProperties.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/PgObjectPreviewer.xaml" />
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml" />
@@ -132,6 +127,7 @@
         <option value="$PROJECT_DIR$/SmModStudio/Graphics/WnStudio.xaml.cs" />
         <option value="$PROJECT_DIR$/SmModStudio/Core/NativeMethods.cs" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/SmModStudio/App.xaml.cs" />
       </list>
     </option>
   </component>
@@ -223,6 +219,7 @@
       <workItem from="1595312978588" duration="157000" />
       <workItem from="1595497417250" duration="7000" />
       <workItem from="1595562364430" duration="350000" />
+      <workItem from="1595652349426" duration="215000" />
     </task>
     <servers />
   </component>
