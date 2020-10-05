@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmModStudio", "SmModStudio\SmModStudio.csproj", "{9F1AC210-6EDB-4647-AA81-72CF9C53715B}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmModStudio", "SmModStudio\SmModStudio.csproj", "{3EA761FD-5451-4085-871C-6DAB7E041C18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9F1AC210-6EDB-4647-AA81-72CF9C53715B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F1AC210-6EDB-4647-AA81-72CF9C53715B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F1AC210-6EDB-4647-AA81-72CF9C53715B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F1AC210-6EDB-4647-AA81-72CF9C53715B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA761FD-5451-4085-871C-6DAB7E041C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA761FD-5451-4085-871C-6DAB7E041C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA761FD-5451-4085-871C-6DAB7E041C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA761FD-5451-4085-871C-6DAB7E041C18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7861720F-1D36-4E0B-9521-B33E6995D4D7}
 	EndGlobalSection
 EndGlobal

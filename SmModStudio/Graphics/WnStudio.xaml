@@ -1,88 +1,55 @@
-﻿<mahApps:MetroWindow x:Class="SmModStudio.Graphics.WnStudio"
-                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
-                     xmlns:converters="clr-namespace:SmModStudio.Core.Converters"
-                     xmlns:io="clr-namespace:System.IO;assembly=System.IO.FileSystem"
-                     Title="Scrap Mechanic Mod Studio" TitleCharacterCasing="Normal" SaveWindowPosition="True" Loaded="StudioLoaded">
-    <Window.CommandBindings>
-        <CommandBinding Command="Open" Executed="OpenProject"/>
-        <CommandBinding Command="Save" Executed="SaveFile"/>
-        <CommandBinding Command="SaveAs" Executed="SaveFileAs"/>
-    </Window.CommandBindings>
+﻿<ui:AdonisWindow x:Class="SmModStudio.Graphics.WnStudio"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+                 xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
+                 Title="Scrap Mechanic Mod Studio" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Open Project" InputGestureText="Ctrl+O" Click="OpenProject"/>
-                <MenuItem Header="Open File" Click="OpenFile"/>
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
                 <Separator/>
-                <MenuItem Header="Save File" InputGestureText="Ctrl+S" Click="SaveFile"/>
-                <MenuItem Header="Save File As" InputGestureText="Ctrl+Shift+S" Click="SaveFileAs"/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As"/>
                 <Separator/>
-                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="ExitStudio"/>
+                <MenuItem Header="Exit"/>
             </MenuItem>
-            <MenuItem x:Name="EditMenu" Header="Edit" IsEnabled="False">
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="UndoText"/>
-                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="RedoText"/>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo"/>
+                <MenuItem Header="Redo"/>
                 <Separator/>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Click="CutText"/>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Click="CopyText"/>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Click="PasteText"/>
-                <MenuItem Header="Delete" InputGestureText="Del" Click="DeleteText"/>
+                <MenuItem Header="Cut"/>
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+                <MenuItem Header="Delete"/>
                 <Separator/>
-                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAllText"/>
-            </MenuItem>
-            <MenuItem x:Name="ProjectMenu" Header="Project" IsEnabled="False">
-                <MenuItem Header="Properties" Click="ShowProjectProperties"/>
+                <MenuItem Header="Select All"/>
             </MenuItem>
             <MenuItem Header="Options">
-                <MenuItem Header="Preferences" Click="ShowPreferences"/>
+                <MenuItem Header="Preferences"/>
                 <Separator/>
-                <MenuItem Header="About SmModStudio" Click="ShowAbout"/>
+                <MenuItem Header="About SmModStudio"/>
             </MenuItem>
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200" MinWidth="200" MaxWidth="400"/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="ProjectListing" DockPanel.Dock="Left" ItemsSource="{Binding}" MouseDoubleClick="OpenFileInListing">
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate DataType="{x:Type io:FileSystemInfo}">
-                        <HierarchicalDataTemplate.ItemsSource>
-                            <Binding Path=".">
-                                <Binding.Converter>
-                                    <converters:FileSystemInfoConverter/>
-                                </Binding.Converter>
-                            </Binding>
-                        </HierarchicalDataTemplate.ItemsSource>
-                        <DockPanel Height="28" ToolTip="{Binding Path=FullName}">
-                            <Label Content="{Binding Path=Name}" VerticalContentAlignment="Center"/>
-                        </DockPanel>
+            <TreeView Grid.Column="0" ItemsSource="{Binding}">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type bindings:HierarchyDirectoryBinding}" ItemsSource="{Binding Items}">
+                        <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}"/>
                     </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-                <TreeView.ContextMenu>
-                    <ContextMenu Opened="ContextOpenedInListing">
-                        <MenuItem x:Name="ContextNewFile" Header="New File" Click="NewFile"/>
-                        <MenuItem x:Name="ContextNewDirectory" Header="New Directory" Click="NewDirectory"/>
-                        <Separator/>
-                        <MenuItem x:Name="ContextImportFile" Header="Import File" Click="ImportFile"/>
-                        <MenuItem x:Name="ContextImportDirectory" Header="Import Directory" Click="ImportDirectory"/>
-                        <MenuItem x:Name="ContextExportFile" Header="Export File" Click="ExportFile"/>
-                        <Separator/>
-                        <MenuItem x:Name="ContextCopyPath" Header="Copy Path" InputGestureText="Ctrl+C" Click="CopyPath"/>
-                        <MenuItem x:Name="ContextRename" Header="Rename" Click="RenameItem"/>
-                        <MenuItem x:Name="ContextDelete" Header="Delete" InputGestureText="Del" Click="DeleteItem"/>
-                    </ContextMenu>
-                </TreeView.ContextMenu>
-                <TreeView.CommandBindings>
-                    <CommandBinding Command="Copy" Executed="CopyPath"/>
-                    <CommandBinding Command="Delete" Executed="DeleteItem"/>
-                </TreeView.CommandBindings>
+                    <DataTemplate DataType="{x:Type bindings:HierarchyFileBinding}">
+                        <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}" />
+                    </DataTemplate>
+                </TreeView.Resources>
             </TreeView>
-            <GridSplitter Grid.Column="1"/>
-            <Frame Grid.Column="2" x:Name="PageView" NavigationUIVisibility="Hidden" Navigated="PageViewNavigated"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+            <TabControl Grid.Column="2"/>
         </Grid>
     </DockPanel>
-</mahApps:MetroWindow>
+</ui:AdonisWindow>

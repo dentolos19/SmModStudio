@@ -1,107 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-    <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <UseWPF>true</UseWPF>
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
-        <PublicSign>true</PublicSign>
-        <Company>Aprodots</Company>
-        <Product>Scrap Mechanic Mod Studio</Product>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <IsPackable>false</IsPackable>
-        <Authors>Dennise Catolos</Authors>
-        <Title>Scrap Mechanic Mod Studio</Title>
-        <Copyright>Copyright © 2020</Copyright>
-        <ApplicationIcon>Resources/Assets/Icon.ico</ApplicationIcon>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>SmModStudio.App</StartupObject>
+    <Authors>Dennise Catolos</Authors>
+    <Product>Scrap Mechanic Mod Studio</Product>
+    <Copyright>Copyright © 2020</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <Page Update="Graphics\WnStudio.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\PgEditor.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\WnPreferences.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\WnIntro.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\WnOpen.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\PgImagePreviewer.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\PgObjectPreviewer.xaml">
-        <Generator></Generator>
-      </Page>
-      <Page Update="Graphics\WnProperties.xaml">
-        <Generator></Generator>
-      </Page>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="Graphics\WnStudio.xaml.cs">
-        <DependentUpon>WnMain.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\PgEditor.xaml.cs">
-        <DependentUpon>PgEditor.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\WnPreferences.xaml.cs">
-        <DependentUpon>WnPreferences.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\WnIntro.xaml.cs">
-        <DependentUpon>WnIntro.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\WnOpen.xaml.cs">
-        <DependentUpon>WnOpen.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\PgImagePreviewer.xaml.cs">
-        <DependentUpon>PgPreviewer.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\PgObjectPreviewer.xaml.cs">
-        <DependentUpon>PgObjectPreviewer.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Graphics\WnProperties.xaml.cs">
-        <DependentUpon>WnProperties.xaml</DependentUpon>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="AvalonEdit" Version="6.0.1" />
-      <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
-      <PackageReference Include="HelixToolkit.Core.Wpf" Version="2.12.0" />
-      <PackageReference Include="MahApps.Metro" Version="2.1.0" />
-      <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.4" />
-      <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.2.2" />
-      <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.2.2" />
-      <PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Resources\Logo.png" />
-      <None Remove=".gitignore" />
-      <None Remove="LICENSE" />
-      <None Remove="README.md" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Resources\LuaSyntax.xml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Resource Include="Resources\Assets\Logo.png" />
-      <None Remove="Resources\Assets\Unknown.png" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Include="Resources\Syntax\Lua.xml" />
-      <None Remove="Resources\Syntax\Json.xml" />
-      <EmbeddedResource Include="Resources\Syntax\Json.xml" />
-      <None Remove="Resources\Assets\Folder.png" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.16.0" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0" />
+    <PackageReference Include="AvalonEdit" Version="6.0.1" />
+  </ItemGroup>
 
 </Project>
