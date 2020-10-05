@@ -38,18 +38,38 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TreeView Grid.Column="0" ItemsSource="{Binding}">
+            <TreeView x:Name="Hierarchy" Grid.Column="0" ItemsSource="{Binding}" MouseDoubleClick="OpenFileInHierarchy">
                 <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type bindings:HierarchyDirectoryBinding}" ItemsSource="{Binding Items}">
-                        <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}"/>
+                    <HierarchicalDataTemplate DataType="{x:Type bindings:HierarchyDirectoryBinding}" ItemsSource="{Binding Path=Items}">
+                        <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
+                            <Image Source="{Binding Path=Icon}" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </HierarchicalDataTemplate>
                     <DataTemplate DataType="{x:Type bindings:HierarchyFileBinding}">
-                        <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}" />
+                        <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
+                            <Image Source="{Binding Path=Icon}" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </DataTemplate>
                 </TreeView.Resources>
             </TreeView>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
-            <TabControl Grid.Column="2"/>
+            <TabControl x:Name="Views" Grid.Column="2">
+                <TabControl.ItemTemplate>
+                    <DataTemplate DataType="bindings:ContentTabBinding">
+                        <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
+                            <TextBlock Text="{Binding Path=Header}" VerticalAlignment="Center"/>
+                            <Image Source="../Resources/Assets/Close.png" Margin="5,5,0,5" MouseUp="CloseTab"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate DataType="bindings:ContentTabBinding">
+                        <Frame Content="{Binding Path=Content}" NavigationUIVisibility="Hidden"/>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
         </Grid>
     </DockPanel>
 </ui:AdonisWindow>

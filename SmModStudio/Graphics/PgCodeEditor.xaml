@@ -2,5 +2,5 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:edit="http://icsharpcode.net/sharpdevelop/avalonedit">
-    <edit:TextEditor x:Name="Editor" FontFamily="Fira Code" FontSize="14" ShowLineNumbers="True"/>
+    <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True"/>
 </Page>

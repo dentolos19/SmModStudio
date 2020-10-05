@@ -14,9 +14,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Assets\Close.png" />
+    <None Remove="Resources\Assets\File.png" />
+    <None Remove="Resources\Assets\Folder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AdonisUI" Version="1.16.0" />
     <PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0" />
     <PackageReference Include="AvalonEdit" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Assets\Close.png" />
+    <Resource Include="Resources\Assets\File.png" />
+    <Resource Include="Resources\Assets\Folder.png" />
   </ItemGroup>
 
 </Project>
