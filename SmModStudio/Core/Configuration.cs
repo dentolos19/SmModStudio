@@ -11,6 +11,10 @@ namespace SmModStudio.Core
         private static readonly string Source = Path.Combine(AppDomain.CurrentDomain.BaseDirectory!, "SmModStudio.cfg");
         private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
+        public string GameDataPath { get; set; }
+        public string WorkshopPath { get; set; }
+        public string UserDataPath { get; set; }
+
         public void Save()
         {
             using var stream = new FileStream(Source, FileMode.Create);

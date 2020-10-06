@@ -7,29 +7,32 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New"/>
-                <MenuItem Header="Open"/>
+                <MenuItem Header="New" InputGestureText="Ctrl+N"/>
+                <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
                 <Separator/>
-                <MenuItem Header="Save"/>
-                <MenuItem Header="Save As"/>
+                <MenuItem Header="Save" InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Save As" InputGestureText="Ctrl+Shift+S"/>
                 <Separator/>
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo"/>
-                <MenuItem Header="Redo"/>
+                <MenuItem Header="Go To Line" InputGestureText="Ctrl+G" Click="GoToLine"/>
+                <MenuItem Header="Find &amp; Replace" InputGestureText="Ctrl+F" Click="FindReplace"/>
                 <Separator/>
-                <MenuItem Header="Cut"/>
-                <MenuItem Header="Copy"/>
-                <MenuItem Header="Paste"/>
-                <MenuItem Header="Delete"/>
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="Undo"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="Redo"/>
                 <Separator/>
-                <MenuItem Header="Select All"/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Click="Cut"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Click="Copy"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Click="Paste"/>
+                <MenuItem Header="Delete" InputGestureText="Del" Click="Delete"/>
+                <Separator/>
+                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAll"/>
             </MenuItem>
             <MenuItem Header="Options">
-                <MenuItem Header="Preferences"/>
+                <MenuItem Header="Preferences" Click="ShowPreferences"/>
                 <Separator/>
-                <MenuItem Header="About SmModStudio"/>
+                <MenuItem Header="About SmModStudio" Click="ShowAbout"/>
             </MenuItem>
         </Menu>
         <Grid>
@@ -57,7 +60,7 @@
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <TabControl x:Name="Views" Grid.Column="2">
                 <TabControl.ItemTemplate>
-                    <DataTemplate DataType="bindings:ContentTabBinding">
+                    <DataTemplate DataType="bindings:ViewTabBinding">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
                             <TextBlock Text="{Binding Path=Header}" VerticalAlignment="Center"/>
                             <Image Source="../Resources/Assets/Close.png" Margin="5,5,0,5" MouseUp="CloseTab"/>
@@ -65,7 +68,7 @@
                     </DataTemplate>
                 </TabControl.ItemTemplate>
                 <TabControl.ContentTemplate>
-                    <DataTemplate DataType="bindings:ContentTabBinding">
+                    <DataTemplate DataType="bindings:ViewTabBinding">
                         <Frame Content="{Binding Path=Content}" NavigationUIVisibility="Hidden"/>
                     </DataTemplate>
                 </TabControl.ContentTemplate>

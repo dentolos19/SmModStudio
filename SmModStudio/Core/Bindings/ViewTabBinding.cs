@@ -3,7 +3,7 @@
 namespace SmModStudio.Core.Bindings
 {
 
-    public class ContentTabBinding
+    public class ViewTabBinding
     {
 
         public string Header { get; set; }

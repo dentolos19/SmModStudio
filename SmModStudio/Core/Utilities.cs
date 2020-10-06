@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Interop;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Gameloop.Vdf;
+using Gameloop.Vdf.Linq;
+using Microsoft.Win32;
 using SmModStudio.Core.Bindings;
 
 namespace SmModStudio.Core
@@ -17,9 +15,6 @@ namespace SmModStudio.Core
 
     public static class Utilities
     {
-
-        [DllImport("gdi32.dll", SetLastError = true)]
-        private static extern bool DeleteObject(IntPtr hObject);
 
         public static void RestartApp(string args = null)
         {
@@ -29,6 +24,33 @@ namespace SmModStudio.Core
             Process.Start(location, args ?? string.Empty);
             Application.Current.Shutdown();
         }
+
+        public static string GetSteamLocation()
+        {
+            var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Valve\Steam");
+            if (key == null)
+                return null;
+            var installPath = (string)key.GetValue("InstallPath");
+            return string.IsNullOrEmpty(installPath) ? null : installPath;
+        }
+
+        public static string GetSteamAppsLocation(string steamPath)
+        {
+            var deserialized = VdfConvert.Deserialize(File.ReadAllText(Path.Combine(steamPath, "steamapps", "libraryfolders.vdf")));
+            var values = (VObject)deserialized.Value;
+            var value = values["1"]?.Value<string>() ?? string.Empty;
+            return value;
+        }
+
+        public static bool CheckSteamLocation(string steamPath)
+        {
+            if (!Directory.Exists(Path.Combine(steamPath, "steamapps", "workshop", "content", Constants.GameId.ToString())))
+                return false;
+            if (!File.Exists(Path.Combine(steamPath, "steamapps", "common", "Scrap Mechanic", "Release", "ScrapMechanic.exe")))
+                return false;
+            return true;
+        }
+
 
         public static bool IsPathDirectory(string path)
         {
