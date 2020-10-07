@@ -1,36 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <StartupObject>SmModStudio.App</StartupObject>
-    <Authors>Dennise Catolos</Authors>
-    <Product>Scrap Mechanic Mod Studio</Product>
-    <Copyright>Copyright © 2020</Copyright>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
-    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<StartupObject>SmModStudio.App</StartupObject>
+		<Authors>Dennise Catolos</Authors>
+		<Product>Scrap Mechanic Mod Studio</Product>
+		<Copyright>Copyright © 2020</Copyright>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
+		<ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Resources\Assets\Close.png" />
-    <None Remove="Resources\Assets\File.png" />
-    <None Remove="Resources\Assets\Folder.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Resources\Assets\Close.png"/>
+		<None Remove="Resources\Assets\File.png"/>
+		<None Remove="Resources\Assets\Folder.png"/>
+		<None Remove="Resources\Assets\Mod.png"/>
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AdonisUI" Version="1.16.0" />
-    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0" />
-    <PackageReference Include="AvalonEdit" Version="6.0.1" />
-    <PackageReference Include="Gameloop.Vdf" Version="0.6.1" />
-    <PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AdonisUI" Version="1.16.0"/>
+		<PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0"/>
+		<PackageReference Include="AvalonEdit" Version="6.0.1"/>
+		<PackageReference Include="Gameloop.Vdf" Version="0.6.1"/>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
+		<PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0"/>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Resources\Assets\Close.png" />
-    <Resource Include="Resources\Assets\File.png" />
-    <Resource Include="Resources\Assets\Folder.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Assets\Close.png"/>
+		<Resource Include="Resources\Assets\File.png"/>
+		<Resource Include="Resources\Assets\Folder.png"/>
+		<Resource Include="Resources\Assets\Mod.png"/>
+	</ItemGroup>
 
 </Project>

@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Xml;
 using Gameloop.Vdf;
 using Gameloop.Vdf.Linq;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using Microsoft.Win32;
 using SmModStudio.Core.Bindings;
 
@@ -51,31 +55,30 @@ namespace SmModStudio.Core
             return true;
         }
 
-
-        public static bool IsPathDirectory(string path)
+        public static bool IsPathDirectory(string directoryPath)
         {
-            var attributes = File.GetAttributes(path);
+            var attributes = File.GetAttributes(directoryPath);
             return attributes.HasFlag(FileAttributes.Directory);
         }
 
-        public static bool IsFileEditable(string path)
+        public static bool IsFileEditable(string filePath)
         {
-            if (IsPathDirectory(path))
+            if (IsPathDirectory(filePath))
                 return false;
-            var content = File.ReadAllBytes(path);
+            var content = File.ReadAllBytes(filePath);
             for (var index = 1; index < 512 && index < content.Length; index++)
                 if (content[index] == 0x00 && content[index - 1] == 0x00)
                     return false;
             return true;
         }
 
-        public static bool IsImagePreviewable(string path)
+        public static bool IsImagePreviewable(string imagePath)
         {
             try
             {
-                if (IsPathDirectory(path))
+                if (IsPathDirectory(imagePath))
                     return false;
-                var unused = new BitmapImage(new Uri(path));
+                var unused = new BitmapImage(new Uri(imagePath));
                 return true;
             }
             catch
@@ -84,15 +87,15 @@ namespace SmModStudio.Core
             }
         }
 
-        public static HierarchyItemBinding[] GenerateHierarchyItems(string path)
+        public static HierarchyItemBinding[] GenerateHierarchyItems(string directoryPath)
         {
             var items = new List<HierarchyItemBinding>();
-            var info = new DirectoryInfo(path);
+            var info = new DirectoryInfo(directoryPath);
             foreach (var directory in info.GetDirectories())
             {
                 var item = new HierarchyDirectoryBinding
                 {
-                    Icon = new BitmapImage(new Uri("pack://application:,,,/SmModStudio;component/Resources/Assets/Folder.png")),
+                    Icon = Constants.FolderIcon,
                     Name = directory.Name,
                     Path = directory.FullName,
                     Items = GenerateHierarchyItems(directory.FullName)
@@ -103,7 +106,7 @@ namespace SmModStudio.Core
             {
                 var item = new HierarchyFileBinding
                 {
-                    Icon = new BitmapImage(new Uri("pack://application:,,,/SmModStudio;component/Resources/Assets/File.png")),
+                    Icon = Constants.FileIcon,
                     Name = file.Name, 
                     Path = file.FullName
                 };

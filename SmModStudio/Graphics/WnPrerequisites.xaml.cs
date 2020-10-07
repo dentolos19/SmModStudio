@@ -3,9 +3,6 @@ using System.Windows;
 using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
-using AdonisMessageBoxButton = AdonisUI.Controls.MessageBoxButton;
-using AdonisMessageBoxImage = AdonisUI.Controls.MessageBoxImage;
-using AdonisMessageBoxResult = AdonisUI.Controls.MessageBoxResult;
 
 namespace SmModStudio.Graphics
 {
@@ -25,11 +22,6 @@ namespace SmModStudio.Graphics
                 WorkshopPathBox.Text = App.Settings.WorkshopPath;
         }
 
-        private void Cancel(object sender, RoutedEventArgs args)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void Continue(object sender, RoutedEventArgs args)
         {
             if (string.IsNullOrEmpty(GameDataPathBox.Text) || string.IsNullOrEmpty(UserDataPathBox.Text))
@@ -43,6 +35,11 @@ namespace SmModStudio.Graphics
             App.Settings.Save();
             DialogResult = true;
             Close();
+        }
+
+        private void Cancel(object sender, RoutedEventArgs args)
+        {
+            Application.Current.Shutdown();
         }
 
         private void BrowseGameDataPath(object sender, RoutedEventArgs args)

@@ -4,30 +4,41 @@
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
                  Title="Scrap Mechanic Mod Studio" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="New"/>
+        <CommandBinding Command="Open" Executed="Open"/>
+        <CommandBinding Command="Save" Executed="Save"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAs"/>
+        <CommandBinding Command="GoToPage" Executed="GoToLine"/>
+        <CommandBinding Command="Find" Executed="FindReplace"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Control" Key="G" Command="GoToPage"/>
+    </Window.InputBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="Ctrl+N"/>
-                <MenuItem Header="Open" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="New" InputGestureText="Ctrl+N" Command="New"/>
+                <MenuItem Header="Open" InputGestureText="Ctrl+O" Command="Open"/>
                 <Separator/>
-                <MenuItem Header="Save" InputGestureText="Ctrl+S"/>
-                <MenuItem Header="Save As" InputGestureText="Ctrl+Shift+S"/>
+                <MenuItem Header="Save" InputGestureText="Ctrl+S" Command="Save"/>
+                <MenuItem Header="Save As" InputGestureText="Ctrl+Shift+S" Command="SaveAs"/>
                 <Separator/>
-                <MenuItem Header="Exit" InputGestureText="Alt+F4"/>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="Exit"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Go To Line" InputGestureText="Ctrl+G" Click="GoToLine"/>
-                <MenuItem Header="Find &amp; Replace" InputGestureText="Ctrl+F" Click="FindReplace"/>
+                <MenuItem Header="Go To Line" InputGestureText="Ctrl+G" Command="GoToPage"/>
+                <MenuItem Header="Find &amp; Replace" InputGestureText="Ctrl+F" Command="Find"/>
                 <Separator/>
-                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Click="Undo"/>
-                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Click="Redo"/>
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Command="Undo"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Command="Redo"/>
                 <Separator/>
-                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Click="Cut"/>
-                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Click="Copy"/>
-                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Click="Paste"/>
-                <MenuItem Header="Delete" InputGestureText="Del" Click="Delete"/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Command="Cut"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Command="Copy"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Command="Paste"/>
+                <MenuItem Header="Delete" InputGestureText="Delete" Command="Delete"/>
                 <Separator/>
-                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Click="SelectAll"/>
+                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Command="SelectAll"/>
             </MenuItem>
             <MenuItem Header="Options">
                 <MenuItem Header="Preferences" Click="ShowPreferences"/>
@@ -45,13 +56,13 @@
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type bindings:HierarchyDirectoryBinding}" ItemsSource="{Binding Path=Items}">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
-                            <Image Source="{Binding Path=Icon}" Margin="0,0,10,0"/>
+                            <Image Source="{Binding Path=Icon}" Margin="0,0,5,0"/>
                             <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </HierarchicalDataTemplate>
                     <DataTemplate DataType="{x:Type bindings:HierarchyFileBinding}">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
-                            <Image Source="{Binding Path=Icon}" Margin="0,0,10,0"/>
+                            <Image Source="{Binding Path=Icon}" Margin="0,0,5,0"/>
                             <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </DataTemplate>

@@ -21,47 +21,49 @@ namespace SmModStudio.Graphics
             Views.ItemsSource = _tabs;
         }
 
-        private void GoToLine(object sender, RoutedEventArgs args)
+        private void New(object sender, ExecutedRoutedEventArgs args)
         {
             // TODO
         }
 
-        private void FindReplace(object sender, RoutedEventArgs args)
+        private void Open(object sender, ExecutedRoutedEventArgs args)
+        {
+            var dialog = new WnOpenProject { Owner = this };
+            if (dialog.ShowDialog() != true)
+                return;
+            Hierarchy.DataContext = new[]
+            {
+                new HierarchyDirectoryBinding
+                {
+                    Icon = Constants.ModIcon,
+                    Name = dialog.ModName,
+                    Path = dialog.ModPath,
+                    Items = Utilities.GenerateHierarchyItems(dialog.ModPath)
+                }
+            };
+        }
+
+        private void Save(object sender, ExecutedRoutedEventArgs args)
         {
             // TODO
         }
 
-        private void Undo(object sender, RoutedEventArgs args)
+        private void SaveAs(object sender, ExecutedRoutedEventArgs args)
         {
             // TODO
         }
 
-        private void Redo(object sender, RoutedEventArgs args)
+        private void Exit(object sender, RoutedEventArgs args)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void GoToLine(object sender, ExecutedRoutedEventArgs args)
         {
             // TODO
         }
 
-        private void Cut(object sender, RoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void Copy(object sender, RoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void Paste(object sender, RoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void Delete(object sender, RoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void SelectAll(object sender, RoutedEventArgs args)
+        private void FindReplace(object sender, ExecutedRoutedEventArgs args)
         {
             // TODO
         }
@@ -96,6 +98,7 @@ namespace SmModStudio.Graphics
                 return;
             var binding = new ViewTabBinding { Header = Path.GetFileName(item.Path), Content = page, Path = item.Path };
             _tabs.Add(binding);
+            Views.SelectedIndex = _tabs.IndexOf(binding);
         }
 
         private void CloseTab(object sender, MouseButtonEventArgs args)

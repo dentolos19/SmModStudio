@@ -1,0 +1,29 @@
+﻿<ui:AdonisWindow x:Class="SmModStudio.Graphics.WnOpenProject"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+                 Title="Open Project" Width="400" SizeToContent="Height" WindowStartupLocation="CenterOwner">
+    <DockPanel Margin="0,0,0,10">
+        <Grid DockPanel.Dock="Bottom" Margin="10,10,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
+            <Button Grid.Column="1" Content="Continue" Margin="5,0,0,0" Click="Continue"/>
+        </Grid>
+        <StackPanel>
+            <StackPanel Margin="10,10,10,0">
+                <TextBlock Text="Project Location"/>
+                <ComboBox x:Name="ProjectLocationBox" SelectionChanged="UpdateLocationSelection">
+                    <ComboBoxItem Content="Local Mod Files" Tag="LMF"/>
+                    <ComboBoxItem Content="Workshop Mod Files" Tag="WMF"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="10,10,10,0">
+                <TextBlock Text="Project List"/>
+                <ListBox x:Name="ProjectListBox" MinHeight="100" MouseDoubleClick="Continue"/>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</ui:AdonisWindow>

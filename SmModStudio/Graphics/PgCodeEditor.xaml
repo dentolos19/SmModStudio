@@ -2,5 +2,22 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:edit="http://icsharpcode.net/sharpdevelop/avalonedit">
-    <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True"/>
+    <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
+        <edit:TextEditor.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Go To Line" InputGestureText="Ctrl+G" Command="GoToPage"/>
+                <MenuItem Header="Find &amp; Replace" InputGestureText="Ctrl+F" Command="Find"/>
+                <Separator/>
+                <MenuItem Header="Undo" InputGestureText="Ctrl+Z" Command="Undo"/>
+                <MenuItem Header="Redo" InputGestureText="Ctrl+Y" Command="Redo"/>
+                <Separator/>
+                <MenuItem Header="Cut" InputGestureText="Ctrl+X" Command="Cut"/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl+C" Command="Copy"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl+V" Command="Paste"/>
+                <MenuItem Header="Delete" InputGestureText="Delete" Command="Delete"/>
+                <Separator/>
+                <MenuItem Header="Select All" InputGestureText="Ctrl+A" Command="SelectAll"/>
+            </ContextMenu>
+        </edit:TextEditor.ContextMenu>
+    </edit:TextEditor>
 </Page>

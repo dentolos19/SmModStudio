@@ -10,7 +10,7 @@ namespace SmModStudio.Graphics
         public PgImagePreviewer(string path)
         {
             InitializeComponent();
-            Preview.Source = BitmapFrame.Create(new Uri(path));
+            Previewer.Source = BitmapFrame.Create(new Uri(path));
         }
 
     }
