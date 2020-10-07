@@ -13,18 +13,24 @@ namespace SmModStudio.Graphics
         public string ModName { get; private set; }
         public string ModPath { get; private set; }
 
+        #region Methods
+
         public WnOpenProject()
         {
             InitializeComponent();
             ProjectLocationBox.SelectedIndex = 0;
         }
 
+        #endregion
+
+        #region Events
+
         private void Continue(object sender, RoutedEventArgs args)
         {
             var item = (ListBoxItem)ProjectListBox.SelectedItem;
-            if (item == null)
+            if (item?.Tag == null)
             {
-                AdonisMessageBox.Show("Select a mod to work with to continue.", "SmModStudio");
+                AdonisMessageBox.Show("Select a valid mod to work with to continue.", "SmModStudio");
                 return;
             }
             ModName = (string)item.Content;
@@ -43,22 +49,33 @@ namespace SmModStudio.Graphics
             var tag = (string)((ComboBoxItem)ProjectLocationBox.SelectedItem).Tag;
             var paths = tag switch
             {
-                "LMF" => Directory.GetDirectories(Path.Combine(App.Settings.UserDataPath, "Mods")),
-                "WMF" => Directory.GetDirectories(Path.Combine(App.Settings.WorkshopPath)),
+                "Local" => Directory.GetDirectories(Path.Combine(App.Settings.UserDataPath, "Mods")),
+                "Workshop" => Directory.GetDirectories(Path.Combine(App.Settings.WorkshopPath)),
                 _ => null
             };
             if (paths == null)
                 return;
             ProjectListBox.Items.Clear();
-            foreach (var path in paths)
+            if (paths.Length <= 0)
             {
-                var name = new DirectoryInfo(path).Name;
-                if (File.Exists(Path.Combine(path, "description.json")))
-                    name = ModDescriptionModel.Load(Path.Combine(path, "description.json")).Name;
-                var item = new ListBoxItem { Content = name, Tag = path };
+                var item = new ListBoxItem { Content = "No mods found" };
                 ProjectListBox.Items.Add(item);
             }
+            else
+            {
+                foreach (var path in paths)
+                {
+                    var name = new DirectoryInfo(path).Name;
+                    if (File.Exists(Path.Combine(path, "description.json")))
+                        name = ModDescriptionModel.Load(Path.Combine(path, "description.json")).Name;
+                    var item = new ListBoxItem { Content = name, Tag = path };
+                    ProjectListBox.Items.Add(item);
+                }
+            }
+            
         }
+
+        #endregion
 
     }
 

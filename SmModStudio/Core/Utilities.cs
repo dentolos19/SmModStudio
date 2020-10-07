@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using System.Xml;
 using Gameloop.Vdf;
 using Gameloop.Vdf.Linq;
-using ICSharpCode.AvalonEdit.Highlighting;
-using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using Microsoft.Win32;
 using SmModStudio.Core.Bindings;
 
@@ -93,6 +89,8 @@ namespace SmModStudio.Core
             var info = new DirectoryInfo(directoryPath);
             foreach (var directory in info.GetDirectories())
             {
+                if (directory.Attributes.HasFlag(FileAttributes.Hidden | FileAttributes.Temporary))
+                    continue;
                 var item = new HierarchyDirectoryBinding
                 {
                     Icon = Constants.FolderIcon,
@@ -104,9 +102,11 @@ namespace SmModStudio.Core
             }
             foreach(var file in info.GetFiles())
             {
+                if (file.Attributes.HasFlag(FileAttributes.Hidden | FileAttributes.Temporary))
+                    continue;
                 var item = new HierarchyFileBinding
                 {
-                    Icon = Constants.FileIcon,
+                    Icon = Constants.WrittenFileIcon,
                     Name = file.Name, 
                     Path = file.FullName
                 };

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using SmModStudio.Core;
 using SmModStudio.Core.Bindings;
+using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
 namespace SmModStudio.Graphics
 {
@@ -14,12 +15,40 @@ namespace SmModStudio.Graphics
 
         private readonly ObservableCollection<ViewTabBinding> _tabs;
 
+        private string _modName;
+        private string _modPath;
+        private FileSystemWatcher _hierarchyUpdater;
+
+        #region Methods
+
         public WnStudio()
         {
             InitializeComponent();
             _tabs = new ObservableCollection<ViewTabBinding>();
             Views.ItemsSource = _tabs;
         }
+
+        private void UpdateHierarchy(string modName = null, string modPath = null)
+        {
+            if (!string.IsNullOrEmpty(modName))
+                _modName = modName;
+            if (!string.IsNullOrEmpty(modPath))
+                _modPath = modPath;
+            Hierarchy.DataContext = new[]
+            {
+                new HierarchyDirectoryBinding
+                {
+                    Icon = Constants.ModFolderIcon,
+                    Name = _modName,
+                    Path = _modPath,
+                    Items = Utilities.GenerateHierarchyItems(_modPath)
+                }
+            };
+        }
+
+        #endregion
+
+        #region Events
 
         private void New(object sender, ExecutedRoutedEventArgs args)
         {
@@ -31,41 +60,28 @@ namespace SmModStudio.Graphics
             var dialog = new WnOpenProject { Owner = this };
             if (dialog.ShowDialog() != true)
                 return;
-            Hierarchy.DataContext = new[]
+            _hierarchyUpdater = new FileSystemWatcher(dialog.ModPath);
+            _hierarchyUpdater.Created += (o, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Deleted += (o, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Renamed += (o, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.EnableRaisingEvents = true;
+            UpdateHierarchy(dialog.ModName, dialog.ModPath);
+        }
+
+        private void SaveAll(object sender, ExecutedRoutedEventArgs args)
+        {
+            AdonisMessageBox.Show("Save All", "SmModStudio");
+            foreach (var tab in _tabs)
             {
-                new HierarchyDirectoryBinding
-                {
-                    Icon = Constants.ModIcon,
-                    Name = dialog.ModName,
-                    Path = dialog.ModPath,
-                    Items = Utilities.GenerateHierarchyItems(dialog.ModPath)
-                }
-            };
-        }
-
-        private void Save(object sender, ExecutedRoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void SaveAs(object sender, ExecutedRoutedEventArgs args)
-        {
-            // TODO
+                if (!(tab.Content is PgCodeEditor editor))
+                    continue;
+                editor.Save(null, null);
+            }
         }
 
         private void Exit(object sender, RoutedEventArgs args)
         {
             Application.Current.Shutdown();
-        }
-
-        private void GoToLine(object sender, ExecutedRoutedEventArgs args)
-        {
-            // TODO
-        }
-
-        private void FindReplace(object sender, ExecutedRoutedEventArgs args)
-        {
-            // TODO
         }
 
         private void ShowPreferences(object sender, RoutedEventArgs args)
@@ -75,7 +91,7 @@ namespace SmModStudio.Graphics
 
         private void ShowAbout(object sender, RoutedEventArgs args)
         {
-            // TODO
+            AdonisMessageBox.Show("Created by Dennise Catolos // For Developing Scrap Mechanic Mods", "SmModStudio");
         }
 
         private void OpenFileInHierarchy(object sender, MouseButtonEventArgs args)
@@ -105,6 +121,8 @@ namespace SmModStudio.Graphics
         {
             _tabs.RemoveAt(Views.SelectedIndex);
         }
+
+        #endregion
 
     }
 

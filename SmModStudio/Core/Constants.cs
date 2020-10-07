@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace SmModStudio.Core
@@ -12,9 +13,9 @@ namespace SmModStudio.Core
 
         public static readonly string UsersDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Axolot Games", "Scrap Mechanic", "User");
 
-        public static readonly BitmapImage FolderIcon = new BitmapImage(new Uri("pack://application:,,,/SmModStudio;component/Resources/Assets/Folder.png"));
-        public static readonly BitmapImage FileIcon = new BitmapImage(new Uri("pack://application:,,,/SmModStudio;component/Resources/Assets/File.png"));
-        public static readonly BitmapImage ModIcon = new BitmapImage(new Uri("pack://application:,,,/SmModStudio;component/Resources/Assets/Mod.png"));
+        public static readonly BitmapImage FolderIcon = (BitmapImage)Application.Current.Resources["ImgFolder"];
+        public static readonly BitmapImage ModFolderIcon = (BitmapImage)Application.Current.Resources["ImgModFolder"];
+        public static readonly BitmapImage WrittenFileIcon = (BitmapImage)Application.Current.Resources["ImgWrittenFile"];
 
     }
 
