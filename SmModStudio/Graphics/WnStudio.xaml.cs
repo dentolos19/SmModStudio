@@ -90,10 +90,12 @@ namespace SmModStudio.Graphics
 
         private void NewHierarchyFile(object sender, ExecutedRoutedEventArgs args)
         {
-            var dialog = new WnNewFile { Owner = this };
-            if (dialog.ShowDialog() != true)
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
                 return;
-            // TODO
+            if (!Utilities.IsPathDirectory(item.Path))
+                return;
+            new WnNewFile(item.Path) { Owner = this }.ShowDialog();
         }
 
         private void OpenHierarchyFile(object sender, MouseButtonEventArgs args)
