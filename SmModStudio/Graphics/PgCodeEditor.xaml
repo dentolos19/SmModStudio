@@ -10,7 +10,37 @@
     <Page.InputBindings>
         <KeyBinding Modifiers="Control" Key="G" Command="GoToPage"/>
     </Page.InputBindings>
-    <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Command="Undo" ToolTip="Undo">
+                    <Image Source="{StaticResource ResourceKey=ImgUndo}" Height="15"/>
+                </Button>
+                <Button Command="Redo" ToolTip="Redo">
+                    <Image Source="{StaticResource ResourceKey=ImgRedo}" Height="15"/>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Command="Save" ToolTip="Save">
+                    <Image Source="{StaticResource ResourceKey=ImgSave}" Height="15"/>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Command="Cut" ToolTip="Cut">
+                    <Image Source="{StaticResource ResourceKey=ImgCut}" Height="15"/>
+                </Button>
+                <Button Command="Copy" ToolTip="Copy">
+                    <Image Source="{StaticResource ResourceKey=ImgCopy}" Height="15"/>
+                </Button>
+                <Button Command="Paste" ToolTip="Paste">
+                    <Image Source="{StaticResource ResourceKey=ImgPaste}" Height="15"/>
+                </Button>
+                <Button Command="Delete" ToolTip="Delete">
+                    <Image Source="{StaticResource ResourceKey=ImgDelete}" Height="15"/>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
         <edit:TextEditor.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="Go To Line" InputGestureText="Ctrl+G" Command="GoToPage"/>
@@ -52,4 +82,5 @@
             </ContextMenu>
         </edit:TextEditor.ContextMenu>
     </edit:TextEditor>
+    </DockPanel>
 </Page>

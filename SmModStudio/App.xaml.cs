@@ -12,8 +12,6 @@ namespace SmModStudio
 
         internal static Configuration Settings { get; private set; }
 
-        internal static WnStudio WindowStudio { get; private set; }
-
         private void InitializeApp(object sender, StartupEventArgs args)
         {
             Settings = Configuration.Load();
@@ -49,8 +47,8 @@ namespace SmModStudio
                 return;
             }
             SkipToStartup:
-            WindowStudio = new WnStudio();
-            WindowStudio.Show();
+            MainWindow = new WnStudio();
+            MainWindow.Show();
         }
 
         private void HandleError(object sender, DispatcherUnhandledExceptionEventArgs args)

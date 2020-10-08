@@ -6,6 +6,8 @@ using System.Windows.Input;
 using SmModStudio.Core;
 using SmModStudio.Core.Bindings;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
+using AdonisMessageBoxResult = AdonisUI.Controls.MessageBoxResult;
+using AdonisMessageBoxButton = AdonisUI.Controls.MessageBoxButton;
 
 namespace SmModStudio.Graphics
 {
@@ -34,26 +36,24 @@ namespace SmModStudio.Graphics
                 _modName = modName;
             if (!string.IsNullOrEmpty(modPath))
                 _modPath = modPath;
-            Hierarchy.DataContext = new[]
+            Dispatcher.Invoke(() =>
             {
-                new HierarchyDirectoryBinding
+                Hierarchy.DataContext = new[]
                 {
-                    Icon = Constants.ModFolderIcon,
-                    Name = _modName,
-                    Path = _modPath,
-                    Items = Utilities.GenerateHierarchyItems(_modPath)
-                }
-            };
+                    new HierarchyDirectoryBinding
+                    {
+                        Icon = Constants.ModFolderIcon,
+                        Name = _modName,
+                        Path = _modPath,
+                        Items = Utilities.GenerateHierarchyItems(_modPath)
+                    }
+                };
+            });
         }
 
         #endregion
 
         #region Events
-
-        private void New(object sender, ExecutedRoutedEventArgs args)
-        {
-            // TODO
-        }
 
         private void Open(object sender, ExecutedRoutedEventArgs args)
         {
@@ -70,7 +70,6 @@ namespace SmModStudio.Graphics
 
         private void SaveAll(object sender, ExecutedRoutedEventArgs args)
         {
-            AdonisMessageBox.Show("Save All", "SmModStudio");
             foreach (var tab in _tabs)
             {
                 if (!(tab.Content is PgCodeEditor editor))
@@ -86,15 +85,18 @@ namespace SmModStudio.Graphics
 
         private void ShowPreferences(object sender, RoutedEventArgs args)
         {
+            new WnPreferences { Owner = this }.ShowDialog();
+        }
+
+        private void NewHierarchyFile(object sender, ExecutedRoutedEventArgs args)
+        {
+            var dialog = new WnNewFile { Owner = this };
+            if (dialog.ShowDialog() != true)
+                return;
             // TODO
         }
 
-        private void ShowAbout(object sender, RoutedEventArgs args)
-        {
-            AdonisMessageBox.Show("Created by Dennise Catolos // For Developing Scrap Mechanic Mods", "SmModStudio");
-        }
-
-        private void OpenFileInHierarchy(object sender, MouseButtonEventArgs args)
+        private void OpenHierarchyFile(object sender, MouseButtonEventArgs args)
         {
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
             if (item == null)
@@ -117,7 +119,43 @@ namespace SmModStudio.Graphics
             Views.SelectedIndex = _tabs.IndexOf(binding);
         }
 
-        private void CloseTab(object sender, MouseButtonEventArgs args)
+        private void DeleteHierarchyFile(object sender, ExecutedRoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            if (AdonisMessageBox.Show("Are you sure that you want to delete this file/folder?", "SmModStudio", AdonisMessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
+                return;
+            if (Utilities.IsPathDirectory(item.Path))
+            {
+                Directory.Delete(item.Path, true);
+            }
+            else
+            {
+                File.Delete(item.Path);
+            }
+        }
+
+        private void CanNew(object sender, CanExecuteRoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            if (Utilities.IsPathDirectory(item.Path))
+                args.CanExecute = true;
+        }
+
+        private void CanDelete(object sender, CanExecuteRoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            if (item.Path == _modPath)
+                return;
+            args.CanExecute = true;
+        }
+
+        private void CloseViewTab(object sender, MouseButtonEventArgs args)
         {
             _tabs.RemoveAt(Views.SelectedIndex);
         }

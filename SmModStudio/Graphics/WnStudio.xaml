@@ -5,7 +5,7 @@
                  xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
                  Title="Scrap Mechanic Mod Studio" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
-        <CommandBinding Command="New" Executed="New"/>
+        <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanNew"/>
         <CommandBinding Command="Open" Executed="Open"/>
         <CommandBinding Command="SaveAs" Executed="SaveAll"/>
     </Window.CommandBindings>
@@ -71,17 +71,15 @@
             </MenuItem>
             <MenuItem Header="Options">
                 <MenuItem Header="Preferences" Click="ShowPreferences"/>
-                <Separator/>
-                <MenuItem Header="About SmModStudio" Click="ShowAbout"/>
             </MenuItem>
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" MinWidth="200" MaxWidth="400"/>
+                <ColumnDefinition Width="Auto" MinWidth="200"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" MinWidth="400"/>
             </Grid.ColumnDefinitions>
-            <TreeView x:Name="Hierarchy" Grid.Column="0" ItemsSource="{Binding}" MouseDoubleClick="OpenFileInHierarchy">
+            <TreeView x:Name="Hierarchy" Grid.Column="0" ItemsSource="{Binding}" MouseDoubleClick="OpenHierarchyFile">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type bindings:HierarchyDirectoryBinding}" ItemsSource="{Binding Path=Items}">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
@@ -96,6 +94,23 @@
                         </StackPanel>
                     </DataTemplate>
                 </TreeView.Resources>
+                <TreeView.CommandBindings>
+                    <CommandBinding Command="Delete" Executed="DeleteHierarchyFile" CanExecute="CanDelete"/>
+                </TreeView.CommandBindings>
+                <TreeView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="New" InputGestureText="Ctrl+N" Command="New">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource ResourceKey=ImgFile}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Delete" InputGestureText="Del" Command="Delete">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource ResourceKey=ImgDelete}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </TreeView.ContextMenu>
             </TreeView>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <TabControl x:Name="Views" Grid.Column="2">
@@ -103,7 +118,7 @@
                     <DataTemplate DataType="bindings:ViewTabBinding">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
                             <TextBlock Text="{Binding Path=Header}" VerticalAlignment="Center"/>
-                            <Image Source="{StaticResource ResourceKey=ImgDelete}" Margin="5,5,0,5" MouseUp="CloseTab"/>
+                            <Image Source="{StaticResource ResourceKey=ImgDelete}" Margin="5,5,0,5" MouseUp="CloseViewTab"/>
                         </StackPanel>
                     </DataTemplate>
                 </TabControl.ItemTemplate>

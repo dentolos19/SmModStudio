@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 
 namespace SmModStudio.Graphics
 {
@@ -28,11 +29,17 @@ namespace SmModStudio.Graphics
 
         private void GoToLine(object sender, ExecutedRoutedEventArgs args)
         {
+            var dialog = new WnEditorLine { Owner = Application.Current.MainWindow };
+            if (dialog.ShowDialog() != true)
+                return;
             // TODO
         }
 
         private void FindReplace(object sender, ExecutedRoutedEventArgs args)
         {
+            var dialog = new WnEditorFind { Owner = Application.Current.MainWindow };
+            if (dialog.ShowDialog() != true)
+                return;
             // TODO
         }
 
