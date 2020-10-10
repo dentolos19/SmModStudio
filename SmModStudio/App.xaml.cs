@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Threading;
+using ICSharpCode.AvalonEdit.Highlighting;
 using SmModStudio.Core;
 using SmModStudio.Graphics;
 
@@ -47,6 +48,7 @@ namespace SmModStudio
                 return;
             }
             SkipToStartup:
+            HighlightingManager.Instance.RegisterHighlighting("RblxLua", new[] { ".rlua", ".lua" }, Utilities.CreateDefinition(Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Lua.xshd")));
             MainWindow = new WnStudio();
             MainWindow.Show();
         }

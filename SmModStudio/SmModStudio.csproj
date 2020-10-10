@@ -25,6 +25,11 @@
 		<None Remove="Resources\Assets\Save.png" />
 		<None Remove="Resources\Assets\Undo.png" />
 		<None Remove="Resources\Assets\WrittenFile.png" />
+		<None Remove="Resources\Documents\Lua.xshd" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Documents\Lua.xshd" />
 	</ItemGroup>
 
 	<ItemGroup>

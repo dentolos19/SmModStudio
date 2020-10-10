@@ -5,7 +5,7 @@
                  xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
                  Title="Scrap Mechanic Mod Studio" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
-        <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanNew"/>
+        <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanExecuteNew"/>
         <CommandBinding Command="Open" Executed="Open"/>
         <CommandBinding Command="SaveAs" Executed="SaveAll"/>
     </Window.CommandBindings>
@@ -95,7 +95,7 @@
                     </DataTemplate>
                 </TreeView.Resources>
                 <TreeView.CommandBindings>
-                    <CommandBinding Command="Delete" Executed="DeleteHierarchyFile" CanExecute="CanDelete"/>
+                    <CommandBinding Command="Delete" Executed="DeleteHierarchyFile" CanExecute="CanExecuteDelete"/>
                 </TreeView.CommandBindings>
                 <TreeView.ContextMenu>
                     <ContextMenu>
@@ -109,6 +109,9 @@
                                 <Image Source="{StaticResource ResourceKey=ImgDelete}"/>
                             </MenuItem.Icon>
                         </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Copy Full Path" Click="CopyFullPath"/>
+                        <MenuItem Header="View In File Explorer" Click="ViewInFileExplorer"/>
                     </ContextMenu>
                 </TreeView.ContextMenu>
             </TreeView>

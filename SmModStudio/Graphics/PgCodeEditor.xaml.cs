@@ -1,4 +1,8 @@
-﻿using System.Windows.Input;
+﻿using System.IO;
+using System.Linq;
+using System.Windows.Controls;
+using System.Windows.Input;
+using ICSharpCode.AvalonEdit.Highlighting;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
 namespace SmModStudio.Graphics
@@ -15,6 +19,23 @@ namespace SmModStudio.Graphics
         {
             InitializeComponent();
             _currentFilePath = filePath;
+            foreach (var definition in HighlightingManager.Instance.HighlightingDefinitions)
+            {
+                var item = new ComboBoxItem
+                {
+                    Content = definition.Name,
+                    Tag = definition
+                };
+                SyntaxHighlightingBox.Items.Add(item);
+            }
+            var targetDefinition = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(_currentFilePath));
+            foreach (var item in SyntaxHighlightingBox.Items.OfType<ComboBoxItem>())
+            {
+                if (item.Tag.Equals(targetDefinition))
+                {
+                    SyntaxHighlightingBox.SelectedItem = item;
+                }
+            }
             Editor.Load(_currentFilePath);
         }
 
@@ -35,6 +56,14 @@ namespace SmModStudio.Graphics
         private void FindReplace(object sender, ExecutedRoutedEventArgs args)
         {
             AdonisMessageBox.Show("This feature is currently unavailable.", "SmModStudio");
+        }
+
+        private void UpdateSyntaxSelection(object sender, SelectionChangedEventArgs args)
+        {
+            var item = (ComboBoxItem)SyntaxHighlightingBox.SelectedItem;
+            if (item == null)
+                return;
+            Editor.SyntaxHighlighting = (IHighlightingDefinition)item.Tag;
         }
 
         #endregion

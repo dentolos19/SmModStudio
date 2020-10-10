@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -138,7 +139,7 @@ namespace SmModStudio.Graphics
             }
         }
 
-        private void CanNew(object sender, CanExecuteRoutedEventArgs args)
+        private void CanExecuteNew(object sender, CanExecuteRoutedEventArgs args)
         {
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
             if (item == null)
@@ -147,7 +148,7 @@ namespace SmModStudio.Graphics
                 args.CanExecute = true;
         }
 
-        private void CanDelete(object sender, CanExecuteRoutedEventArgs args)
+        private void CanExecuteDelete(object sender, CanExecuteRoutedEventArgs args)
         {
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
             if (item == null)
@@ -157,12 +158,30 @@ namespace SmModStudio.Graphics
             args.CanExecute = true;
         }
 
+        private void CopyFullPath(object sender, RoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            Clipboard.SetText(item.Path);
+        }
+
+        private void ViewInFileExplorer(object sender, RoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            Process.Start("explorer.exe", Utilities.IsPathDirectory(item.Path) ? item.Path : $"/select,\"{item.Path}\"");
+        }
+
         private void CloseViewTab(object sender, MouseButtonEventArgs args)
         {
             _tabs.RemoveAt(Views.SelectedIndex);
         }
 
         #endregion
+
+        
 
     }
 

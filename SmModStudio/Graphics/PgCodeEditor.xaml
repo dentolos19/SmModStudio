@@ -39,6 +39,9 @@
                     <Image Source="{StaticResource ResourceKey=ImgDelete}" Height="15"/>
                 </Button>
             </ToolBar>
+            <ToolBar>
+                <ComboBox x:Name="SyntaxHighlightingBox" Width="100" SelectionChanged="UpdateSyntaxSelection"/>
+            </ToolBar>
         </ToolBarTray>
         <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
         <edit:TextEditor.ContextMenu>

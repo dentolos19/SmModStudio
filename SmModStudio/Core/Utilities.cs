@@ -5,8 +5,11 @@ using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Xml;
 using Gameloop.Vdf;
 using Gameloop.Vdf.Linq;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using Microsoft.Win32;
 using SmModStudio.Core.Bindings;
 
@@ -23,6 +26,30 @@ namespace SmModStudio.Core
                 location = Path.Combine(Path.GetDirectoryName(location)!, Path.GetFileNameWithoutExtension(location) + ".exe");
             Process.Start(location, args ?? string.Empty);
             Application.Current.Shutdown();
+        }
+
+        public static string RetrieveResourceString(string resourceName)
+        {
+            using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            using var reader = new StreamReader(stream!);
+            return reader.ReadToEnd();
+        }
+
+        public static Stream StringToStream(string data)
+        {
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+            writer.Write(data);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
+        }
+
+        public static IHighlightingDefinition CreateDefinition(string data)
+        {
+            using var stream = StringToStream(data); 
+            using var reader = new XmlTextReader(stream);
+            return HighlightingLoader.Load(reader, HighlightingManager.Instance);
         }
 
         public static string GetSteamLocation()
