@@ -75,9 +75,9 @@
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="200"/>
+                <ColumnDefinition Width="Auto" MinWidth="200" MaxWidth="600"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="*" MinWidth="400"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TreeView x:Name="Hierarchy" Grid.Column="0" ItemsSource="{Binding}" MouseDoubleClick="OpenHierarchyFile">
                 <TreeView.Resources>

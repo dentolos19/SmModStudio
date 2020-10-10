@@ -18,7 +18,7 @@ namespace SmModStudio.Graphics
         public WnOpenProject()
         {
             InitializeComponent();
-            ProjectLocationBox.SelectedIndex = 0;
+            ProjectLocationBox.SelectedIndex = 1;
         }
 
         #endregion

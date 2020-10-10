@@ -45,7 +45,7 @@ namespace SmModStudio.Core
             return stream;
         }
 
-        public static IHighlightingDefinition CreateDefinition(string data)
+        public static IHighlightingDefinition CreateHighlightingDefinition(string data)
         {
             using var stream = StringToStream(data); 
             using var reader = new XmlTextReader(stream);

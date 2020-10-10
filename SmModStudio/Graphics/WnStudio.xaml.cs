@@ -181,8 +181,6 @@ namespace SmModStudio.Graphics
 
         #endregion
 
-        
-
     }
 
 }

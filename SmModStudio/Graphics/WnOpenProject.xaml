@@ -3,15 +3,8 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  Title="Open Project" Width="400" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
-    <DockPanel Margin="0,0,0,10">
-        <Grid DockPanel.Dock="Bottom" Margin="10,10,10,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
-            <Button Grid.Column="1" Content="Continue" Margin="5,0,0,0" Click="Continue"/>
-        </Grid>
+    <StackPanel Margin="0,0,0,10">
+        <TextBlock Text="Get started working on a mod project!" FontWeight="Bold" Margin="10,10,10,0"/>
         <StackPanel>
             <StackPanel Margin="10,10,10,0">
                 <TextBlock Text="Project Location"/>
@@ -22,8 +15,16 @@
             </StackPanel>
             <StackPanel Margin="10,10,10,0">
                 <TextBlock Text="Project List"/>
-                <ListBox x:Name="ProjectListBox" MouseDoubleClick="Continue"/>
+                <ListBox x:Name="ProjectListBox" MaxHeight="200" MouseDoubleClick="Continue"/>
             </StackPanel>
         </StackPanel>
-    </DockPanel>
+        <Grid Margin="10,10,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
+            <Button Grid.Column="1" Content="Continue" Margin="5,0,0,0" Click="Continue"/>
+        </Grid>
+    </StackPanel>
 </ui:AdonisWindow>
