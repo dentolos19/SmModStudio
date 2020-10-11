@@ -64,6 +64,11 @@ namespace SmModStudio
 
         private void SetAppLanguage()
         {
+            var culture = Settings.AppLanguage switch
+            {
+                AppLanguageOptions.Spanish => "es-ES",
+                _ => "en-US" // English
+            };
             // TODO
         }
 

@@ -4,7 +4,7 @@
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  Title="Environment Preferences" Width="500" Height="400" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <TabControl Margin="10,10,10,10">
-        <TabItem Header="{StaticResource ResourceKey=TxtGeneralHeader}">
+        <TabItem Header="{StaticResource ResourceKey=TxtGeneral}">
             <DockPanel>
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
@@ -19,7 +19,8 @@
                         <StackPanel Margin="0,0,0,10">
                             <TextBlock Text="{StaticResource ResourceKey=TxtAppLanguage}"/>
                             <ComboBox x:Name="AppLanguageBox">
-                                <ComboBoxItem Content="English"/>
+                                <ComboBoxItem Content="English (en-US)"/>
+                                <ComboBoxItem Content="Spanish (es-ES)"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
@@ -50,9 +51,6 @@
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>
-        </TabItem>
-        <TabItem Header="{StaticResource ResourceKey=TxtCreditsHeader}">
-            <TextBlock Text="Coming Soon!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </TabItem>
     </TabControl>
 </ui:AdonisWindow>

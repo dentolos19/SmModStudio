@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using SmModStudio.Core;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
 namespace SmModStudio.Graphics
@@ -28,7 +29,7 @@ namespace SmModStudio.Graphics
         {
             if (string.IsNullOrEmpty(FileNameBox.Text))
             {
-                AdonisMessageBox.Show("You must enter a file name to continue!", "SmModStudio");
+                AdonisMessageBox.Show(Constants.TxtDialogMsg6, Constants.TxtDialogTitle);
                 return;
             }
             var item = (ComboBoxItem)FileTypeBox.SelectedItem;
@@ -41,7 +42,7 @@ namespace SmModStudio.Graphics
             var filePath = Path.Combine(_directoryPath, FileNameBox.Text + fileExtension);
             if (File.Exists(filePath))
             {
-                AdonisMessageBox.Show("File already exists with that name!", "SmModStudio");
+                AdonisMessageBox.Show(Constants.TxtDialogMsg7, Constants.TxtDialogTitle);
                 return;
             }
             File.CreateText(filePath);

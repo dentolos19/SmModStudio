@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
 using ICSharpCode.AvalonEdit.Highlighting;
+using SmModStudio.Core;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
 namespace SmModStudio.Graphics
@@ -57,12 +58,12 @@ namespace SmModStudio.Graphics
 
         private void GoToLine(object sender, ExecutedRoutedEventArgs args)
         {
-            AdonisMessageBox.Show("This feature is currently unavailable.", "SmModStudio");
+            AdonisMessageBox.Show(Constants.TxtDialogMsg5, Constants.TxtDialogTitle);
         }
 
         private void FindReplace(object sender, ExecutedRoutedEventArgs args)
         {
-            AdonisMessageBox.Show("This feature is currently unavailable.", "SmModStudio");
+            AdonisMessageBox.Show(Constants.TxtDialogMsg5, Constants.TxtDialogTitle);
         }
 
         private void UpdateSyntaxSelection(object sender, SelectionChangedEventArgs args)

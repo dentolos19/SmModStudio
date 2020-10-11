@@ -43,7 +43,7 @@ namespace SmModStudio.Graphics
                 {
                     new HierarchyDirectoryBinding
                     {
-                        Icon = Constants.ModFolderIcon,
+                        Icon = Constants.ImgModFolder,
                         Name = _modName,
                         Path = _modPath,
                         Items = Utilities.GenerateHierarchyItems(_modPath)
@@ -63,6 +63,7 @@ namespace SmModStudio.Graphics
                 return;
             _hierarchyUpdater = new FileSystemWatcher(dialog.ModPath);
             _hierarchyUpdater.Created += (o, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Changed += (o, a) => { UpdateHierarchy(); };
             _hierarchyUpdater.Deleted += (o, a) => { UpdateHierarchy(); };
             _hierarchyUpdater.Renamed += (o, a) => { UpdateHierarchy(); };
             _hierarchyUpdater.EnableRaisingEvents = true;
@@ -127,7 +128,7 @@ namespace SmModStudio.Graphics
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
             if (item == null)
                 return;
-            if (AdonisMessageBox.Show("Are you sure that you want to delete this file/folder?", "SmModStudio", AdonisMessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
+            if (AdonisMessageBox.Show(Constants.TxtDialogMsg8, Constants.TxtDialogTitle, AdonisMessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
                 return;
             if (Utilities.IsPathDirectory(item.Path))
             {

@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using SmModStudio.Core;
 using SmModStudio.Core.Models;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
@@ -30,7 +31,7 @@ namespace SmModStudio.Graphics
             var item = (ListBoxItem)ProjectListBox.SelectedItem;
             if (item?.Tag == null)
             {
-                AdonisMessageBox.Show("Select a valid mod to work with to continue.", "SmModStudio");
+                AdonisMessageBox.Show(Constants.TxtDialogMsg4, Constants.TxtDialogTitle);
                 return;
             }
             ModName = (string)item.Content;
@@ -58,7 +59,7 @@ namespace SmModStudio.Graphics
             ProjectListBox.Items.Clear();
             if (paths.Length <= 0)
             {
-                var item = new ListBoxItem { Content = "No mods found" };
+                var item = new ListBoxItem { Content = Constants.TxtOtherMsg0 };
                 ProjectListBox.Items.Add(item);
             }
             else

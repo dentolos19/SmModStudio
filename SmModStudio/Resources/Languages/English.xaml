@@ -1,7 +1,17 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    
+
+    <!-- Universal Strings -->
+
+    <sys:String x:Key="TxtContinue">Continue</sys:String>
+    <sys:String x:Key="TxtCancel">Cancel</sys:String>
+    <sys:String x:Key="TxtReset">Reset</sys:String>
+    <sys:String x:Key="TxtCreate">Create</sys:String>
+    <sys:String x:Key="TxtBrowse">Browse</sys:String>
+
+    <!-- Menu Strings -->
+
     <sys:String x:Key="TxtFile">File</sys:String>
     <sys:String x:Key="TxtEdit">Edit</sys:String>
     <sys:String x:Key="TxtOptions">Options</sys:String>
@@ -11,8 +21,6 @@
     <sys:String x:Key="TxtSave">Save</sys:String>
     <sys:String x:Key="TxtSaveAll">Save All</sys:String>
     <sys:String x:Key="TxtExit">Exit</sys:String>
-
-    <sys:String x:Key="TxtBrowse">Browse</sys:String>
 
     <sys:String x:Key="TxtGoToLine">Go To Line</sys:String>
     <sys:String x:Key="TxtFindReplace">Find &amp; Replace</sys:String>
@@ -29,9 +37,13 @@
     <sys:String x:Key="TxtCopyFullPath">Copy Full Path</sys:String>
     <sys:String x:Key="TxtViewInFileExplorer">View In File Explorer</sys:String>
 
+    <!-- Error Handler Strings -->
+
     <sys:String x:Key="TxtErrorHandlerTitle">A fatal error had occurred internally!</sys:String>
     <sys:String x:Key="TxtErrorStackTrace">Stack Trace</sys:String>
     <sys:String x:Key="TxtErrorMessage">Message</sys:String>
+
+    <!-- Subwindows Strings -->
 
     <sys:String x:Key="TxtFileName">File Name</sys:String>
     <sys:String x:Key="TxtFileType">File Type</sys:String>
@@ -41,14 +53,10 @@
     <sys:String x:Key="TxtLocalMods">Local Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">Workshop Mods</sys:String>
 
-    <sys:String x:Key="TxtContinue">Continue</sys:String>
-    <sys:String x:Key="TxtCancel">Cancel</sys:String>
-    <sys:String x:Key="TxtReset">Reset</sys:String>
-    <sys:String x:Key="TxtCreate">Create</sys:String>
+    <!-- Preferences Strings -->
 
-    <sys:String x:Key="TxtGeneralHeader">General</sys:String>
-    <sys:String x:Key="TxtCreditsHeader">Credits</sys:String>
-    
+    <sys:String x:Key="TxtGeneral">General</sys:String>
+
     <sys:String x:Key="TxtGameDataPath">Game Data Path</sys:String>
     <sys:String x:Key="TxtWorkshopPath">Workshop Path</sys:String>
     <sys:String x:Key="TxtUserDataPath">User Data Path</sys:String>
@@ -58,5 +66,24 @@
 
     <sys:String x:Key="TxtThemeLight">Light</sys:String>
     <sys:String x:Key="TxtThemeDark">Dark</sys:String>
+
+    <!-- Dialog Strings -->
+
+    <sys:String x:Key="TxtDialogTitle">SmModStudio</sys:String>
+
+    <sys:String x:Key="TxtDialogMsg0">Make sure all the inputs are filled!</sys:String>
+    <sys:String x:Key="TxtDialogMsg1">The selected path doesn't contain the game's executable!</sys:String>
+    <sys:String x:Key="TxtDialogMsg2">All settings has been saved! Would you like to restart this app?</sys:String>
+    <sys:String x:Key="TxtDialogMsg3">Are you sure that you want to reset to default settings?</sys:String>
+    <sys:String x:Key="TxtDialogMsg4">Select a valid mod to work with to continue.</sys:String>
+    <sys:String x:Key="TxtDialogMsg5">This feature is currently unavailable.</sys:String>
+    <sys:String x:Key="TxtDialogMsg6">You must enter a file name to continue!</sys:String>
+    <sys:String x:Key="TxtDialogMsg7">File already exists with that name!</sys:String>
+    <sys:String x:Key="TxtDialogMsg8">Are you sure that you want to delete this file/folder?</sys:String>
+
+    <!-- Other Strings -->
+
+    <sys:String x:Key="TxtOtherMsg0">No mods found.</sys:String>
+    <sys:String x:Key="TxtOtherMsg1">The error report doesn't contain stack trace info.</sys:String>
 
 </ResourceDictionary>

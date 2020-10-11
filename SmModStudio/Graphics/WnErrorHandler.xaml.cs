@@ -14,7 +14,7 @@ namespace SmModStudio.Graphics
         {
             InitializeComponent();
             MessageText.Text = error.Message;
-            StackTraceText.Text = error.StackTrace!;
+            StackTraceText.Text = error.StackTrace ?? Constants.TxtOtherMsg1;
         }
 
         #endregion

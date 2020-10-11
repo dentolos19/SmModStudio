@@ -120,7 +120,7 @@ namespace SmModStudio.Core
                     continue;
                 var item = new HierarchyDirectoryBinding
                 {
-                    Icon = Constants.FolderIcon,
+                    Icon = Constants.ImgFolder,
                     Name = directory.Name,
                     Path = directory.FullName,
                     Items = GenerateHierarchyItems(directory.FullName)
@@ -133,7 +133,7 @@ namespace SmModStudio.Core
                     continue;
                 var item = new HierarchyFileBinding
                 {
-                    Icon = Constants.WrittenFileIcon,
+                    Icon = Constants.ImgWrittenFile,
                     Name = file.Name, 
                     Path = file.FullName
                 };

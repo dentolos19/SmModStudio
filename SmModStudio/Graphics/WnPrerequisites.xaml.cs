@@ -32,7 +32,7 @@ namespace SmModStudio.Graphics
         {
             if (string.IsNullOrEmpty(GameDataPathBox.Text) || string.IsNullOrEmpty(UserDataPathBox.Text))
             {
-                AdonisMessageBox.Show("Make sure all the inputs are filled!", "SmModStudio");
+                AdonisMessageBox.Show(Constants.TxtDialogMsg0, Constants.TxtDialogTitle);
                 return;
             }
             App.Settings.GameDataPath = GameDataPathBox.Text;
@@ -55,7 +55,7 @@ namespace SmModStudio.Graphics
                 return;
             if (!File.Exists(Path.Combine(dialog.SelectedPath, "Release", "ScrapMechanic.exe")))
             {
-                MessageBox.Show("The selected path doesn't contain the game's executable!", "SmModStudio");
+                MessageBox.Show(Constants.TxtDialogMsg1, Constants.TxtDialogTitle);
                 return;
             }
             GameDataPathBox.Text = dialog.SelectedPath;

@@ -53,13 +53,13 @@ namespace SmModStudio.Graphics
             App.Settings.WorkshopPath = WorkshopPathBox.Text;
             App.Settings.UserDataPath = UserDataPathBox.Text;
             App.Settings.Save();
-            if (AdonisMessageBox.Show("All settings has been saved! Would you like to restart this app?", "SmModStudio", MessageBoxButton.YesNo) == AdonisMessageBoxResult.Yes)
+            if (AdonisMessageBox.Show(Constants.TxtDialogMsg2, Constants.TxtDialogTitle, MessageBoxButton.YesNo) == AdonisMessageBoxResult.Yes)
                 Utilities.RestartApp();
         }
 
         private void Reset(object sender, RoutedEventArgs args)
         {
-            if (AdonisMessageBox.Show("Are you sure that you want to reset to default settings?", "SmModStudio", MessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
+            if (AdonisMessageBox.Show(Constants.TxtDialogMsg3, Constants.TxtDialogTitle, MessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
                 return;
             App.Settings.Reset();
             Utilities.RestartApp();
@@ -72,7 +72,7 @@ namespace SmModStudio.Graphics
                 return;
             if (!File.Exists(Path.Combine(dialog.SelectedPath, "Release", "ScrapMechanic.exe")))
             {
-                MessageBox.Show("The selected path doesn't contain the game's executable!", "SmModStudio");
+                MessageBox.Show(Constants.TxtDialogMsg1, Constants.TxtDialogTitle);
                 return;
             }
             GameDataPathBox.Text = dialog.SelectedPath;
