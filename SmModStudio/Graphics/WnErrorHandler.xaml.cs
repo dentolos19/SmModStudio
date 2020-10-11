@@ -14,7 +14,7 @@ namespace SmModStudio.Graphics
         {
             InitializeComponent();
             MessageText.Text = error.Message;
-            StackTraceText.Text = error.StackTrace ?? "The error info doesn't contain stack trace data.";
+            StackTraceText.Text = error.StackTrace!;
         }
 
         #endregion

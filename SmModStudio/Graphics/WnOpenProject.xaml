@@ -7,14 +7,14 @@
         <TextBlock Text="Get started working on a mod project!" FontWeight="Bold" Margin="10,10,10,0"/>
         <StackPanel>
             <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="Project Location"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtProjectLocation}"/>
                 <ComboBox x:Name="ProjectLocationBox" SelectionChanged="UpdateLocationSelection">
-                    <ComboBoxItem Content="Local Mods" Tag="Local"/>
-                    <ComboBoxItem Content="Workshop Mods" Tag="Workshop"/>
+                    <ComboBoxItem Content="{StaticResource ResourceKey=TxtLocalMods}" Tag="Local"/>
+                    <ComboBoxItem Content="{StaticResource ResourceKey=TxtWorkshopMods}" Tag="Workshop"/>
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="Project List"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtProjectList}"/>
                 <ListBox x:Name="ProjectListBox" MaxHeight="200" MouseDoubleClick="Continue"/>
             </StackPanel>
         </StackPanel>
@@ -23,8 +23,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
-            <Button Grid.Column="1" Content="Continue" Margin="5,0,0,0" Click="Continue"/>
+            <Button Grid.Column="0" Content="{StaticResource ResourceKey=TxtCancel}" Margin="0,0,5,0" Click="Cancel"/>
+            <Button Grid.Column="1" Content="{StaticResource ResourceKey=TxtContinue}" Margin="5,0,0,0" Click="Continue"/>
         </Grid>
     </StackPanel>
 </ui:AdonisWindow>

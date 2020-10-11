@@ -13,7 +13,7 @@ namespace SmModStudio.Core
         private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
         public AppLanguageOptions AppLanguage { get; set; } = AppLanguageOptions.English;
-        public AppThemeOptions AppTheme { get; set; } = AppThemeOptions.Dark;
+        public AppThemeOptions AppTheme { get; set; } = AppThemeOptions.Light;
 
         public string GameDataPath { get; set; }
         public string WorkshopPath { get; set; }

@@ -5,11 +5,11 @@
                  Title="New File" Width="400" SizeToContent="Height" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Margin="0,0,0,10">
         <StackPanel Margin="10,10,10,0">
-            <TextBlock Text="File Name"/>
+            <TextBlock Text="{StaticResource ResourceKey=TxtFileName}"/>
             <TextBox x:Name="FileNameBox"/>
         </StackPanel>
         <StackPanel Margin="10,10,10,0">
-            <TextBlock Text="File Type"/>
+            <TextBlock Text="{StaticResource ResourceKey=TxtFileType}"/>
             <ComboBox x:Name="FileTypeBox">
                 <ComboBoxItem Content="Lua"/>
                 <ComboBoxItem Content="Json"/>
@@ -20,8 +20,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
-            <Button Grid.Column="1" Content="Create" Margin="5,0,0,0" Click="Create"/>
+            <Button Grid.Column="0" Content="{StaticResource ResourceKey=TxtCancel}" Margin="0,0,5,0" Click="Cancel"/>
+            <Button Grid.Column="1" Content="{StaticResource ResourceKey=TxtCreate}" Margin="5,0,0,0" Click="Create"/>
         </Grid>
     </StackPanel>
 </ui:AdonisWindow>

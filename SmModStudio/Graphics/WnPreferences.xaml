@@ -4,54 +4,54 @@
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  Title="Environment Preferences" Width="500" Height="400" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <TabControl Margin="10,10,10,10">
-        <TabItem Header="General">
+        <TabItem Header="{StaticResource ResourceKey=TxtGeneralHeader}">
             <DockPanel>
                 <Grid DockPanel.Dock="Bottom">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="Reset" Margin="0,0,5,0" Click="Reset"/>
-                    <Button Grid.Column="1" Content="Save" Margin="5,0,0,0" Click="Save"/>
+                    <Button Grid.Column="0" Content="{StaticResource ResourceKey=TxtReset}" Margin="0,0,5,0" Click="Reset"/>
+                    <Button Grid.Column="1" Content="{StaticResource ResourceKey=TxtSave}" Margin="5,0,0,0" Click="Save"/>
                 </Grid>
                 <ScrollViewer>
                     <StackPanel>
                         <StackPanel Margin="0,0,0,10">
-                            <TextBlock Text="App Language"/>
+                            <TextBlock Text="{StaticResource ResourceKey=TxtAppLanguage}"/>
                             <ComboBox x:Name="AppLanguageBox">
                                 <ComboBoxItem Content="English"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
-                            <TextBlock Text="App Theme"/>
+                            <TextBlock Text="{StaticResource ResourceKey=TxtAppTheme}"/>
                             <ComboBox x:Name="AppThemeBox">
-                                <ComboBoxItem Content="Light"/>
-                                <ComboBoxItem Content="Dark"/>
+                                <ComboBoxItem Content="{StaticResource ResourceKey=TxtThemeLight}"/>
+                                <ComboBoxItem Content="{StaticResource ResourceKey=TxtThemeDark}"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
-                            <TextBlock Text="Game Data Path"/>
+                            <TextBlock Text="{StaticResource ResourceKey=TxtGameDataPath}"/>
                             <DockPanel>
-                                <Button DockPanel.Dock="Right" Content="Browse" Margin="10,0,0,0" Width="75" Click="BrowseGameDataPath"/>
+                                <Button DockPanel.Dock="Right" Content="{StaticResource ResourceKey=TxtBrowse}" Margin="10,0,0,0" Width="75" Click="BrowseGameDataPath"/>
                                 <TextBox x:Name="GameDataPathBox" IsReadOnly="True"/>
                             </DockPanel>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
-                            <TextBlock Text="Workshop Path"/>
+                            <TextBlock Text="{StaticResource ResourceKey=TxtWorkshopPath}"/>
                             <DockPanel>
-                                <Button DockPanel.Dock="Right" Content="Browse" Margin="10,0,0,0" Width="75" Click="BrowseWorkshopPath"/>
+                                <Button DockPanel.Dock="Right" Content="{StaticResource ResourceKey=TxtBrowse}" Margin="10,0,0,0" Width="75" Click="BrowseWorkshopPath"/>
                                 <TextBox x:Name="WorkshopPathBox" IsReadOnly="True"/>
                             </DockPanel>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
-                            <TextBlock Text="User Data Path"/>
+                            <TextBlock Text="{StaticResource ResourceKey=TxtUserDataPath}"/>
                             <ComboBox x:Name="UserDataPathBox"/>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>
         </TabItem>
-        <TabItem Header="Credits">
+        <TabItem Header="{StaticResource ResourceKey=TxtCreditsHeader}">
             <TextBlock Text="Coming Soon!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </TabItem>
     </TabControl>

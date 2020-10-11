@@ -29,12 +29,19 @@ namespace SmModStudio.Graphics
                 SyntaxHighlightingBox.Items.Add(item);
             }
             var targetDefinition = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(_currentFilePath));
-            foreach (var item in SyntaxHighlightingBox.Items.OfType<ComboBoxItem>())
+            if (targetDefinition != null)
             {
-                if (item.Tag.Equals(targetDefinition))
+                foreach (var item in SyntaxHighlightingBox.Items.OfType<ComboBoxItem>())
                 {
-                    SyntaxHighlightingBox.SelectedItem = item;
+                    if (item.Tag != null && item.Tag.Equals(targetDefinition))
+                    {
+                        SyntaxHighlightingBox.SelectedItem = item;
+                    }
                 }
+            }
+            else
+            {
+                SyntaxHighlightingBox.SelectedIndex = 0;
             }
             Editor.Load(_currentFilePath);
         }
@@ -63,7 +70,14 @@ namespace SmModStudio.Graphics
             var item = (ComboBoxItem)SyntaxHighlightingBox.SelectedItem;
             if (item == null)
                 return;
-            Editor.SyntaxHighlighting = (IHighlightingDefinition)item.Tag;
+            if (item.Tag is IHighlightingDefinition definition)
+            {
+                Editor.SyntaxHighlighting = definition;
+            }
+            else
+            {
+                Editor.SyntaxHighlighting = null;
+            }
         }
 
         #endregion

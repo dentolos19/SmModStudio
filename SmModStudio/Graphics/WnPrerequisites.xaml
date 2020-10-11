@@ -7,21 +7,21 @@
         <TextBlock Text="Get started by setting important fields!" FontWeight="Bold" Margin="10,10,10,0"/>
         <StackPanel>
             <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="Game Data Path"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtGameDataPath}"/>
                 <DockPanel>
-                    <Button DockPanel.Dock="Right" Content="Browse" Margin="10,0,0,0" Width="75" Click="BrowseGameDataPath"/>
+                    <Button DockPanel.Dock="Right" Content="{StaticResource ResourceKey=TxtBrowse}" Margin="10,0,0,0" Width="75" Click="BrowseGameDataPath"/>
                     <TextBox x:Name="GameDataPathBox" IsReadOnly="True"/>
                 </DockPanel>
             </StackPanel>
             <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="Workshop Path"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtWorkshopPath}"/>
                 <DockPanel>
-                    <Button DockPanel.Dock="Right" Content="Browse" Margin="10,0,0,0" Width="75" Click="BrowseWorkshopPath"/>
+                    <Button DockPanel.Dock="Right" Content="{StaticResource ResourceKey=TxtBrowse}" Margin="10,0,0,0" Width="75" Click="BrowseWorkshopPath"/>
                     <TextBox x:Name="WorkshopPathBox" IsReadOnly="True"/>
                 </DockPanel>
             </StackPanel>
             <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="User Data Path"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtUserDataPath}"/>
                 <ComboBox x:Name="UserDataPathBox"/>
             </StackPanel>
         </StackPanel>
@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Cancel" Margin="0,0,5,0" Click="Cancel"/>
-            <Button Grid.Column="1" Content="Continue" Margin="5,0,0,0" Click="Continue"/>
+            <Button Grid.Column="0" Content="{StaticResource ResourceKey=TxtCancel}" Margin="0,0,5,0" Click="Cancel"/>
+            <Button Grid.Column="1" Content="{StaticResource ResourceKey=TxtContinue}" Margin="5,0,0,0" Click="Continue"/>
         </Grid>
     </StackPanel>
 </ui:AdonisWindow>

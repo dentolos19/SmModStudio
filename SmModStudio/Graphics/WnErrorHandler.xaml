@@ -6,11 +6,11 @@
     <StackPanel Margin="0,0,0,10">
         <TextBlock Margin="10,10,10,0" Text="An fatal error had occurred internally!" FontWeight="Bold"/>
         <StackPanel Margin="10,10,10,0">
-            <TextBlock Text="Message"/>
+            <TextBlock Text="{StaticResource ResourceKey=TxtErrorMessage}"/>
             <TextBox x:Name="MessageText" IsReadOnly="True"/>
         </StackPanel>
         <StackPanel Margin="10,10,10,0">
-            <TextBlock Text="Stack Trace"/>
+            <TextBlock Text="{StaticResource ResourceKey=TxtErrorStackTrace}"/>
             <TextBox x:Name="StackTraceText" IsReadOnly="True"/>
         </StackPanel>
         <Grid Margin="10,10,10,0" Height="30">
@@ -18,8 +18,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin="0,0,5,0" Content="Restart" Click="Restart"/>
-            <Button Grid.Column="1" Margin="5,0,0,0" Content="Exit" Click="Exit"/>
+            <Button Grid.Column="0" Margin="0,0,5,0" Content="{StaticResource ResourceKey=TxtRestart}" Click="Restart"/>
+            <Button Grid.Column="1" Margin="5,0,0,0" Content="{StaticResource ResourceKey=TxtExit}" Click="Exit"/>
         </Grid>
     </StackPanel>
 </ui:AdonisWindow>
