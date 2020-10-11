@@ -2,9 +2,9 @@
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
-                 Title="Environment Prerequisites" Width="500" SizeToContent="Height" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+                 Title="{StaticResource ResourceKey=TxtPrerequisitesTitle}" Width="500" SizeToContent="Height" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Margin="0,0,0,10">
-        <TextBlock Text="Get started by setting important fields!" FontWeight="Bold" Margin="10,10,10,0"/>
+        <TextBlock Text="{StaticResource ResourceKey=TxtPrerequisiteMessage}" FontWeight="Bold" Margin="10,10,10,0"/>
         <StackPanel>
             <StackPanel Margin="10,10,10,0">
                 <TextBlock Text="{StaticResource ResourceKey=TxtGameDataPath}"/>

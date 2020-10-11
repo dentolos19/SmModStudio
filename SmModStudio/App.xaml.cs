@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using ICSharpCode.AvalonEdit.Highlighting;
@@ -64,12 +67,17 @@ namespace SmModStudio
 
         private void SetAppLanguage()
         {
-            var culture = Settings.AppLanguage switch
+            var culture = new CultureInfo(Settings.AppLanguage switch
             {
-                AppLanguageOptions.Spanish => "es-ES",
                 _ => "en-US" // English
-            };
-            // TODO
+            });
+            var language = Current.Resources.MergedDictionaries.FirstOrDefault(dictionary => dictionary.Source.OriginalString.Contains(culture.ToString()));
+            if (language == null)
+                return;
+            Current.Resources.MergedDictionaries.Remove(language);
+            Current.Resources.MergedDictionaries.Add(language);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         #endregion

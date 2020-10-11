@@ -1,6 +1,6 @@
 ﻿namespace SmModStudio.Core.Enums
 {
 
-    public enum AppLanguageOptions { English, Spanish }
+    public enum AppLanguageOptions { English }
 
 }

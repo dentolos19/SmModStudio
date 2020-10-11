@@ -3,7 +3,7 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
-                 Title="Scrap Mechanic Mod Studio" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
+                 Title="{StaticResource ResourceKey=TxtStudioTitle}" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanExecuteNew"/>
         <CommandBinding Command="Open" Executed="Open"/>

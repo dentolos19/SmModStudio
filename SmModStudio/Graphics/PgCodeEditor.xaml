@@ -19,8 +19,6 @@
                 <Button Command="Redo" ToolTip="{StaticResource ResourceKey=TxtRedo}">
                     <Image Source="{StaticResource ResourceKey=ImgRedo}" Height="15"/>
                 </Button>
-            </ToolBar>
-            <ToolBar>
                 <Button Command="Save" ToolTip="{StaticResource ResourceKey=TxtSave}">
                     <Image Source="{StaticResource ResourceKey=ImgSave}" Height="15"/>
                 </Button>

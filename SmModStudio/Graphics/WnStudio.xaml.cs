@@ -177,7 +177,10 @@ namespace SmModStudio.Graphics
 
         private void CloseViewTab(object sender, MouseButtonEventArgs args)
         {
-            _tabs.RemoveAt(Views.SelectedIndex);
+            var tab = _tabs[Views.SelectedIndex];
+            if (tab.Content is PgCodeEditor editor)
+                editor.Save(null, null);
+            _tabs.Remove(tab);
         }
 
         #endregion

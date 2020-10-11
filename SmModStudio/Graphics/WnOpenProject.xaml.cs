@@ -66,6 +66,8 @@ namespace SmModStudio.Graphics
             {
                 foreach (var path in paths)
                 {
+                    if (!File.Exists(Path.Combine(path, "description.json")))
+                        return;
                     var name = new DirectoryInfo(path).Name;
                     if (File.Exists(Path.Combine(path, "description.json")))
                         name = ModDescriptionModel.Load(Path.Combine(path, "description.json")).Name;

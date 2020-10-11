@@ -7,8 +7,20 @@
     <sys:String x:Key="TxtContinue">Continue</sys:String>
     <sys:String x:Key="TxtCancel">Cancel</sys:String>
     <sys:String x:Key="TxtReset">Reset</sys:String>
+    <sys:String x:Key="TxtRestart">Restart</sys:String>
     <sys:String x:Key="TxtCreate">Create</sys:String>
     <sys:String x:Key="TxtBrowse">Browse</sys:String>
+    <sys:String x:Key="TxtYes">Yes</sys:String>
+    <sys:String x:Key="TxtNo">No</sys:String>
+
+    <!-- Window Title Strings -->
+
+    <sys:String x:Key="TxtStudioTitle">Scrap Mechanic Mod Studio</sys:String>
+    <sys:String x:Key="TxtOpenProjectTitle">Open Project</sys:String>
+    <sys:String x:Key="TxtErrorHandlerTitle">Error Handler</sys:String>
+    <sys:String x:Key="TxtPrerequisitesTitle">Environment Prerequisites</sys:String>
+    <sys:String x:Key="TxtPreferencesTitle">Environment Preferences</sys:String>
+    <sys:String x:Key="TxtNewFileTitle">New File</sys:String>
 
     <!-- Menu Strings -->
 
@@ -39,11 +51,11 @@
 
     <!-- Error Handler Strings -->
 
-    <sys:String x:Key="TxtErrorHandlerTitle">A fatal error had occurred internally!</sys:String>
+    <sys:String x:Key="TxtErrorTitle">A fatal error had occurred internally!</sys:String>
     <sys:String x:Key="TxtErrorStackTrace">Stack Trace</sys:String>
     <sys:String x:Key="TxtErrorMessage">Message</sys:String>
 
-    <!-- Subwindows Strings -->
+    <!-- Sub-Windows Strings -->
 
     <sys:String x:Key="TxtFileName">File Name</sys:String>
     <sys:String x:Key="TxtFileType">File Type</sys:String>
@@ -53,7 +65,10 @@
     <sys:String x:Key="TxtLocalMods">Local Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">Workshop Mods</sys:String>
 
-    <!-- Preferences Strings -->
+    <sys:String x:Key="TxtPrerequisiteMessage">Get started by setting important fields!</sys:String>
+    <sys:String x:Key="TxtOpenProjectMessage">Get started working on a mod project!</sys:String>
+
+    <!-- Preferences/Prerequisites Strings -->
 
     <sys:String x:Key="TxtGeneral">General</sys:String>
 
