@@ -74,9 +74,15 @@ namespace SmModStudio.Graphics
         {
             foreach (var tab in _tabs)
             {
-                if (!(tab.Content is PgCodeEditor editor))
-                    continue;
-                editor.Save(null, null);
+                switch (tab.Content)
+                {
+                    case PgCodeEditor codeEditor:
+                        codeEditor.Save(null, null);
+                        break;
+                    case PgDescriptionEditor descriptionEditor:
+                        descriptionEditor.Save(null, null);
+                        break;
+                }
             }
         }
 
@@ -110,7 +116,14 @@ namespace SmModStudio.Graphics
             Page page = null;
             if (Utilities.IsFileEditable(item.Path))
             {
-                page = new PgCodeEditor(item.Path);
+                if (item.Path == Path.Combine(_modPath, "description.json"))
+                {
+                    page = new PgDescriptionEditor(item.Path);
+                }
+                else
+                {
+                    page = new PgCodeEditor(item.Path);
+                }
             }
             else if (Utilities.IsImagePreviewable(item.Path))
             {
@@ -178,8 +191,10 @@ namespace SmModStudio.Graphics
         private void CloseViewTab(object sender, MouseButtonEventArgs args)
         {
             var tab = _tabs[Views.SelectedIndex];
-            if (tab.Content is PgCodeEditor editor)
-                editor.Save(null, null);
+            if (tab.Content is PgCodeEditor codeEditor)
+                codeEditor.Save(null, null);
+            if (tab.Content is PgCodeEditor descriptionEditor)
+                descriptionEditor.Save(null, null);
             _tabs.Remove(tab);
         }
 

@@ -10,6 +10,7 @@
     <sys:String x:Key="TxtRestart">重新启动</sys:String>
     <sys:String x:Key="TxtCreate">创造</sys:String>
     <sys:String x:Key="TxtBrowse">浏览</sys:String>
+    <sys:String x:Key="TxtComingSoon">即将到来</sys:String>
     <sys:String x:Key="TxtYes">是的</sys:String>
     <sys:String x:Key="TxtNo">没有</sys:String>
 
@@ -26,7 +27,6 @@
 
     <sys:String x:Key="TxtFile">文件</sys:String>
     <sys:String x:Key="TxtEdit">编辑</sys:String>
-    <sys:String x:Key="TxtProject">工程</sys:String>
     <sys:String x:Key="TxtOptions">方案</sys:String>
 
     <sys:String x:Key="TxtNew">新文件</sys:String>
@@ -45,11 +45,6 @@
     <sys:String x:Key="TxtDelete">删去</sys:String>
     <sys:String x:Key="TxtSelectAll">全选</sys:String>
 
-    <sys:String x:Key="TxtPublish">发布</sys:String>
-    <sys:String x:Key="TxtPublishViaZipFile">通过压缩文件</sys:String>
-    <sys:String x:Key="TxtPublishViaModTool">通过 Mod Tool</sys:String>
-    <sys:String x:Key="TxtProperties">项目属性</sys:String>
-
     <sys:String x:Key="TxtPreferences">喜好</sys:String>
 
     <sys:String x:Key="TxtCopyFullPath">抄全路径</sys:String>
@@ -66,10 +61,18 @@
     <sys:String x:Key="TxtFileName">文件名</sys:String>
     <sys:String x:Key="TxtFileType">档案类型</sys:String>
 
+    <sys:String x:Key="TxtProjectName">项目名称</sys:String>
+    <sys:String x:Key="TxtProjectType">项目类型</sys:String>
+    <sys:String x:Key="TxtProjectDescription">项目说明</sys:String>
+
     <sys:String x:Key="TxtProjectLocation">项目位置</sys:String>
     <sys:String x:Key="TxtProjectList">项目列表</sys:String>
+
     <sys:String x:Key="TxtLocalMods">本地 Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">车间 Mods</sys:String>
+
+    <sys:String x:Key="TxtRaw">原料</sys:String>
+    <sys:String x:Key="TxtPreview">预览</sys:String>
 
     <sys:String x:Key="TxtPrerequisiteMessage">开始设置重要的字段吧!</sys:String>
     <sys:String x:Key="TxtOpenProjectMessage">开始做一个 Mod 项目吧!</sys:String>

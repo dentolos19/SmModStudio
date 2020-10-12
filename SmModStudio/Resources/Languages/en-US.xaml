@@ -10,6 +10,7 @@
     <sys:String x:Key="TxtRestart">Restart</sys:String>
     <sys:String x:Key="TxtCreate">Create</sys:String>
     <sys:String x:Key="TxtBrowse">Browse</sys:String>
+    <sys:String x:Key="TxtComingSoon">Coming Soon</sys:String>
     <sys:String x:Key="TxtYes">Yes</sys:String>
     <sys:String x:Key="TxtNo">No</sys:String>
 
@@ -26,7 +27,6 @@
 
     <sys:String x:Key="TxtFile">File</sys:String>
     <sys:String x:Key="TxtEdit">Edit</sys:String>
-    <sys:String x:Key="TxtProject">Project</sys:String>
     <sys:String x:Key="TxtOptions">Options</sys:String>
 
     <sys:String x:Key="TxtNew">New</sys:String>
@@ -45,11 +45,6 @@
     <sys:String x:Key="TxtDelete">Delete</sys:String>
     <sys:String x:Key="TxtSelectAll">Select All</sys:String>
 
-    <sys:String x:Key="TxtPublish">Publish</sys:String>
-    <sys:String x:Key="TxtPublishViaZipFile">Via Zip File</sys:String>
-    <sys:String x:Key="TxtPublishViaModTool">Via Mod Tool</sys:String>
-    <sys:String x:Key="TxtProperties">Project Properties</sys:String>
-
     <sys:String x:Key="TxtPreferences">Preferences</sys:String>
 
     <sys:String x:Key="TxtCopyFullPath">Copy Full Path</sys:String>
@@ -61,15 +56,23 @@
     <sys:String x:Key="TxtErrorStackTrace">Stack Trace</sys:String>
     <sys:String x:Key="TxtErrorMessage">Message</sys:String>
 
-    <!-- Sub-Windows Strings -->
+    <!-- Sub-Windows/Pages Strings -->
 
     <sys:String x:Key="TxtFileName">File Name</sys:String>
     <sys:String x:Key="TxtFileType">File Type</sys:String>
 
+    <sys:String x:Key="TxtProjectName">Project Name</sys:String>
+    <sys:String x:Key="TxtProjectType">Project Type</sys:String>
+    <sys:String x:Key="TxtProjectDescription">Project Description</sys:String>
+
     <sys:String x:Key="TxtProjectLocation">Project Location</sys:String>
     <sys:String x:Key="TxtProjectList">Project List</sys:String>
+
     <sys:String x:Key="TxtLocalMods">Local Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">Workshop Mods</sys:String>
+
+    <sys:String x:Key="TxtRaw">Raw</sys:String>
+    <sys:String x:Key="TxtPreview">Preview</sys:String>
 
     <sys:String x:Key="TxtPrerequisiteMessage">Get started by setting important fields!</sys:String>
     <sys:String x:Key="TxtOpenProjectMessage">Get started working on a mod project!</sys:String>
