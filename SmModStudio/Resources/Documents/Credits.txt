@@ -1,0 +1,8 @@
+﻿Created by Dennise Catolos // By Players, For Players
+
+Thank you for using Scrap Mechanic Mod Studio! I hope you found this app useful for creating and managing mods for Scrap Mechanic!
+
+Translation:
+Chinese (zh-CH): Deepl Translator (https://www.deepl.com/translator)
+
+GitHub: https://github.com/dentolos19/SmModStudio

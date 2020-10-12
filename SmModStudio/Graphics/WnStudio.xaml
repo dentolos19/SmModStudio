@@ -69,6 +69,14 @@
                 <Separator/>
                 <MenuItem Header="{StaticResource ResourceKey=TxtSelectAll}" InputGestureText="Ctrl+A" Command="SelectAll"/>
             </MenuItem>
+            <MenuItem Header="{StaticResource ResourceKey=TxtProject}">
+                <MenuItem Header="{StaticResource ResourceKey=TxtPublish}">
+                    <MenuItem Header="{StaticResource ResourceKey=TxtPublishViaZipFile}"/>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtPublishViaModTool}"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{StaticResource ResourceKey=TxtProperties}"/>
+            </MenuItem>
             <MenuItem Header="{StaticResource ResourceKey=TxtOptions}">
                 <MenuItem Header="{StaticResource ResourceKey=TxtPreferences}" Click="ShowPreferences"/>
             </MenuItem>

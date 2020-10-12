@@ -18,8 +18,10 @@ namespace SmModStudio.Graphics
         public WnPreferences()
         {
             InitializeComponent();
+            CreditsText.Text = Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Credits.txt");
             AppLanguageBox.SelectedIndex = App.Settings.AppLanguage switch
             {
+                AppLanguageOptions.Chinese => 1,
                 _ => 0 // English
             };
             AppThemeBox.SelectedIndex = App.Settings.AppTheme switch
@@ -42,6 +44,7 @@ namespace SmModStudio.Graphics
         {
             App.Settings.AppLanguage = AppLanguageBox.SelectedIndex switch
             {
+                1 => AppLanguageOptions.Chinese,
                 _ => AppLanguageOptions.English
             };
             App.Settings.AppTheme = AppThemeBox.SelectedIndex switch

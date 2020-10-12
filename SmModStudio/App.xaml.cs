@@ -69,6 +69,7 @@ namespace SmModStudio
         {
             var culture = new CultureInfo(Settings.AppLanguage switch
             {
+                AppLanguageOptions.Chinese => "zh-CN",
                 _ => "en-US" // English
             });
             var language = Current.Resources.MergedDictionaries.FirstOrDefault(dictionary => dictionary.Source.OriginalString.Contains(culture.ToString()));

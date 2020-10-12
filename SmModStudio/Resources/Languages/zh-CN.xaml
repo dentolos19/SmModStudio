@@ -1,0 +1,111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Universal Strings -->
+
+    <sys:String x:Key="TxtContinue">继续</sys:String>
+    <sys:String x:Key="TxtCancel">取消</sys:String>
+    <sys:String x:Key="TxtReset">重置</sys:String>
+    <sys:String x:Key="TxtRestart">重新启动</sys:String>
+    <sys:String x:Key="TxtCreate">创造</sys:String>
+    <sys:String x:Key="TxtBrowse">浏览</sys:String>
+    <sys:String x:Key="TxtYes">是的</sys:String>
+    <sys:String x:Key="TxtNo">没有</sys:String>
+
+    <!-- Window Title Strings -->
+
+    <sys:String x:Key="TxtStudioTitle">Scrap Mechanic Mod Studio</sys:String>
+    <sys:String x:Key="TxtOpenProjectTitle">Open Project</sys:String>
+    <sys:String x:Key="TxtErrorHandlerTitle">Error Handler</sys:String>
+    <sys:String x:Key="TxtPrerequisitesTitle">Environment Prerequisites</sys:String>
+    <sys:String x:Key="TxtPreferencesTitle">Environment Preferences</sys:String>
+    <sys:String x:Key="TxtNewFileTitle">New File</sys:String>
+
+    <!-- Menu Strings -->
+
+    <sys:String x:Key="TxtFile">文件</sys:String>
+    <sys:String x:Key="TxtEdit">编辑</sys:String>
+    <sys:String x:Key="TxtProject">工程</sys:String>
+    <sys:String x:Key="TxtOptions">方案</sys:String>
+
+    <sys:String x:Key="TxtNew">新文件</sys:String>
+    <sys:String x:Key="TxtOpen">开放</sys:String>
+    <sys:String x:Key="TxtSave">保存</sys:String>
+    <sys:String x:Key="TxtSaveAll">攒足</sys:String>
+    <sys:String x:Key="TxtExit">退出</sys:String>
+
+    <sys:String x:Key="TxtGoToLine">转入行</sys:String>
+    <sys:String x:Key="TxtFindReplace">找补</sys:String>
+    <sys:String x:Key="TxtUndo">撤消</sys:String>
+    <sys:String x:Key="TxtRedo">重做</sys:String>
+    <sys:String x:Key="TxtCut">切割</sys:String>
+    <sys:String x:Key="TxtCopy">复制</sys:String>
+    <sys:String x:Key="TxtPaste">粘贴</sys:String>
+    <sys:String x:Key="TxtDelete">删去</sys:String>
+    <sys:String x:Key="TxtSelectAll">全选</sys:String>
+
+    <sys:String x:Key="TxtPublish">发布</sys:String>
+    <sys:String x:Key="TxtPublishViaZipFile">通过压缩文件</sys:String>
+    <sys:String x:Key="TxtPublishViaModTool">通过 Mod Tool</sys:String>
+    <sys:String x:Key="TxtProperties">项目属性</sys:String>
+
+    <sys:String x:Key="TxtPreferences">喜好</sys:String>
+
+    <sys:String x:Key="TxtCopyFullPath">抄全路径</sys:String>
+    <sys:String x:Key="TxtViewInFileExplorer">看在 File Explorer</sys:String>
+
+    <!-- Error Handler Strings -->
+
+    <sys:String x:Key="TxtErrorTitle">内部发生了一个致命的错误!</sys:String>
+    <sys:String x:Key="TxtErrorStackTrace">堆栈跟踪</sys:String>
+    <sys:String x:Key="TxtErrorMessage">讯息</sys:String>
+
+    <!-- Sub-Windows Strings -->
+
+    <sys:String x:Key="TxtFileName">文件名</sys:String>
+    <sys:String x:Key="TxtFileType">档案类型</sys:String>
+
+    <sys:String x:Key="TxtProjectLocation">项目位置</sys:String>
+    <sys:String x:Key="TxtProjectList">项目列表</sys:String>
+    <sys:String x:Key="TxtLocalMods">本地 Mods</sys:String>
+    <sys:String x:Key="TxtWorkshopMods">车间 Mods</sys:String>
+
+    <sys:String x:Key="TxtPrerequisiteMessage">开始设置重要的字段吧!</sys:String>
+    <sys:String x:Key="TxtOpenProjectMessage">开始做一个 Mod 项目吧!</sys:String>
+
+    <!-- Preferences/Prerequisites Strings -->
+
+    <sys:String x:Key="TxtGeneral">一般</sys:String>
+    <sys:String x:Key="TxtCredits">学分</sys:String>
+
+    <sys:String x:Key="TxtGameDataPath">游戏数据路径</sys:String>
+    <sys:String x:Key="TxtWorkshopPath">车间路径</sys:String>
+    <sys:String x:Key="TxtUserDataPath">用户数据路径</sys:String>
+
+    <sys:String x:Key="TxtAppLanguage">应用语言</sys:String>
+    <sys:String x:Key="TxtAppTheme">应用主题</sys:String>
+
+    <sys:String x:Key="TxtThemeLight">轻主题</sys:String>
+    <sys:String x:Key="TxtThemeDark">暗黑主题</sys:String>
+
+    <!-- Dialog Strings -->
+
+    <sys:String x:Key="TxtDialogTitle">SmModStudio</sys:String>
+
+    <sys:String x:Key="TxtDialogMsg0">确保所有的输入都被填满!</sys:String>
+    <sys:String x:Key="TxtDialogMsg1">所选路径不包含游戏的可执行文件!</sys:String>
+    <sys:String x:Key="TxtDialogMsg2">所有的设置已被保存! 你想重新启动这个应用程序吗？</sys:String>
+    <sys:String x:Key="TxtDialogMsg3">你确定要重设为默认设置吗？</sys:String>
+    <sys:String x:Key="TxtDialogMsg4">选择一个有效的 Mod 来继续工作。</sys:String>
+    <sys:String x:Key="TxtDialogMsg5">此功能目前不可用。</sys:String>
+    <sys:String x:Key="TxtDialogMsg6">你必须输入一个文件名才能继续</sys:String>
+    <sys:String x:Key="TxtDialogMsg7">这个名字的文件已经存在了!</sys:String>
+    <sys:String x:Key="TxtDialogMsg8">你确定要删除这个文件/文件夹吗？</sys:String>
+
+    <!-- Other Strings -->
+
+    <sys:String x:Key="TxtOtherMsg0">没有找到 Mods</sys:String>
+    <sys:String x:Key="TxtOtherMsg1">错误报告不包含堆栈跟踪信息。</sys:String>
+
+</ResourceDictionary>

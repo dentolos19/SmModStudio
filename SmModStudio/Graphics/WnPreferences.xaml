@@ -20,6 +20,7 @@
                             <TextBlock Text="{StaticResource ResourceKey=TxtAppLanguage}"/>
                             <ComboBox x:Name="AppLanguageBox">
                                 <ComboBoxItem Content="English (en-US)"/>
+                                <ComboBoxItem Content="Chinese (zh-CN)"/>
                             </ComboBox>
                         </StackPanel>
                         <StackPanel Margin="0,0,0,10">
@@ -50,6 +51,11 @@
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>
+        </TabItem>
+        <TabItem Header="{StaticResource ResourceKey=TxtCredits}">
+            <ScrollViewer>
+                <TextBlock x:Name="CreditsText" TextWrapping="Wrap"/>
+            </ScrollViewer>
         </TabItem>
     </TabControl>
 </ui:AdonisWindow>

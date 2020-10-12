@@ -14,6 +14,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Documents\Credits.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AdonisUI" Version="1.16.0" />
 		<PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0" />
 		<PackageReference Include="AvalonEdit" Version="6.0.1" />
@@ -37,7 +41,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Include="Resources\Documents\Credits.txt" />
 		<EmbeddedResource Include="Resources\Documents\Lua.xshd" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="Resources\Languages\zh-CN.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
 	</ItemGroup>
 
 </Project>

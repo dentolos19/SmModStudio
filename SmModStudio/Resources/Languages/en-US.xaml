@@ -26,6 +26,7 @@
 
     <sys:String x:Key="TxtFile">File</sys:String>
     <sys:String x:Key="TxtEdit">Edit</sys:String>
+    <sys:String x:Key="TxtProject">Project</sys:String>
     <sys:String x:Key="TxtOptions">Options</sys:String>
 
     <sys:String x:Key="TxtNew">New</sys:String>
@@ -43,6 +44,11 @@
     <sys:String x:Key="TxtPaste">Paste</sys:String>
     <sys:String x:Key="TxtDelete">Delete</sys:String>
     <sys:String x:Key="TxtSelectAll">Select All</sys:String>
+
+    <sys:String x:Key="TxtPublish">Publish</sys:String>
+    <sys:String x:Key="TxtPublishViaZipFile">Via Zip File</sys:String>
+    <sys:String x:Key="TxtPublishViaModTool">Via Mod Tool</sys:String>
+    <sys:String x:Key="TxtProperties">Project Properties</sys:String>
 
     <sys:String x:Key="TxtPreferences">Preferences</sys:String>
 
@@ -71,13 +77,14 @@
     <!-- Preferences/Prerequisites Strings -->
 
     <sys:String x:Key="TxtGeneral">General</sys:String>
+    <sys:String x:Key="TxtCredits">Credits</sys:String>
 
     <sys:String x:Key="TxtGameDataPath">Game Data Path</sys:String>
     <sys:String x:Key="TxtWorkshopPath">Workshop Path</sys:String>
     <sys:String x:Key="TxtUserDataPath">User Data Path</sys:String>
 
-    <sys:String x:Key="TxtAppLanguage">App Language</sys:String>
-    <sys:String x:Key="TxtAppTheme">App Theme</sys:String>
+    <sys:String x:Key="TxtAppLanguage">Application Language</sys:String>
+    <sys:String x:Key="TxtAppTheme">Application Theme</sys:String>
 
     <sys:String x:Key="TxtThemeLight">Light</sys:String>
     <sys:String x:Key="TxtThemeDark">Dark</sys:String>
@@ -98,7 +105,7 @@
 
     <!-- Other Strings -->
 
-    <sys:String x:Key="TxtOtherMsg0">No mods found.</sys:String>
+    <sys:String x:Key="TxtOtherMsg0">No mods found</sys:String>
     <sys:String x:Key="TxtOtherMsg1">The error report doesn't contain stack trace info.</sys:String>
 
 </ResourceDictionary>
