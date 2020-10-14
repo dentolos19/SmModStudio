@@ -26,10 +26,16 @@ namespace SmModStudio.Core.Models
         [JsonProperty("fileId")]
         public uint WorkshopId { get; private set; }
 
-        public static ModDescriptionModel Load(string path)
+        public void Save(string descriptionPath)
         {
-            var content = File.ReadAllText(path);
-            return JsonConvert.DeserializeObject<ModDescriptionModel>(content);
+            var contents = JsonConvert.SerializeObject(this);
+            File.WriteAllText(descriptionPath, contents);
+        }
+
+        public static ModDescriptionModel Load(string descriptionPath)
+        {
+            var contents = File.ReadAllText(descriptionPath);
+            return JsonConvert.DeserializeObject<ModDescriptionModel>(contents);
         }
 
     }

@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using SmModStudio.Core;
 using SmModStudio.Core.Enums;
 using SmModStudio.Core.Models;
 
@@ -40,10 +42,17 @@ namespace SmModStudio.Graphics
                 _ => ModType.BlocksAndParts
             };
             _descriptionModel.Description = ProjectDescriptionBox.Text;
+            _descriptionModel.Save(_descriptionPath);
+        }
+
+        private void UpdateDescription(object sender, SelectionChangedEventArgs args)
+        {
+            ProjectParsedDescriptionBox.Document = Utilities.ParseToFlowDocument(ProjectDescriptionBox.Text);
         }
 
         #endregion
 
+        
     }
 
 }

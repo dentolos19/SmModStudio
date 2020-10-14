@@ -18,12 +18,12 @@
                 </StackPanel>
                 <StackPanel Margin="0,0,0,10">
                     <TextBlock Text="{StaticResource ResourceKey=TxtProjectDescription}"/>
-                    <TabControl>
+                    <TabControl SelectionChanged="UpdateDescription">
                         <TabItem Header="{StaticResource ResourceKey=TxtRaw}">
                             <TextBox x:Name="ProjectDescriptionBox" AcceptsReturn="True" Height="Auto"/>
                         </TabItem>
                         <TabItem Header="{StaticResource ResourceKey=TxtPreview}">
-                            <TextBlock Text="{StaticResource ResourceKey=TxtComingSoon}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <RichTextBox x:Name="ProjectParsedDescriptionBox" IsReadOnly="True"/>
                         </TabItem>
                     </TabControl>
                 </StackPanel>
