@@ -45,7 +45,13 @@
     <sys:String x:Key="TxtDelete">删去</sys:String>
     <sys:String x:Key="TxtSelectAll">全选</sys:String>
 
+    <sys:String x:Key="TxtGame">游戏</sys:String>
     <sys:String x:Key="TxtPreferences">喜好</sys:String>
+
+    <sys:String x:Key="TxtLaunchGame">推出 Scrap Mechanic</sys:String>
+    <sys:String x:Key="TxtVerifyGameFiles">验证游戏文件</sys:String>
+    <sys:String x:Key="TxtLaunchModTool">推出 Mod Tool</sys:String>
+    <sys:String x:Key="TxtLaunchBackupWizard">推出 Backup Wizard</sys:String>
 
     <sys:String x:Key="TxtCopyFullPath">抄全路径</sys:String>
     <sys:String x:Key="TxtViewInFileExplorer">看在 File Explorer</sys:String>
@@ -105,6 +111,7 @@
     <sys:String x:Key="TxtDialogMsg6">你必须输入一个文件名才能继续</sys:String>
     <sys:String x:Key="TxtDialogMsg7">这个名字的文件已经存在了!</sys:String>
     <sys:String x:Key="TxtDialogMsg8">你确定要删除这个文件/文件夹吗？</sys:String>
+    <sys:String x:Key="TxtDialogMsg9">你确定你要验证游戏文件？这可能需要一段时间。</sys:String>
 
     <!-- Other Strings -->
 

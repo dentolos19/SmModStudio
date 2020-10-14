@@ -70,6 +70,14 @@
                 <MenuItem Header="{StaticResource ResourceKey=TxtSelectAll}" InputGestureText="Ctrl+A" Command="SelectAll"/>
             </MenuItem>
             <MenuItem Header="{StaticResource ResourceKey=TxtOptions}">
+                <MenuItem Header="{StaticResource ResourceKey=TxtGame}">
+                    <MenuItem Header="{StaticResource ResourceKey=TxtLaunchGame}" Click="LaunchGame"/>
+                    <Separator/>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtVerifyGameFiles}" Click="VerifyGameFiles"/>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtLaunchModTool}" Click="LaunchModTool"/>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtLaunchBackupWizard}" Click="LaunchBackupWizard"/>
+                </MenuItem>
+                <Separator/>
                 <MenuItem Header="{StaticResource ResourceKey=TxtPreferences}" Click="ShowPreferences"/>
             </MenuItem>
         </Menu>

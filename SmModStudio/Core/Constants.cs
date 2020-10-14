@@ -27,6 +27,7 @@ namespace SmModStudio.Core
         public static readonly string TxtDialogMsg6 = (string)Application.Current.Resources["TxtDialogMsg6"];
         public static readonly string TxtDialogMsg7 = (string)Application.Current.Resources["TxtDialogMsg7"];
         public static readonly string TxtDialogMsg8 = (string)Application.Current.Resources["TxtDialogMsg8"];
+        public static readonly string TxtDialogMsg9 = (string)Application.Current.Resources["TxtDialogMsg9"];
 
         public static readonly string TxtOtherMsg0 = (string)Application.Current.Resources["TxtOtherMsg0"];
         public static readonly string TxtOtherMsg1 = (string)Application.Current.Resources["TxtOtherMsg1"];

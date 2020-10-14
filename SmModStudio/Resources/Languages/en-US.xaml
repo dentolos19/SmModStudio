@@ -45,7 +45,13 @@
     <sys:String x:Key="TxtDelete">Delete</sys:String>
     <sys:String x:Key="TxtSelectAll">Select All</sys:String>
 
+    <sys:String x:Key="TxtGame">Game</sys:String>
     <sys:String x:Key="TxtPreferences">Preferences</sys:String>
+
+    <sys:String x:Key="TxtLaunchGame">Launch Scrap Mechanic</sys:String>
+    <sys:String x:Key="TxtVerifyGameFiles">Verify Game Files</sys:String>
+    <sys:String x:Key="TxtLaunchModTool">Launch Mod Tool</sys:String>
+    <sys:String x:Key="TxtLaunchBackupWizard">Launch Backup Wizard</sys:String>
 
     <sys:String x:Key="TxtCopyFullPath">Copy Full Path</sys:String>
     <sys:String x:Key="TxtViewInFileExplorer">View In File Explorer</sys:String>
@@ -105,6 +111,7 @@
     <sys:String x:Key="TxtDialogMsg6">You must enter a file name to continue!</sys:String>
     <sys:String x:Key="TxtDialogMsg7">File already exists with that name!</sys:String>
     <sys:String x:Key="TxtDialogMsg8">Are you sure that you want to delete this file/folder?</sys:String>
+    <sys:String x:Key="TxtDialogMsg9">Are you sure that you want to verify game files? This might take a while.</sys:String>
 
     <!-- Other Strings -->
 

@@ -96,6 +96,16 @@ namespace SmModStudio.Graphics
             new WnPreferences { Owner = this }.ShowDialog();
         }
 
+        private void CloseViewTab(object sender, MouseButtonEventArgs args)
+        {
+            var tab = _tabs[Views.SelectedIndex];
+            if (tab.Content is PgCodeEditor codeEditor)
+                codeEditor.Save(null, null);
+            if (tab.Content is PgCodeEditor descriptionEditor)
+                descriptionEditor.Save(null, null);
+            _tabs.Remove(tab);
+        }
+
         private void NewHierarchyFile(object sender, ExecutedRoutedEventArgs args)
         {
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
@@ -113,6 +123,13 @@ namespace SmModStudio.Graphics
                 return;
             if (Utilities.IsPathDirectory(item.Path))
                 return;
+            foreach (var tab in _tabs)
+            {
+                if (tab.Path != item.Path)
+                    continue;
+                Views.SelectedIndex = _tabs.IndexOf(tab);
+                return;
+            }
             Page page = null;
             if (Utilities.IsFileEditable(item.Path))
             {
@@ -188,14 +205,42 @@ namespace SmModStudio.Graphics
             Process.Start("explorer.exe", Utilities.IsPathDirectory(item.Path) ? item.Path : $"/select,\"{item.Path}\"");
         }
 
-        private void CloseViewTab(object sender, MouseButtonEventArgs args)
+        private void LaunchGame(object sender, RoutedEventArgs args)
         {
-            var tab = _tabs[Views.SelectedIndex];
-            if (tab.Content is PgCodeEditor codeEditor)
-                codeEditor.Save(null, null);
-            if (tab.Content is PgCodeEditor descriptionEditor)
-                descriptionEditor.Save(null, null);
-            _tabs.Remove(tab);
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "steam://run/387990",
+                UseShellExecute = true
+            });
+        }
+
+        private void VerifyGameFiles(object sender, RoutedEventArgs args)
+        {
+            if (AdonisMessageBox.Show(Constants.TxtDialogMsg9, Constants.TxtDialogTitle, AdonisMessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
+                return;
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "steam://validate/387990",
+                UseShellExecute = true
+            });
+        }
+
+        private void LaunchModTool(object sender, RoutedEventArgs args)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "steam://run/588870",
+                UseShellExecute = true
+            });
+        }
+
+        private void LaunchBackupWizard(object sender, RoutedEventArgs args)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "steam://backup/387990",
+                UseShellExecute = true
+            });
         }
 
         #endregion

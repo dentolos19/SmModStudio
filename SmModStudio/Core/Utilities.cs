@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Documents;
+using System.Windows.Markup;
 using System.Windows.Media.Imaging;
 using System.Xml;
 using Gameloop.Vdf;
@@ -35,19 +37,13 @@ namespace SmModStudio.Core
             return reader.ReadToEnd();
         }
 
-        public static Stream StringToStream(string data)
+        public static IHighlightingDefinition CreateHighlightingDefinition(string data)
         {
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
+            using var stream = new MemoryStream();
+            using var writer = new StreamWriter(stream);
             writer.Write(data);
             writer.Flush();
             stream.Position = 0;
-            return stream;
-        }
-
-        public static IHighlightingDefinition CreateHighlightingDefinition(string data)
-        {
-            using var stream = StringToStream(data); 
             using var reader = new XmlTextReader(stream);
             return HighlightingLoader.Load(reader, HighlightingManager.Instance);
         }
@@ -76,6 +72,24 @@ namespace SmModStudio.Core
             if (!File.Exists(Path.Combine(steamPath, "steamapps", "common", "Scrap Mechanic", "Release", "ScrapMechanic.exe")))
                 return false;
             return true;
+        }
+
+        public static FlowDocument ParseToFlowDocument(string description)
+        {
+            description = description.Replace("\n", "<LineBreak/>");
+            description = description.Replace("[h1]", "<Bold FontSize=\"12\">");
+            description = description.Replace("[/h1]", "</Bold>");
+            description = description.Replace("[h2]", "<Bold FontSize=\"14\">");
+            description = description.Replace("[/h2]", "</Bold>");
+            description = description.Replace("[h3]", "<Bold FontSize=\"16\">");
+            description = description.Replace("[/h3]", "</Bold>");
+            description = description.Replace("[b]", "<Bold>");
+            description = description.Replace("[/b]", "</Bold>");
+            description = description.Replace("[u]", "<Underline>");
+            description = description.Replace("[/u]", "</Underline>");
+            description = description.Replace("[i]", "<Italic>");
+            description = description.Replace("[/i]", "</Italic>");
+            return (FlowDocument)XamlReader.Parse($"<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"><Paragraph>{description}</Paragraph></FlowDocument>");
         }
 
         public static bool IsPathDirectory(string directoryPath)
