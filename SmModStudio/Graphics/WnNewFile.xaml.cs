@@ -12,18 +12,12 @@ namespace SmModStudio.Graphics
 
         private readonly string _directoryPath;
 
-        #region Methods
-
         public WnNewFile(string directoryPath)
         {
             InitializeComponent();
             _directoryPath = directoryPath;
             FileTypeBox.SelectedIndex = 0;
         }
-
-        #endregion
-
-        #region Events
 
         private void Create(object sender, RoutedEventArgs args)
         {
@@ -53,8 +47,6 @@ namespace SmModStudio.Graphics
         {
             Close();
         }
-
-        #endregion
 
     }
 

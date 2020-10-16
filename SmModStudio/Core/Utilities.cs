@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Documents;
@@ -13,7 +14,10 @@ using Gameloop.Vdf.Linq;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using SmModStudio.Core.Bindings;
+using SmModStudio.Core.Models;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace SmModStudio.Core
 {
@@ -90,6 +94,20 @@ namespace SmModStudio.Core
             description = description.Replace("[i]", "<Italic>");
             description = description.Replace("[/i]", "</Italic>");
             return (FlowDocument)XamlReader.Parse($"<FlowDocument xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"><Paragraph>{description}</Paragraph></FlowDocument>");
+        }
+
+        public static IEnumerable<InventoryDescriptionModel> LoadInventoryDescriptions(string inputPath)
+        {
+            var data = File.ReadAllText(inputPath);
+            var descriptions = JsonConvert.DeserializeObject<Dictionary<Guid, InventoryDescriptionModel>>(data);
+            return descriptions.Select(description => new InventoryDescriptionModel { Id = description.Key, Title = description.Value.Title, Description = description.Value.Description }).ToArray();
+        }
+
+        public static void SaveInventoryDescriptions(IEnumerable<InventoryDescriptionModel> descriptions, string outputPath)
+        {
+            var dictionary = descriptions.ToDictionary(description => description.Id, description => new InventoryDescriptionModel { Title = description.Title, Description = description.Description });
+            var data = JsonConvert.SerializeObject(dictionary, Formatting.Indented);
+            File.WriteAllText(outputPath, data);
         }
 
         public static bool IsPathDirectory(string directoryPath)

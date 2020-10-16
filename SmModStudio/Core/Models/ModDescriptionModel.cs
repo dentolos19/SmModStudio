@@ -11,7 +11,7 @@ namespace SmModStudio.Core.Models
     {
 
         [JsonProperty("localId")]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -24,7 +24,7 @@ namespace SmModStudio.Core.Models
         public string Description { get; set; }
 
         [JsonProperty("fileId")]
-        public uint WorkshopId { get; private set; }
+        public uint WorkshopId { get; set; }
 
         public void Save(string descriptionPath)
         {

@@ -18,9 +18,24 @@ namespace SmModStudio
 
         internal static Configuration Settings { get; private set; }
 
-        #region Methods
+        private void InitializeApp(object sender, StartupEventArgs args)
+        {
+            Settings = Configuration.Load();
+            AutoDetectSteamLocation();
+            SetupHighlightingDefinitions();
+            SetAppTheme();
+            SetAppLanguage();
+            MainWindow = new WnStudio();
+            MainWindow.Show();
+        }
 
-        private void AutoDetectSteamLocation()
+        private void HandleError(object sender, DispatcherUnhandledExceptionEventArgs args)
+        {
+            args.Handled = true;
+            new WnErrorHandler(args.Exception).ShowDialog();
+        }
+
+        private static void AutoDetectSteamLocation()
         {
             if (!string.IsNullOrEmpty(Settings.GameDataPath) && !string.IsNullOrEmpty(Settings.WorkshopPath) && !string.IsNullOrEmpty(Settings.UserDataPath))
                 return;
@@ -53,24 +68,24 @@ namespace SmModStudio
             Current.Shutdown();
         }
 
-        private void SetupHighlightingDefinitions()
+        private static void SetupHighlightingDefinitions()
         {
             var luaDefinition = Utilities.CreateHighlightingDefinition(Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Lua.xshd"));
             HighlightingManager.Instance.RegisterHighlighting(luaDefinition.Name, new[] { ".lua", ".rlua" }, luaDefinition);
         }
 
-        private void SetAppTheme()
+        private static void SetAppTheme()
         {
-            var theme = Settings.AppTheme == AppThemeOptions.Light ? new ResourceDictionary { Source = new Uri("pack://application:,,,/Resources/Themes/Light.xaml") } : new ResourceDictionary { Source = new Uri("pack://application:,,,/Resources/Themes/Dark.xaml") };
-            Current.Resources.MergedDictionaries.Add(theme);
+            var themeDictionary = Settings.AppTheme == AppThemeOptions.Light ? new ResourceDictionary { Source = new Uri("pack://application:,,,/Resources/Themes/Light.xaml") } : new ResourceDictionary { Source = new Uri("pack://application:,,,/Resources/Themes/Dark.xaml") };
+            Current.Resources.MergedDictionaries.Add(themeDictionary);
         }
 
-        private void SetAppLanguage()
+        private static void SetAppLanguage()
         {
             var culture = new CultureInfo(Settings.AppLanguage switch
             {
                 AppLanguageOptions.Chinese => "zh-CN",
-                _ => "en-US" // English
+                _ => "en-US"
             });
             var language = Current.Resources.MergedDictionaries.FirstOrDefault(dictionary => dictionary.Source.OriginalString.Contains(culture.ToString()));
             if (language == null)
@@ -80,29 +95,6 @@ namespace SmModStudio
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
         }
-
-        #endregion
-
-        #region Events
-
-        private void InitializeApp(object sender, StartupEventArgs args)
-        {
-            Settings = Configuration.Load();
-            AutoDetectSteamLocation();
-            SetupHighlightingDefinitions();
-            SetAppTheme();
-            SetAppLanguage();
-            MainWindow = new WnStudio();
-            MainWindow.Show();
-        }
-
-        private void HandleError(object sender, DispatcherUnhandledExceptionEventArgs args)
-        {
-            args.Handled = true;
-            new WnErrorHandler(args.Exception).ShowDialog();
-        }
-
-        #endregion
 
     }
 

@@ -19,6 +19,8 @@ namespace SmModStudio.Core
         public string WorkshopPath { get; set; }
         public string UserDataPath { get; set; }
 
+        public bool AutoSaveClosingFile { get; set; } = true;
+
         public void Save()
         {
             using var stream = new FileStream(Source, FileMode.Create);

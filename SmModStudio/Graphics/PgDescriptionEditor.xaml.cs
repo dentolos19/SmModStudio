@@ -13,9 +13,6 @@ namespace SmModStudio.Graphics
 
         private readonly string _descriptionPath;
         private readonly ModDescriptionModel _descriptionModel;
-
-        #region Methods
-
         public PgDescriptionEditor(string descriptionPath)
         {
             InitializeComponent();
@@ -30,10 +27,6 @@ namespace SmModStudio.Graphics
             ProjectDescriptionBox.Text =  _descriptionModel.Description;
             Title = Path.GetFileName(_descriptionPath);
         }
-
-        #endregion
-
-        #region Events
 
         public void Save(object sender, RoutedEventArgs args)
         {
@@ -52,9 +45,6 @@ namespace SmModStudio.Graphics
             ProjectParsedDescriptionBox.Document = Utilities.ParseToFlowDocument(ProjectDescriptionBox.Text);
         }
 
-        #endregion
-
-        
     }
 
 }

@@ -8,18 +8,12 @@ namespace SmModStudio.Graphics
     public partial class WnErrorHandler
     {
 
-        #region Methods
-
         public WnErrorHandler(Exception error)
         {
             InitializeComponent();
             MessageText.Text = error.Message;
             StackTraceText.Text = error.StackTrace ?? Constants.TxtOtherMsg1;
         }
-
-        #endregion
-
-        #region Events
 
         private void Restart(object sender, RoutedEventArgs args)
         {
@@ -30,8 +24,6 @@ namespace SmModStudio.Graphics
         {
             Application.Current.Shutdown();
         }
-
-        #endregion
 
     }
 

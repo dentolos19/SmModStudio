@@ -48,6 +48,7 @@
                             <TextBlock Text="{StaticResource ResourceKey=TxtUserDataPath}"/>
                             <ComboBox x:Name="UserDataPathBox"/>
                         </StackPanel>
+                        <CheckBox x:Name="AutoSaveClosingFileOption" Content="Auto-Save Closing File" Margin="0,0,0,10"/>
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>

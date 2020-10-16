@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,8 +13,6 @@ namespace SmModStudio.Graphics
     {
 
         private readonly string _currentFilePath;
-
-        #region Methods
 
         public PgCodeEditor(string filePath)
         {
@@ -49,10 +46,6 @@ namespace SmModStudio.Graphics
             Title = Path.GetFileName(_currentFilePath);
         }
 
-        #endregion
-
-        #region Events
-
         public void Save(object sender, ExecutedRoutedEventArgs args)
         {
             Editor.Save(_currentFilePath);
@@ -82,10 +75,6 @@ namespace SmModStudio.Graphics
                 Editor.SyntaxHighlighting = null;
             }
         }
-
-        #endregion
-
-        
 
     }
 

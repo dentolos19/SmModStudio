@@ -22,39 +22,12 @@ namespace SmModStudio.Graphics
         private string _modPath;
         private FileSystemWatcher _hierarchyUpdater;
 
-        #region Methods
-
         public WnStudio()
         {
             InitializeComponent();
             _tabs = new ObservableCollection<ViewTabBinding>();
             Views.ItemsSource = _tabs;
         }
-
-        private void UpdateHierarchy(string modName = null, string modPath = null)
-        {
-            if (!string.IsNullOrEmpty(modName))
-                _modName = modName;
-            if (!string.IsNullOrEmpty(modPath))
-                _modPath = modPath;
-            Dispatcher.Invoke(() =>
-            {
-                Hierarchy.DataContext = new[]
-                {
-                    new HierarchyDirectoryBinding
-                    {
-                        Icon = Constants.ImgModFolder,
-                        Name = _modName,
-                        Path = _modPath,
-                        Items = Utilities.GenerateHierarchyItems(_modPath)
-                    }
-                };
-            });
-        }
-
-        #endregion
-
-        #region Events
 
         private void Open(object sender, ExecutedRoutedEventArgs args)
         {
@@ -72,18 +45,8 @@ namespace SmModStudio.Graphics
 
         private void SaveAll(object sender, ExecutedRoutedEventArgs args)
         {
-            foreach (var tab in _tabs)
-            {
-                switch (tab.Content)
-                {
-                    case PgCodeEditor codeEditor:
-                        codeEditor.Save(null, null);
-                        break;
-                    case PgDescriptionEditor descriptionEditor:
-                        descriptionEditor.Save(null, null);
-                        break;
-                }
-            }
+            for (var index = 0; index < _tabs.Count; index++)
+                SaveEditorTabIndex(index);
         }
 
         private void Exit(object sender, RoutedEventArgs args)
@@ -99,10 +62,8 @@ namespace SmModStudio.Graphics
         private void CloseViewTab(object sender, MouseButtonEventArgs args)
         {
             var tab = _tabs[Views.SelectedIndex];
-            if (tab.Content is PgCodeEditor codeEditor)
-                codeEditor.Save(null, null);
-            if (tab.Content is PgCodeEditor descriptionEditor)
-                descriptionEditor.Save(null, null);
+            if (App.Settings.AutoSaveClosingFile)
+                SaveEditorTabIndex(Views.SelectedIndex);
             _tabs.Remove(tab);
         }
 
@@ -136,6 +97,10 @@ namespace SmModStudio.Graphics
                 if (item.Path == Path.Combine(_modPath, "description.json"))
                 {
                     page = new PgDescriptionEditor(item.Path);
+                }
+                else if (Path.GetFileName(item.Path) == "inventoryDescriptions.json")
+                {
+                    page = new PgLanguageEditor(item.Path);
                 }
                 else
                 {
@@ -243,7 +208,42 @@ namespace SmModStudio.Graphics
             });
         }
 
-        #endregion
+        private void UpdateHierarchy(string modName = null, string modPath = null)
+        {
+            if (!string.IsNullOrEmpty(modName))
+                _modName = modName;
+            if (!string.IsNullOrEmpty(modPath))
+                _modPath = modPath;
+            Dispatcher.Invoke(() =>
+            {
+                Hierarchy.DataContext = new[]
+                {
+                    new HierarchyDirectoryBinding
+                    {
+                        Icon = Constants.ImgModFolder,
+                        Name = _modName,
+                        Path = _modPath,
+                        Items = Utilities.GenerateHierarchyItems(_modPath)
+                    }
+                };
+            });
+        }
+
+        private void SaveEditorTabIndex(int index)
+        {
+            switch (_tabs[index].Content)
+            {
+                case PgCodeEditor codeEditor:
+                    codeEditor.Save(null, null);
+                    break;
+                case PgDescriptionEditor descriptionEditor:
+                    descriptionEditor.Save(null, null);
+                    break;
+                case PgLanguageEditor languageEditor:
+                    // TODO
+                    break;
+            }
+        }
 
     }
 

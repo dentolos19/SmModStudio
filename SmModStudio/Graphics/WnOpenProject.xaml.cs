@@ -14,17 +14,11 @@ namespace SmModStudio.Graphics
         public string ModName { get; private set; }
         public string ModPath { get; private set; }
 
-        #region Methods
-
         public WnOpenProject()
         {
             InitializeComponent();
             ProjectLocationBox.SelectedIndex = 1;
         }
-
-        #endregion
-
-        #region Events
 
         private void Continue(object sender, RoutedEventArgs args)
         {
@@ -77,8 +71,6 @@ namespace SmModStudio.Graphics
             }
             
         }
-
-        #endregion
 
     }
 

@@ -10,8 +10,6 @@ namespace SmModStudio.Graphics
     public partial class WnPrerequisites
     {
 
-        #region Methods
-
         public WnPrerequisites()
         {
             InitializeComponent();
@@ -23,10 +21,6 @@ namespace SmModStudio.Graphics
             if (!string.IsNullOrEmpty(App.Settings.WorkshopPath))
                 WorkshopPathBox.Text = App.Settings.WorkshopPath;
         }
-
-        #endregion
-
-        #region Events
 
         private void Continue(object sender, RoutedEventArgs args)
         {
@@ -67,8 +61,6 @@ namespace SmModStudio.Graphics
             if (dialog.ShowDialog() == true)
                 WorkshopPathBox.Text = dialog.SelectedPath;
         }
-
-        #endregion
 
     }
 

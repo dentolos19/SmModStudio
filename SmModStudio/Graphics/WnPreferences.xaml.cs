@@ -13,8 +13,6 @@ namespace SmModStudio.Graphics
     public partial class WnPreferences
     {
 
-        #region Methods
-
         public WnPreferences()
         {
             InitializeComponent();
@@ -22,23 +20,20 @@ namespace SmModStudio.Graphics
             AppLanguageBox.SelectedIndex = App.Settings.AppLanguage switch
             {
                 AppLanguageOptions.Chinese => 1,
-                _ => 0 // English
+                _ => 0
             };
             AppThemeBox.SelectedIndex = App.Settings.AppTheme switch
             {
                 AppThemeOptions.Light => 0,
-                _ => 1 // Dark
+                _ => 1
             };
             GameDataPathBox.Text = App.Settings.GameDataPath;
             WorkshopPathBox.Text = App.Settings.WorkshopPath;
             foreach (var userDataPath in Directory.GetDirectories(Constants.UsersDataPath))
                 UserDataPathBox.Items.Add(userDataPath);
             UserDataPathBox.SelectedIndex = 0;
+            AutoSaveClosingFileOption.IsChecked = App.Settings.AutoSaveClosingFile;
         }
-
-        #endregion
-
-        #region Events
 
         private void Save(object sender, RoutedEventArgs args)
         {
@@ -55,6 +50,7 @@ namespace SmModStudio.Graphics
             App.Settings.GameDataPath = GameDataPathBox.Text;
             App.Settings.WorkshopPath = WorkshopPathBox.Text;
             App.Settings.UserDataPath = UserDataPathBox.Text;
+            App.Settings.AutoSaveClosingFile = AutoSaveClosingFileOption.IsChecked == true;
             App.Settings.Save();
             if (AdonisMessageBox.Show(Constants.TxtDialogMsg2, Constants.TxtDialogTitle, MessageBoxButton.YesNo) == AdonisMessageBoxResult.Yes)
                 Utilities.RestartApp();
@@ -87,8 +83,6 @@ namespace SmModStudio.Graphics
             if (dialog.ShowDialog(Application.Current.MainWindow) == true)
                 WorkshopPathBox.Text = dialog.SelectedPath;
         }
-
-        #endregion
 
     }
 
