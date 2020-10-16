@@ -98,9 +98,11 @@
     <sys:String x:Key="TxtThemeLight">轻主题</sys:String>
     <sys:String x:Key="TxtThemeDark">暗黑主题</sys:String>
 
+    <sys:String x:Key="TxtAutoSaveClosingFile">自动保存关闭文件</sys:String>
+
     <!-- Dialog Strings -->
 
-    <sys:String x:Key="TxtDialogTitle">SmModStudio</sys:String>
+    <sys:String x:Key="TxtDialogTitle">Mod Studio</sys:String>
 
     <sys:String x:Key="TxtDialogMsg0">确保所有的输入都被填满!</sys:String>
     <sys:String x:Key="TxtDialogMsg1">所选路径不包含游戏的可执行文件!</sys:String>

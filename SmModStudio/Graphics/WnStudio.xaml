@@ -7,7 +7,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanExecuteNew"/>
         <CommandBinding Command="Open" Executed="Open"/>
-        <CommandBinding Command="SaveAs" Executed="SaveAll"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAll" CanExecute="CanExecuteSaveAll"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Modifiers="Control+Shift" Key="S" Command="SaveAs"/>

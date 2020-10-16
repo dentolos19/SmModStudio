@@ -98,9 +98,11 @@
     <sys:String x:Key="TxtThemeLight">Light</sys:String>
     <sys:String x:Key="TxtThemeDark">Dark</sys:String>
 
+    <sys:String x:Key="TxtAutoSaveClosingFile">Auto-Save Closing File</sys:String>
+
     <!-- Dialog Strings -->
 
-    <sys:String x:Key="TxtDialogTitle">SmModStudio</sys:String>
+    <sys:String x:Key="TxtDialogTitle">Mod Studio</sys:String>
 
     <sys:String x:Key="TxtDialogMsg0">Make sure all the inputs are filled!</sys:String>
     <sys:String x:Key="TxtDialogMsg1">The selected path doesn't contain the game's executable!</sys:String>

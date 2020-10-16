@@ -1,13 +1,29 @@
-# Scrap Mechanic Mod Studio
+<h1 align="center">
+    <br>
+        <img src="./.github/icon.png" width="200">
+    <br>
+        Scrap Mechanic Mod Studio
+    <br>
+</h1>
 
-I created this project just for fun and for the learning experience.
+---
 
-![Preview](https://dentolos19.github.io/previews/smmodstudio.png)
+## Features (w/ Todo)
 
-### Contributing
+- [X] Code Editor
+    - [ ] Intellisense
+    - [X] Syntax Highlighting
+- [ ] Language Editor
+    - [ ] Built-In Translator (w/ DeepL Translator)
+- [X] Clean & Fluent Design
+- [X] Multi-Language Support
+    - [X] Chinese (zh-CN)
+- [X] Easy Project Mangement
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Screenshots
 
-### License
-
-This project is licensed with the [MIT License](https://choosealicense.com/licenses/mit).
+![](./.github/screenshots/0.png)
+![](./.github/screenshots/1.png)
+![](./.github/screenshots/2.png)
+![](./.github/screenshots/3.png)
+![](./.github/screenshots/4.png)

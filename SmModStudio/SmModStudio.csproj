@@ -28,6 +28,7 @@
 		<Resource Include="Resources\Assets\Cut.png"/>
 		<Resource Include="Resources\Assets\File.png"/>
 		<Resource Include="Resources\Assets\Folder.png"/>
+		<Resource Include="Resources\Assets\Icon.png"/>
 		<Resource Include="Resources\Assets\ModFolder.png"/>
 		<Resource Include="Resources\Assets\Paste.png"/>
 		<Resource Include="Resources\Assets\Redo.png"/>
@@ -39,12 +40,6 @@
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\Documents\Credits.txt"/>
 		<EmbeddedResource Include="Resources\Documents\Lua.xshd"/>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Page Update="Resources\Languages\zh-CN.xaml">
-			<SubType>Designer</SubType>
-		</Page>
 	</ItemGroup>
 
 </Project>

@@ -144,6 +144,12 @@ namespace SmModStudio.Graphics
                 args.CanExecute = true;
         }
 
+        private void CanExecuteSaveAll(object sender, CanExecuteRoutedEventArgs args)
+        {
+            if (_tabs.Count >= 1)
+                args.CanExecute = true;
+        }
+
         private void CanExecuteDelete(object sender, CanExecuteRoutedEventArgs args)
         {
             var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
