@@ -29,7 +29,7 @@
                 </MenuItem>
                 <MenuItem Header="{StaticResource ResourceKey=TxtSaveAll}" InputGestureText="Ctrl+Shift+S" Command="SaveAs"/>
                 <Separator/>
-                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="Exit"/>
+                <MenuItem Header="{StaticResource ResourceKey=TxtExit}" InputGestureText="Alt+F4" Click="Exit"/>
             </MenuItem>
             <MenuItem Header="{StaticResource ResourceKey=TxtEdit}">
                 <MenuItem Header="{StaticResource ResourceKey=TxtGoToLine}" InputGestureText="Ctrl+G" Command="GoToPage"/>
@@ -128,7 +128,7 @@
                 <TabControl.ItemTemplate>
                     <DataTemplate DataType="bindings:ViewTabBinding">
                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Path=Path}" Height="20">
-                            <TextBlock Text="{Binding Path=Header}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Path=Content.Title}" VerticalAlignment="Center"/>
                             <Image Source="{StaticResource ResourceKey=ImgDelete}" Margin="5,5,0,5" MouseUp="CloseViewTab"/>
                         </StackPanel>
                     </DataTemplate>

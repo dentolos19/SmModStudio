@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -45,6 +46,7 @@ namespace SmModStudio.Graphics
                 SyntaxHighlightingBox.SelectedIndex = 0;
             }
             Editor.Load(_currentFilePath);
+            Title = Path.GetFileName(_currentFilePath);
         }
 
         #endregion
@@ -82,6 +84,8 @@ namespace SmModStudio.Graphics
         }
 
         #endregion
+
+        
 
     }
 

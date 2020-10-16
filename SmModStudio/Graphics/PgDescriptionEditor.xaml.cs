@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using SmModStudio.Core;
 using SmModStudio.Core.Enums;
@@ -27,6 +28,7 @@ namespace SmModStudio.Graphics
                 _ => 0
             };
             ProjectDescriptionBox.Text =  _descriptionModel.Description;
+            Title = Path.GetFileName(_descriptionPath);
         }
 
         #endregion

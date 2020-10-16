@@ -148,7 +148,7 @@ namespace SmModStudio.Graphics
             }
             if (page == null)
                 return;
-            var binding = new ViewTabBinding { Header = Path.GetFileName(item.Path), Content = page, Path = item.Path };
+            var binding = new ViewTabBinding { Content = page, Path = item.Path };
             _tabs.Add(binding);
             Views.SelectedIndex = _tabs.IndexOf(binding);
         }

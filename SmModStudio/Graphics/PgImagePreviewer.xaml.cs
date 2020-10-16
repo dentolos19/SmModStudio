@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace SmModStudio.Graphics
@@ -9,10 +10,11 @@ namespace SmModStudio.Graphics
 
         #region Methods
 
-        public PgImagePreviewer(string path)
+        public PgImagePreviewer(string imagePath)
         {
             InitializeComponent();
-            Previewer.Source = BitmapFrame.Create(new Uri(path));
+            Previewer.Source = BitmapFrame.Create(new Uri(imagePath));
+            Title = Path.GetFileName(imagePath);
         }
 
         #endregion

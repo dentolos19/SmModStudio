@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>net5.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<StartupObject>SmModStudio.App</StartupObject>
 		<Authors>Dennise Catolos</Authors>
@@ -14,41 +14,37 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Documents\Credits.txt" />
+		<PackageReference Include="AdonisUI" Version="1.16.0"/>
+		<PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0"/>
+		<PackageReference Include="AvalonEdit" Version="6.0.1"/>
+		<PackageReference Include="Gameloop.Vdf" Version="0.6.1"/>
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
+		<PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0"/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AdonisUI" Version="1.16.0" />
-		<PackageReference Include="AdonisUI.ClassicTheme" Version="1.16.0" />
-		<PackageReference Include="AvalonEdit" Version="6.0.1" />
-		<PackageReference Include="Gameloop.Vdf" Version="0.6.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-		<PackageReference Include="Ookii.Dialogs.Wpf.NETCore" Version="2.1.0" />
+		<Resource Include="Resources\Assets\Delete.png"/>
+		<Resource Include="Resources\Assets\Copy.png"/>
+		<Resource Include="Resources\Assets\Cut.png"/>
+		<Resource Include="Resources\Assets\File.png"/>
+		<Resource Include="Resources\Assets\Folder.png"/>
+		<Resource Include="Resources\Assets\ModFolder.png"/>
+		<Resource Include="Resources\Assets\Paste.png"/>
+		<Resource Include="Resources\Assets\Redo.png"/>
+		<Resource Include="Resources\Assets\Save.png"/>
+		<Resource Include="Resources\Assets\Undo.png"/>
+		<Resource Include="Resources\Assets\WrittenFile.png"/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<Resource Include="Resources\Assets\Delete.png" />
-		<Resource Include="Resources\Assets\Copy.png" />
-		<Resource Include="Resources\Assets\Cut.png" />
-		<Resource Include="Resources\Assets\File.png" />
-		<Resource Include="Resources\Assets\Folder.png" />
-		<Resource Include="Resources\Assets\ModFolder.png" />
-		<Resource Include="Resources\Assets\Paste.png" />
-		<Resource Include="Resources\Assets\Redo.png" />
-		<Resource Include="Resources\Assets\Save.png" />
-		<Resource Include="Resources\Assets\Undo.png" />
-		<Resource Include="Resources\Assets\WrittenFile.png" />
+		<EmbeddedResource Include="Resources\Documents\Credits.txt"/>
+		<EmbeddedResource Include="Resources\Documents\Lua.xshd"/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\Documents\Credits.txt" />
-		<EmbeddedResource Include="Resources\Documents\Lua.xshd" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Page Update="Resources\Languages\zh-CN.xaml">
-	    <SubType>Designer</SubType>
-	  </Page>
+		<Page Update="Resources\Languages\zh-CN.xaml">
+			<SubType>Designer</SubType>
+		</Page>
 	</ItemGroup>
 
 </Project>

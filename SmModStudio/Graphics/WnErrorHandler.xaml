@@ -4,7 +4,7 @@
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
                  Title="{StaticResource ResourceKey=TxtErrorHandlerTitle}" Width="500" SizeToContent="Height" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <StackPanel Margin="0,0,0,10">
-        <TextBlock Margin="10,10,10,0" Text="An fatal error had occurred internally!" FontWeight="Bold"/>
+        <TextBlock Margin="10,10,10,0" Text="{StaticResource ResourceKey=TxtErrorHandlerTitle}" FontWeight="Bold"/>
         <StackPanel Margin="10,10,10,0">
             <TextBlock Text="{StaticResource ResourceKey=TxtErrorMessage}"/>
             <TextBox x:Name="MessageText" IsReadOnly="True"/>
