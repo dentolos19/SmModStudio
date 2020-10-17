@@ -6,6 +6,15 @@
     <br>
 </h1>
 
+<p align="center">
+  <a href="https://travis-ci.com/YilianSource/chesster">
+    <img src="https://badgen.net/badge/icon/Windows%20%7C%20.NET%205.0?icon=windows&label">
+  </a>
+     <a href="https://travis-ci.com/YilianSource/chesster">
+    <img src="https://badgen.net/badge/icon/Visual%20Studio%202019?icon=visualstudio&label">
+  </a>
+</p>
+
 ## Features (w/ Todo)
 
 - [X] Code Editor
