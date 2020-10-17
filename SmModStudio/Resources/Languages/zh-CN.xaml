@@ -12,16 +12,6 @@
     <sys:String x:Key="TxtBrowse">浏览</sys:String>
     <sys:String x:Key="TxtComingSoon">即将到来</sys:String>
     <sys:String x:Key="TxtYes">是的</sys:String>
-    <sys:String x:Key="TxtNo">没有</sys:String>
-
-    <!-- Window Title Strings -->
-
-    <sys:String x:Key="TxtStudioTitle">Scrap Mechanic Mod Studio</sys:String>
-    <sys:String x:Key="TxtOpenProjectTitle">Open Project</sys:String>
-    <sys:String x:Key="TxtErrorHandlerTitle">Error Handler</sys:String>
-    <sys:String x:Key="TxtPrerequisitesTitle">Environment Prerequisites</sys:String>
-    <sys:String x:Key="TxtPreferencesTitle">Environment Preferences</sys:String>
-    <sys:String x:Key="TxtNewFileTitle">New File</sys:String>
 
     <!-- Menu Strings -->
 
@@ -34,6 +24,8 @@
     <sys:String x:Key="TxtSave">保存</sys:String>
     <sys:String x:Key="TxtSaveAll">攒足</sys:String>
     <sys:String x:Key="TxtExit">退出</sys:String>
+
+    <sys:String x:Key="TxtFolder">夹子</sys:String>
 
     <sys:String x:Key="TxtGoToLine">转入行</sys:String>
     <sys:String x:Key="TxtFindReplace">找补</sys:String>
@@ -64,16 +56,6 @@
 
     <!-- Sub-Windows Strings -->
 
-    <sys:String x:Key="TxtFileName">文件名</sys:String>
-    <sys:String x:Key="TxtFileType">档案类型</sys:String>
-
-    <sys:String x:Key="TxtProjectName">项目名称</sys:String>
-    <sys:String x:Key="TxtProjectType">项目类型</sys:String>
-    <sys:String x:Key="TxtProjectDescription">项目说明</sys:String>
-
-    <sys:String x:Key="TxtProjectLocation">项目位置</sys:String>
-    <sys:String x:Key="TxtProjectList">项目列表</sys:String>
-
     <sys:String x:Key="TxtLocalMods">本地 Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">车间 Mods</sys:String>
 
@@ -84,8 +66,10 @@
     <sys:String x:Key="TxtRemove">去掉</sys:String>
 
     <sys:String x:Key="TxtId">身份证</sys:String>
+    <sys:String x:Key="TxtName">名称</sys:String>
     <sys:String x:Key="TxtTitle">标题</sys:String>
-    <sys:String x:Key="TxtDescription">说明</sys:String>
+    <sys:String x:Key="TxtType">类型</sys:String>
+    <sys:String x:Key="TxtDescription">描述</sys:String>
 
     <sys:String x:Key="TxtPrerequisiteMessage">开始设置重要的字段吧!</sys:String>
     <sys:String x:Key="TxtOpenProjectMessage">开始做一个 Mod 项目吧!</sys:String>
@@ -108,8 +92,6 @@
     <sys:String x:Key="TxtAutoSaveClosingFile">自动保存关闭文件</sys:String>
 
     <!-- Dialog Strings -->
-
-    <sys:String x:Key="TxtDialogTitle">Mod Studio</sys:String>
 
     <sys:String x:Key="TxtDialogMsg0">确保所有的输入都被填满!</sys:String>
     <sys:String x:Key="TxtDialogMsg1">所选路径不包含游戏的可执行文件!</sys:String>

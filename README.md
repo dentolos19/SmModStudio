@@ -11,8 +11,7 @@
 - [X] Code Editor
     - [ ] Intellisense
     - [X] Syntax Highlighting
-- [ ] Language Editor
-    - [ ] Built-In Translator (w/ DeepL Translator)
+- [X] Language Editor
 - [X] Clean & Fluent Design
 - [X] Multi-Language Support
     - [X] Chinese (zh-CN)

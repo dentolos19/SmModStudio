@@ -1,19 +1,12 @@
-﻿<ui:AdonisWindow x:Class="SmModStudio.Graphics.WnNewFile"
+﻿<ui:AdonisWindow x:Class="SmModStudio.Graphics.WnNewFolder"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:ui="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
-                 Title="{StaticResource ResourceKey=TxtNewFileTitle}" Width="400" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+                 Title="{StaticResource ResourceKey=TxtNewFolderTitle}" Width="400" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <StackPanel Margin="0,0,0,10">
         <StackPanel Margin="10,10,10,0">
             <TextBlock Text="{StaticResource ResourceKey=TxtName}"/>
-            <TextBox x:Name="FileNameBox"/>
-        </StackPanel>
-        <StackPanel Margin="10,10,10,0">
-            <TextBlock Text="{StaticResource ResourceKey=TxtType}"/>
-            <ComboBox x:Name="FileTypeBox">
-                <ComboBoxItem Content="Lua"/>
-                <ComboBoxItem Content="Json"/>
-            </ComboBox>
+            <TextBox x:Name="FolderNameBox"/>
         </StackPanel>
         <Grid Margin="10,10,10,0">
             <Grid.ColumnDefinitions>

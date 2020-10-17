@@ -6,17 +6,11 @@
     <StackPanel Margin="0,0,0,10">
         <TextBlock Text="{StaticResource ResourceKey=TxtOpenProjectMessage}" FontWeight="Bold" Margin="10,10,10,0"/>
         <StackPanel>
-            <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="{StaticResource ResourceKey=TxtProjectLocation}"/>
-                <ComboBox x:Name="ProjectLocationBox" SelectionChanged="UpdateLocationSelection">
-                    <ComboBoxItem Content="{StaticResource ResourceKey=TxtLocalMods}" Tag="Local"/>
-                    <ComboBoxItem Content="{StaticResource ResourceKey=TxtWorkshopMods}" Tag="Workshop"/>
-                </ComboBox>
-            </StackPanel>
-            <StackPanel Margin="10,10,10,0">
-                <TextBlock Text="{StaticResource ResourceKey=TxtProjectList}"/>
-                <ListBox x:Name="ProjectListBox" MaxHeight="200" MouseDoubleClick="Continue"/>
-            </StackPanel>
+            <ComboBox x:Name="ProjectLocationBox" Margin="10,10,10,0" SelectionChanged="UpdateLocationSelection">
+                <ComboBoxItem Content="{StaticResource ResourceKey=TxtLocalMods}" Tag="Local"/>
+                <ComboBoxItem Content="{StaticResource ResourceKey=TxtWorkshopMods}" Tag="Workshop"/>
+            </ComboBox>
+            <ListBox x:Name="ProjectListBox" MaxHeight="200" Margin="10,10,10,0" MouseDoubleClick="Continue"/>
         </StackPanel>
         <Grid Margin="10,10,10,0">
             <Grid.ColumnDefinitions>

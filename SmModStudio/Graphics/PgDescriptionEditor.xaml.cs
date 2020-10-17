@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using SmModStudio.Core;
@@ -18,6 +19,7 @@ namespace SmModStudio.Graphics
             InitializeComponent();
             _descriptionPath = descriptionPath;
             _descriptionModel = ModDescriptionModel.Load(_descriptionPath);
+            ProjectIdBox.Text = _descriptionModel.Id.ToString();
             ProjectNameBox.Text =  _descriptionModel.Name;
             ProjectTypeBox.SelectedIndex =  _descriptionModel.Type switch
             {
@@ -43,6 +45,11 @@ namespace SmModStudio.Graphics
         private void UpdateDescription(object sender, SelectionChangedEventArgs args)
         {
             ProjectParsedDescriptionBox.Document = Utilities.ParseToFlowDocument(ProjectDescriptionBox.Text);
+        }
+
+        private void CopyProjectId(object sender, RoutedEventArgs args)
+        {
+            Clipboard.SetText(ProjectIdBox.Text);
         }
 
     }

@@ -34,6 +34,8 @@ namespace SmModStudio.Graphics
             var dialog = new WnOpenProject { Owner = this };
             if (dialog.ShowDialog() != true)
                 return;
+            SaveAll(null, null);
+            _tabs.Clear();
             _hierarchyUpdater = new FileSystemWatcher(dialog.ModPath);
             _hierarchyUpdater.Created += (o, a) => { UpdateHierarchy(); };
             _hierarchyUpdater.Changed += (o, a) => { UpdateHierarchy(); };
@@ -65,16 +67,6 @@ namespace SmModStudio.Graphics
             if (App.Settings.AutoSaveClosingFile)
                 SaveEditorTabIndex(Views.SelectedIndex);
             _tabs.Remove(tab);
-        }
-
-        private void NewHierarchyFile(object sender, ExecutedRoutedEventArgs args)
-        {
-            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
-            if (item == null)
-                return;
-            if (!Utilities.IsPathDirectory(item.Path))
-                return;
-            new WnNewFile(item.Path) { Owner = this }.ShowDialog();
         }
 
         private void OpenHierarchyFile(object sender, MouseButtonEventArgs args)
@@ -133,6 +125,26 @@ namespace SmModStudio.Graphics
             {
                 File.Delete(item.Path);
             }
+        }
+
+        private void CreateFolder(object sender, RoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            if (!Utilities.IsPathDirectory(item.Path))
+                return;
+            new WnNewFolder(item.Path) { Owner = this }.ShowDialog();
+        }
+
+        private void CreateFile(object sender, ExecutedRoutedEventArgs args)
+        {
+            var item = (HierarchyItemBinding)Hierarchy.SelectedItem;
+            if (item == null)
+                return;
+            if (!Utilities.IsPathDirectory(item.Path))
+                return;
+            new WnNewFile(item.Path) { Owner = this }.ShowDialog();
         }
 
         private void CanExecuteNew(object sender, CanExecuteRoutedEventArgs args)

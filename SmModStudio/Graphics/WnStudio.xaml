@@ -5,7 +5,7 @@
                  xmlns:bindings="clr-namespace:SmModStudio.Core.Bindings"
                  Title="{StaticResource ResourceKey=TxtStudioTitle}" MinWidth="800" MinHeight="500" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
-        <CommandBinding Command="New" Executed="NewHierarchyFile" CanExecute="CanExecuteNew"/>
+        <CommandBinding Command="New" Executed="CreateFile" CanExecute="CanExecuteNew"/>
         <CommandBinding Command="Open" Executed="Open"/>
         <CommandBinding Command="SaveAs" Executed="SaveAll" CanExecute="CanExecuteSaveAll"/>
     </Window.CommandBindings>
@@ -15,10 +15,20 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{StaticResource ResourceKey=TxtFile}">
-                <MenuItem Header="{StaticResource ResourceKey=TxtNew}" InputGestureText="Ctrl+N" Command="New">
+                <MenuItem Header="{StaticResource ResourceKey=TxtNew}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource ResourceKey=ImgFile}"/>
                     </MenuItem.Icon>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtFolder}" Click="CreateFolder">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgFolder}"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtFile}" InputGestureText="Ctrl+N" Command="New">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgWrittenFile}"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="{StaticResource ResourceKey=TxtOpen}" InputGestureText="Ctrl+O" Command="Open"/>
                 <Separator/>
@@ -107,10 +117,20 @@
                 </TreeView.CommandBindings>
                 <TreeView.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="{StaticResource ResourceKey=TxtNew}" InputGestureText="Ctrl+N" Command="New">
+                        <MenuItem Header="{StaticResource ResourceKey=TxtNew}">
                             <MenuItem.Icon>
                                 <Image Source="{StaticResource ResourceKey=ImgFile}"/>
                             </MenuItem.Icon>
+                            <MenuItem Header="{StaticResource ResourceKey=TxtFolder}" Click="CreateFolder">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource ResourceKey=ImgFolder}"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{StaticResource ResourceKey=TxtFile}" InputGestureText="Ctrl+N" Command="New">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource ResourceKey=ImgWrittenFile}"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
                         </MenuItem>
                         <MenuItem Header="{StaticResource ResourceKey=TxtDelete}" InputGestureText="Del" Command="Delete">
                             <MenuItem.Icon>

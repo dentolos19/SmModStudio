@@ -22,6 +22,8 @@
     <sys:String x:Key="TxtPrerequisitesTitle">Environment Prerequisites</sys:String>
     <sys:String x:Key="TxtPreferencesTitle">Environment Preferences</sys:String>
     <sys:String x:Key="TxtNewFileTitle">New File</sys:String>
+    <sys:String x:Key="TxtNewFolderTitle">New Folder</sys:String>
+    <sys:String x:Key="TxtDialogTitle">Mod Studio</sys:String>
 
     <!-- Menu Strings -->
 
@@ -34,6 +36,8 @@
     <sys:String x:Key="TxtSave">Save</sys:String>
     <sys:String x:Key="TxtSaveAll">Save All</sys:String>
     <sys:String x:Key="TxtExit">Exit</sys:String>
+
+    <sys:String x:Key="TxtFolder">Folder</sys:String>
 
     <sys:String x:Key="TxtGoToLine">Go To Line</sys:String>
     <sys:String x:Key="TxtFindReplace">Find &amp; Replace</sys:String>
@@ -64,16 +68,6 @@
 
     <!-- Sub-Windows/Pages Strings -->
 
-    <sys:String x:Key="TxtFileName">File Name</sys:String>
-    <sys:String x:Key="TxtFileType">File Type</sys:String>
-
-    <sys:String x:Key="TxtProjectName">Project Name</sys:String>
-    <sys:String x:Key="TxtProjectType">Project Type</sys:String>
-    <sys:String x:Key="TxtProjectDescription">Project Description</sys:String>
-
-    <sys:String x:Key="TxtProjectLocation">Project Location</sys:String>
-    <sys:String x:Key="TxtProjectList">Project List</sys:String>
-
     <sys:String x:Key="TxtLocalMods">Local Mods</sys:String>
     <sys:String x:Key="TxtWorkshopMods">Workshop Mods</sys:String>
 
@@ -84,7 +78,9 @@
     <sys:String x:Key="TxtRemove">Remove</sys:String>
 
     <sys:String x:Key="TxtId">ID</sys:String>
+    <sys:String x:Key="TxtName">Name</sys:String>
     <sys:String x:Key="TxtTitle">Title</sys:String>
+    <sys:String x:Key="TxtType">Type</sys:String>
     <sys:String x:Key="TxtDescription">Description</sys:String>
 
     <sys:String x:Key="TxtPrerequisiteMessage">Get started by setting important fields!</sys:String>
@@ -108,8 +104,6 @@
     <sys:String x:Key="TxtAutoSaveClosingFile">Auto-Save Closing File</sys:String>
 
     <!-- Dialog Strings -->
-
-    <sys:String x:Key="TxtDialogTitle">Mod Studio</sys:String>
 
     <sys:String x:Key="TxtDialogMsg0">Make sure all the inputs are filled!</sys:String>
     <sys:String x:Key="TxtDialogMsg1">The selected path doesn't contain the game's executable!</sys:String>

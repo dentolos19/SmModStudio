@@ -6,18 +6,25 @@
         <ScrollViewer>
             <StackPanel>
                 <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="{StaticResource ResourceKey=TxtProjectName}"/>
+                    <TextBlock Text="{StaticResource ResourceKey=TxtId}"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Content="{StaticResource ResourceKey=TxtCopy}" Margin="10,0,0,0" Click="CopyProjectId"/>
+                        <TextBox x:Name="ProjectIdBox" IsReadOnly="True"/>
+                    </DockPanel>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,10">
+                    <TextBlock Text="{StaticResource ResourceKey=TxtName}"/>
                     <TextBox x:Name="ProjectNameBox"/>
                 </StackPanel>
                 <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="{StaticResource ResourceKey=TxtProjectType}"/>
+                    <TextBlock Text="{StaticResource ResourceKey=TxtType}"/>
                     <ComboBox x:Name="ProjectTypeBox">
                         <ComboBoxItem Content="Blocks &amp; Parts"/>
                         <ComboBoxItem Content="Terrain Assets"/>
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Margin="0,0,0,10">
-                    <TextBlock Text="{StaticResource ResourceKey=TxtProjectDescription}"/>
+                    <TextBlock Text="{StaticResource ResourceKey=TxtDescription}"/>
                     <TabControl SelectionChanged="UpdateDescription">
                         <TabItem Header="{StaticResource ResourceKey=TxtRaw}">
                             <TextBox x:Name="ProjectDescriptionBox" AcceptsReturn="True" Height="Auto"/>
