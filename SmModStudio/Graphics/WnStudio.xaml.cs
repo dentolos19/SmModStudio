@@ -246,7 +246,7 @@ namespace SmModStudio.Graphics
                     descriptionEditor.Save(null, null);
                     break;
                 case PgLanguageEditor languageEditor:
-                    // TODO
+                    languageEditor.Save(null, null);
                     break;
             }
         }

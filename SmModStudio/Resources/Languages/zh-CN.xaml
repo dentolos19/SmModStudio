@@ -80,6 +80,13 @@
     <sys:String x:Key="TxtRaw">原料</sys:String>
     <sys:String x:Key="TxtPreview">预览</sys:String>
 
+    <sys:String x:Key="TxtAdd">增加</sys:String>
+    <sys:String x:Key="TxtRemove">去掉</sys:String>
+
+    <sys:String x:Key="TxtId">身份证</sys:String>
+    <sys:String x:Key="TxtTitle">标题</sys:String>
+    <sys:String x:Key="TxtDescription">说明</sys:String>
+
     <sys:String x:Key="TxtPrerequisiteMessage">开始设置重要的字段吧!</sys:String>
     <sys:String x:Key="TxtOpenProjectMessage">开始做一个 Mod 项目吧!</sys:String>
 

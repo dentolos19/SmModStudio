@@ -6,8 +6,6 @@
     <br>
 </h1>
 
----
-
 ## Features (w/ Todo)
 
 - [X] Code Editor
@@ -22,8 +20,10 @@
 
 ## Screenshots
 
-![](./.github/screenshots/0.png)
-![](./.github/screenshots/1.png)
-![](./.github/screenshots/2.png)
-![](./.github/screenshots/3.png)
-![](./.github/screenshots/4.png)
+[![](./.github/screenshots/0.png)](#)
+[![](./.github/screenshots/1.png)](#)
+[![](./.github/screenshots/2.png)](#)
+[![](./.github/screenshots/3.png)](#)
+[![](./.github/screenshots/4.png)](#)
+[![](./.github/screenshots/5.png)](#)
+[![](./.github/screenshots/6.png)](#)

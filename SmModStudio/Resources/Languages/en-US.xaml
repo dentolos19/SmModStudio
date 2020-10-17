@@ -80,6 +80,13 @@
     <sys:String x:Key="TxtRaw">Raw</sys:String>
     <sys:String x:Key="TxtPreview">Preview</sys:String>
 
+    <sys:String x:Key="TxtAdd">Add</sys:String>
+    <sys:String x:Key="TxtRemove">Remove</sys:String>
+
+    <sys:String x:Key="TxtId">ID</sys:String>
+    <sys:String x:Key="TxtTitle">Title</sys:String>
+    <sys:String x:Key="TxtDescription">Description</sys:String>
+
     <sys:String x:Key="TxtPrerequisiteMessage">Get started by setting important fields!</sys:String>
     <sys:String x:Key="TxtOpenProjectMessage">Get started working on a mod project!</sys:String>
 
