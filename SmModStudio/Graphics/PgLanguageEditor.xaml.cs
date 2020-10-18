@@ -26,7 +26,7 @@ namespace SmModStudio.Graphics
             foreach (var description in Utilities.LoadInventoryDescriptions(filePath))
                 _descriptions.Add(description);
             DescriptionListBox.DataContext = _descriptions;
-            Title = Path.GetFileName(_currentFilePath);
+            Title = Path.GetFileName(_currentFilePath) + $" ({new DirectoryInfo(Path.GetDirectoryName(_currentFilePath)!).Name})";
         }
 
         public void Save(object sender, RoutedEventArgs args)

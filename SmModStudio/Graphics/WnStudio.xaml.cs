@@ -37,10 +37,10 @@ namespace SmModStudio.Graphics
             SaveAll(null, null);
             _tabs.Clear();
             _hierarchyUpdater = new FileSystemWatcher(dialog.ModPath);
-            _hierarchyUpdater.Created += (o, a) => { UpdateHierarchy(); };
-            _hierarchyUpdater.Changed += (o, a) => { UpdateHierarchy(); };
-            _hierarchyUpdater.Deleted += (o, a) => { UpdateHierarchy(); };
-            _hierarchyUpdater.Renamed += (o, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Created += (s, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Changed += (s, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Deleted += (s, a) => { UpdateHierarchy(); };
+            _hierarchyUpdater.Renamed += (s, a) => { UpdateHierarchy(); };
             _hierarchyUpdater.EnableRaisingEvents = true;
             UpdateHierarchy(dialog.ModName, dialog.ModPath);
         }
