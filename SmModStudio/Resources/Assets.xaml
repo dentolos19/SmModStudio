@@ -1,8 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <BitmapImage x:Key="ImgIcon" UriSource="/SmModStudio;component/Resources/Assets/Icon.png"/>
-
     <BitmapImage x:Key="ImgSave" UriSource="/SmModStudio;component/Resources/Assets/Save.png"/>
 
     <BitmapImage x:Key="ImgCut" UriSource="/SmModStudio;component/Resources/Assets/Cut.png"/>
@@ -16,6 +14,5 @@
     <BitmapImage x:Key="ImgModFolder" UriSource="/SmModStudio;component/Resources/Assets/ModFolder.png"/>
     <BitmapImage x:Key="ImgFile" UriSource="/SmModStudio;component/Resources/Assets/File.png"/>
     <BitmapImage x:Key="ImgWrittenFile" UriSource="/SmModStudio;component/Resources/Assets/WrittenFile.png"/>
-    
 
 </ResourceDictionary>

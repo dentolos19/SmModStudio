@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using SmModStudio.Core;
+using SmModStudio.Core.Bindings;
 using SmModStudio.Core.Models;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
@@ -22,14 +23,13 @@ namespace SmModStudio.Graphics
 
         private void Continue(object sender, RoutedEventArgs args)
         {
-            var item = (ListBoxItem)ProjectListBox.SelectedItem;
-            if (item?.Tag == null)
+            if (!(ProjectListBox.SelectedItem is ProjectItemBinding item))
             {
                 AdonisMessageBox.Show(Constants.TxtDialogMsg4, Constants.TxtDialogTitle);
                 return;
             }
-            ModName = (string)item.Content;
-            ModPath = (string)item.Tag;
+            ModName = item.Name;
+            ModPath = item.Path;
             DialogResult = true;
             Close();
         }
@@ -61,12 +61,13 @@ namespace SmModStudio.Graphics
                 foreach (var path in paths)
                 {
                     if (!File.Exists(Path.Combine(path, "description.json")))
-                        return;
-                    var name = new DirectoryInfo(path).Name;
-                    if (File.Exists(Path.Combine(path, "description.json")))
-                        name = ModDescriptionModel.Load(Path.Combine(path, "description.json")).Name;
-                    var item = new ListBoxItem { Content = name, Tag = path };
-                    ProjectListBox.Items.Add(item);
+                        continue;
+                    var description = ModDescriptionModel.Load(Path.Combine(path, "description.json"));
+                    ProjectListBox.Items.Add(new ProjectItemBinding
+                    {
+                        Name = description.Name,
+                        Path = path
+                    });
                 }
             }
             
