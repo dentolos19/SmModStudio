@@ -79,6 +79,9 @@
                 <Separator/>
                 <MenuItem Header="{StaticResource ResourceKey=TxtSelectAll}" InputGestureText="Ctrl+A" Command="SelectAll"/>
             </MenuItem>
+            <MenuItem Header="{StaticResource ResourceKey=TxtViews}">
+                <MenuItem x:Name="ShowHierarchyCheckBox" Header="{StaticResource ResourceKey=TxtHierarchy}" IsCheckable="True" Click="ToggleHierarchyView"/>
+            </MenuItem>
             <MenuItem Header="{StaticResource ResourceKey=TxtOptions}">
                 <MenuItem Header="{StaticResource ResourceKey=TxtGame}">
                     <MenuItem Header="{StaticResource ResourceKey=TxtLaunchGame}" Click="LaunchGame"/>
@@ -93,8 +96,8 @@
         </Menu>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="200" MaxWidth="600"/>
-                <ColumnDefinition Width="5"/>
+                <ColumnDefinition x:Name="HierarchyColumn" Width="Auto" MinWidth="200" MaxWidth="600"/>
+                <ColumnDefinition x:Name="SplitterColumn" Width="5"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TreeView x:Name="Hierarchy" Grid.Column="0" ItemsSource="{Binding}" MouseDoubleClick="OpenHierarchyFile">

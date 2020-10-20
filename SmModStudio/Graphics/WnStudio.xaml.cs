@@ -16,6 +16,8 @@ namespace SmModStudio.Graphics
     public partial class WnStudio
     {
 
+        private readonly int _originalHierarchyWidth;
+        private readonly int _originalSplitterWidth;
         private readonly ObservableCollection<ViewTabBinding> _tabs;
 
         private string _modName;
@@ -27,6 +29,9 @@ namespace SmModStudio.Graphics
             InitializeComponent();
             _tabs = new ObservableCollection<ViewTabBinding>();
             Views.ItemsSource = _tabs;
+            ShowHierarchyCheckBox.IsChecked = true;
+            _originalHierarchyWidth = (int)HierarchyColumn.MinWidth;
+            _originalSplitterWidth = int.Parse(new GridLengthConverter().ConvertToString(SplitterColumn.Width)!);
         }
 
         private void Open(object sender, ExecutedRoutedEventArgs args)
@@ -260,6 +265,22 @@ namespace SmModStudio.Graphics
                 case PgLanguageEditor languageEditor:
                     languageEditor.Save(null, null);
                     break;
+            }
+        }
+
+        private void ToggleHierarchyView(object sender, RoutedEventArgs args)
+        {
+            if (ShowHierarchyCheckBox.IsChecked)
+            {
+                HierarchyColumn.MinWidth = _originalHierarchyWidth;
+                HierarchyColumn.Width = (GridLength)new GridLengthConverter().ConvertFrom("Auto")!;
+                SplitterColumn.Width = (GridLength)new GridLengthConverter().ConvertFrom(_originalSplitterWidth)!;
+            }
+            else
+            {
+                HierarchyColumn.MinWidth = 0;
+                HierarchyColumn.Width = (GridLength) new GridLengthConverter().ConvertFrom(0)!;
+                SplitterColumn.Width = (GridLength)new GridLengthConverter().ConvertFrom(0)!;
             }
         }
 

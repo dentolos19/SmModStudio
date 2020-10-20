@@ -17,6 +17,7 @@
 
     <sys:String x:Key="TxtFile">文件</sys:String>
     <sys:String x:Key="TxtEdit">编辑</sys:String>
+    <sys:String x:Key="TxtViews">观点</sys:String>
     <sys:String x:Key="TxtOptions">方案</sys:String>
 
     <sys:String x:Key="TxtNew">新文件</sys:String>
@@ -26,6 +27,8 @@
     <sys:String x:Key="TxtExit">退出</sys:String>
 
     <sys:String x:Key="TxtFolder">夹子</sys:String>
+
+    <sys:String x:Key="TxtHierarchy">等级制度</sys:String>
 
     <sys:String x:Key="TxtGoToLine">转入行</sys:String>
     <sys:String x:Key="TxtFindReplace">找补</sys:String>

@@ -29,6 +29,7 @@
 
     <sys:String x:Key="TxtFile">File</sys:String>
     <sys:String x:Key="TxtEdit">Edit</sys:String>
+    <sys:String x:Key="TxtViews">Views</sys:String>
     <sys:String x:Key="TxtOptions">Options</sys:String>
 
     <sys:String x:Key="TxtNew">New</sys:String>
@@ -38,6 +39,8 @@
     <sys:String x:Key="TxtExit">Exit</sys:String>
 
     <sys:String x:Key="TxtFolder">Folder</sys:String>
+
+    <sys:String x:Key="TxtHierarchy">Hierarchy</sys:String>
 
     <sys:String x:Key="TxtGoToLine">Go To Line</sys:String>
     <sys:String x:Key="TxtFindReplace">Find &amp; Replace</sys:String>
