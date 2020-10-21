@@ -94,17 +94,18 @@
     <sys:String x:Key="TxtGeneral">General</sys:String>
     <sys:String x:Key="TxtCredits">Credits</sys:String>
 
+    <sys:String x:Key="TxtAppLanguage">Application Language</sys:String>
+    <sys:String x:Key="TxtAppTheme">Application Theme</sys:String>
+
     <sys:String x:Key="TxtGameDataPath">Game Data Path</sys:String>
     <sys:String x:Key="TxtWorkshopPath">Workshop Path</sys:String>
     <sys:String x:Key="TxtUserDataPath">User Data Path</sys:String>
-
-    <sys:String x:Key="TxtAppLanguage">Application Language</sys:String>
-    <sys:String x:Key="TxtAppTheme">Application Theme</sys:String>
 
     <sys:String x:Key="TxtThemeLight">Light</sys:String>
     <sys:String x:Key="TxtThemeDark">Dark</sys:String>
 
     <sys:String x:Key="TxtAutoSaveClosingFile">Auto-Save Closing File</sys:String>
+    <sys:String x:Key="TxtEnableCodeCompletion">Enable Code Completion (Experimental)</sys:String>
 
     <!-- Dialog Strings -->
 

@@ -17,6 +17,9 @@ namespace SmModStudio.Core
         public static readonly BitmapImage ImgModFolder = (BitmapImage)Application.Current.Resources["ImgModFolder"];
         public static readonly BitmapImage ImgWrittenFile = (BitmapImage)Application.Current.Resources["ImgWrittenFile"];
 
+        public static readonly BitmapImage ImgFunction = (BitmapImage)Application.Current.Resources["ImgFunction"];
+        public static readonly BitmapImage ImgVariable = (BitmapImage)Application.Current.Resources["ImgVariable"];
+
         public static readonly string TxtDialogTitle = (string)Application.Current.Resources["TxtDialogTitle"];
         public static readonly string TxtDialogMsg0 = (string)Application.Current.Resources["TxtDialogMsg0"];
         public static readonly string TxtDialogMsg1 = (string)Application.Current.Resources["TxtDialogMsg1"];

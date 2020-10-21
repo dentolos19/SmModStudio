@@ -82,17 +82,18 @@
     <sys:String x:Key="TxtGeneral">一般</sys:String>
     <sys:String x:Key="TxtCredits">学分</sys:String>
 
+    <sys:String x:Key="TxtAppLanguage">应用语言</sys:String>
+    <sys:String x:Key="TxtAppTheme">应用主题</sys:String>
+
     <sys:String x:Key="TxtGameDataPath">游戏数据路径</sys:String>
     <sys:String x:Key="TxtWorkshopPath">车间路径</sys:String>
     <sys:String x:Key="TxtUserDataPath">用户数据路径</sys:String>
-
-    <sys:String x:Key="TxtAppLanguage">应用语言</sys:String>
-    <sys:String x:Key="TxtAppTheme">应用主题</sys:String>
 
     <sys:String x:Key="TxtThemeLight">轻主题</sys:String>
     <sys:String x:Key="TxtThemeDark">暗黑主题</sys:String>
 
     <sys:String x:Key="TxtAutoSaveClosingFile">自动保存关闭文件</sys:String>
+    <sys:String x:Key="TxtEnableCodeCompletion">启用代码完成 (试验性)</sys:String>
 
     <!-- Dialog Strings -->
 

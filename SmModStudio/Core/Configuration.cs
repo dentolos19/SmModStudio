@@ -20,6 +20,7 @@ namespace SmModStudio.Core
         public string UserDataPath { get; set; }
 
         public bool AutoSaveClosingFile { get; set; } = true;
+        public bool EnableCodeCompletion { get; set; } = false;
 
         public void Save()
         {

@@ -44,7 +44,7 @@
             </ToolBar>
         </ToolBarTray>
         <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
-        <edit:TextEditor.ContextMenu>
+            <edit:TextEditor.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="{StaticResource ResourceKey=TxtGoToLine}" InputGestureText="Ctrl+G" Command="GoToPage"/>
                 <MenuItem Header="{StaticResource ResourceKey=TxtFindReplace}" InputGestureText="Ctrl+F" Command="Find"/>

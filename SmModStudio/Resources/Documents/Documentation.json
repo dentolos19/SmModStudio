@@ -1,0 +1,51 @@
+{
+    "version": "0.3.3", 
+    "reference": "https://scrapmechanic.com/api/index.html",
+    "namespaces": [
+        {
+            "name": "sm",
+            "members": [
+                {
+                    "name": "version",
+                    "type": "Variable",
+                    "description": "Returns the current version of the game."
+                },
+                {
+                    "name": "isHost",
+                    "type": "Variable",
+                    "description": "Returns whether the game is running on the host."
+                },
+                {
+                    "name": "isServerHost",
+                    "type": "Function",
+                    "description": "Returns whether the script is running in server mode."
+                },
+                {
+                    "name": "exists",
+                    "type": "Function",
+                    "description": "Returns whether an object exists in the game."
+                },
+                {
+                    "name": "dofile",
+                    "type": "Function",
+                    "description": "Opens the named file and executes its contents as a chunk."
+                },
+                {
+                    "name": "class",
+                    "type": "Function",
+                    "description": "Creates a new class object."
+                },
+                {
+                    "name": "print",
+                    "type": "Function",
+                    "description": "Prints data to the console."
+                },
+                {
+                    "name": "type",
+                    "type": "Function",
+                    "description": "Returns the type of an object as a string."
+                }
+            ]
+        }
+    ]
+}

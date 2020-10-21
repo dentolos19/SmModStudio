@@ -15,4 +15,7 @@
     <BitmapImage x:Key="ImgFile" UriSource="/SmModStudio;component/Resources/Assets/File.png"/>
     <BitmapImage x:Key="ImgWrittenFile" UriSource="/SmModStudio;component/Resources/Assets/WrittenFile.png"/>
 
+    <BitmapImage x:Key="ImgFunction" UriSource="/SmModStudio;component/Resources/Assets/Function.png"/>
+    <BitmapImage x:Key="ImgVariable" UriSource="/SmModStudio;component/Resources/Assets/Variable.png"/>
+
 </ResourceDictionary>
