@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -95,7 +96,11 @@ namespace SmModStudio.Graphics
             foreach (var @namespace in _documentation.Namespaces)
             {
                 foreach (var member in @namespace.Members)
+                {
+                    if (!member.Name.Contains(args.Text))
+                        continue;
                     _completionWindow.CompletionList.CompletionData.Add(new CodeCompletionBinding(@namespace.Name, member));
+                }
             }
             _completionWindow.Closed += (o, a) => { _completionWindow = null; };
             _completionWindow.Show();

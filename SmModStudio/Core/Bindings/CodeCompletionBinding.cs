@@ -20,8 +20,8 @@ namespace SmModStudio.Core.Bindings
                 ApiMemberType.Variable => Constants.ImgVariable,
                 _ => null
             };
-            Text = namespaceName + "." + member.Name;
-            Content = member.Name;
+            Text = (string.IsNullOrEmpty(namespaceName) ? string.Empty : $"{namespaceName}.") + member.Name;
+            Content = (string.IsNullOrEmpty(namespaceName) ? string.Empty : $"{namespaceName}.") + member.Name;
             Description = member.Description;
             Priority = 0;
         }

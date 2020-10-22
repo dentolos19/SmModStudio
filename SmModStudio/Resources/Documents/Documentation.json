@@ -3,6 +3,31 @@
     "reference": "https://scrapmechanic.com/api/index.html",
     "namespaces": [
         {
+            "name": null,
+            "members": [
+                {
+                    "name": "dofile",
+                    "type": "Function",
+                    "description": "Opens the named file and executes its contents as a chunk."
+                },
+                {
+                    "name": "class",
+                    "type": "Function",
+                    "description": "Creates a new class object."
+                },
+                {
+                    "name": "print",
+                    "type": "Function",
+                    "description": "Prints data to the console."
+                },
+                {
+                    "name": "type",
+                    "type": "Function",
+                    "description": "Returns the type of an object as a string."
+                }
+            ] 
+        },
+        {
             "name": "sm",
             "members": [
                 {
@@ -24,28 +49,53 @@
                     "name": "exists",
                     "type": "Function",
                     "description": "Returns whether an object exists in the game."
-                },
-                {
-                    "name": "dofile",
-                    "type": "Function",
-                    "description": "Opens the named file and executes its contents as a chunk."
-                },
-                {
-                    "name": "class",
-                    "type": "Function",
-                    "description": "Creates a new class object."
-                },
-                {
-                    "name": "print",
-                    "type": "Function",
-                    "description": "Prints data to the console."
-                },
-                {
-                    "name": "type",
-                    "type": "Function",
-                    "description": "Returns the type of an object as a string."
                 }
             ]
+        },
+        {
+            "name": "sm.physics",
+            "members": [
+                {
+                    "name": "raycast",
+                    "type": "Function",
+                    "description": "Performs a ray cast between two positions."
+                },
+                {
+                    "name": "distanceRaycast",
+                    "type": "Function",
+                    "description": "Performs a distance ray cast from a position with a given direction."
+                },
+                {
+                    "name": "applyImpluse",
+                    "type": "Function",
+                    "description": "Applies an impulse to a shape, changing its velocity immediately."
+                },
+                {
+                    "name": "applyTorque",
+                    "type": "Function",
+                    "description": "Applies a torque impulse to a body, changing its angular velocity immediately."
+                },
+                {
+                    "name": "explode",
+                    "type": "Function",
+                    "description": "Creates an explosion at given position."
+                },
+                {
+                    "name": "setGravity",
+                    "type": "Function",
+                    "description": "Sets the gravitational acceleration affecting shapes and bodies."
+                },
+                {
+                    "name": "getGravity",
+                    "type": "Function",
+                    "description": "Returns the gravitational acceleration affecting shapes and bodies."
+                },
+                {
+                    "name": "types",
+                    "type": "Variable",
+                    "description": "Upon a raycast or collision detection, these types are used to find out what object was intersected."
+                }
+            ] 
         }
     ]
 }

@@ -3,87 +3,90 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:edit="http://icsharpcode.net/sharpdevelop/avalonedit">
     <Page.CommandBindings>
-        <CommandBinding Command="Save" Executed="Save"/>
-        <CommandBinding Command="GoToPage" Executed="GoToLine"/>
-        <CommandBinding Command="Find" Executed="FindReplace"/>
+        <CommandBinding Command="Save" Executed="Save" />
+        <CommandBinding Command="GoToPage" Executed="GoToLine" />
+        <CommandBinding Command="Find" Executed="FindReplace" />
     </Page.CommandBindings>
     <Page.InputBindings>
-        <KeyBinding Modifiers="Control" Key="G" Command="GoToPage"/>
+        <KeyBinding Modifiers="Control" Key="G" Command="GoToPage" />
     </Page.InputBindings>
     <DockPanel>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
                 <Button Command="Undo" ToolTip="{StaticResource ResourceKey=TxtUndo}">
-                    <Image Source="{StaticResource ResourceKey=ImgUndo}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgUndo}" Height="15" />
                 </Button>
                 <Button Command="Redo" ToolTip="{StaticResource ResourceKey=TxtRedo}">
-                    <Image Source="{StaticResource ResourceKey=ImgRedo}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgRedo}" Height="15" />
                 </Button>
                 <Button Command="Save" ToolTip="{StaticResource ResourceKey=TxtSave}">
-                    <Image Source="{StaticResource ResourceKey=ImgSave}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgSave}" Height="15" />
                 </Button>
             </ToolBar>
             <ToolBar>
                 <Button Command="Cut" ToolTip="{StaticResource ResourceKey=TxtCut}">
-                    <Image Source="{StaticResource ResourceKey=ImgCut}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgCut}" Height="15" />
                 </Button>
                 <Button Command="Copy" ToolTip="{StaticResource ResourceKey=TxtCopy}">
-                    <Image Source="{StaticResource ResourceKey=ImgCopy}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgCopy}" Height="15" />
                 </Button>
                 <Button Command="Paste" ToolTip="{StaticResource ResourceKey=TxtPaste}">
-                    <Image Source="{StaticResource ResourceKey=ImgPaste}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgPaste}" Height="15" />
                 </Button>
                 <Button Command="Delete" ToolTip="{StaticResource ResourceKey=TxtDelete}">
-                    <Image Source="{StaticResource ResourceKey=ImgDelete}" Height="15"/>
+                    <Image Source="{StaticResource ResourceKey=ImgDelete}" Height="15" />
                 </Button>
             </ToolBar>
             <ToolBar>
                 <ComboBox x:Name="SyntaxHighlightingBox" Width="100" SelectionChanged="UpdateSyntaxSelection">
-                    <ComboBoxItem Content="None"/>
+                    <ComboBoxItem Content="None" />
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
         <edit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="14" ShowLineNumbers="True">
             <edit:TextEditor.ContextMenu>
-            <ContextMenu>
-                <MenuItem Header="{StaticResource ResourceKey=TxtGoToLine}" InputGestureText="Ctrl+G" Command="GoToPage"/>
-                <MenuItem Header="{StaticResource ResourceKey=TxtFindReplace}" InputGestureText="Ctrl+F" Command="Find"/>
-                <Separator/>
-                <MenuItem Header="{StaticResource ResourceKey=TxtUndo}" InputGestureText="Ctrl+Z" Command="Undo">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgUndo}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{StaticResource ResourceKey=TxtRedo}" InputGestureText="Ctrl+Y" Command="Redo">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgRedo}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem Header="{StaticResource ResourceKey=TxtCut}" InputGestureText="Ctrl+X" Command="Cut">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgCut}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{StaticResource ResourceKey=TxtCopy}" InputGestureText="Ctrl+C" Command="Copy">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgCopy}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{StaticResource ResourceKey=TxtPaste}" InputGestureText="Ctrl+V" Command="Paste">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgPaste}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="{StaticResource ResourceKey=TxtDelete}" InputGestureText="Del" Command="Delete">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource ResourceKey=ImgDelete}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem Header="{StaticResource ResourceKey=TxtSelectAll}" InputGestureText="Ctrl+A" Command="SelectAll"/>
-            </ContextMenu>
-        </edit:TextEditor.ContextMenu>
-    </edit:TextEditor>
+                <ContextMenu>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtGoToLine}" InputGestureText="Ctrl+G"
+                              Command="GoToPage" />
+                    <MenuItem Header="{StaticResource ResourceKey=TxtFindReplace}" InputGestureText="Ctrl+F"
+                              Command="Find" />
+                    <Separator />
+                    <MenuItem Header="{StaticResource ResourceKey=TxtUndo}" InputGestureText="Ctrl+Z" Command="Undo">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgUndo}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtRedo}" InputGestureText="Ctrl+Y" Command="Redo">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgRedo}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="{StaticResource ResourceKey=TxtCut}" InputGestureText="Ctrl+X" Command="Cut">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgCut}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtCopy}" InputGestureText="Ctrl+C" Command="Copy">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgCopy}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtPaste}" InputGestureText="Ctrl+V" Command="Paste">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgPaste}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="{StaticResource ResourceKey=TxtDelete}" InputGestureText="Del" Command="Delete">
+                        <MenuItem.Icon>
+                            <Image Source="{StaticResource ResourceKey=ImgDelete}" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="{StaticResource ResourceKey=TxtSelectAll}" InputGestureText="Ctrl+A"
+                              Command="SelectAll" />
+                </ContextMenu>
+            </edit:TextEditor.ContextMenu>
+        </edit:TextEditor>
     </DockPanel>
 </Page>
