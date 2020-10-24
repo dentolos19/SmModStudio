@@ -95,6 +95,56 @@
                     "type": "Variable",
                     "description": "Upon a raycast or collision detection, these types are used to find out what object was intersected."
                 }
+            ]
+        },
+        {
+            "name": "sm.camera",
+            "members": [
+                {
+                    "name": "getPosition",
+                    "type": "Function",
+                    "description": "Returns the world postition of the camera."
+                },
+                {
+                    "name": "getDirection",
+                    "type": "Function",
+                    "description": "Returns the direction the camera is aiming."
+                },
+                {
+                    "name": "getUp",
+                    "type": "Function",
+                    "description": "Returns the up-vector perpendicular to the camera's aim."
+                },
+                {
+                    "name": "getRight",
+                    "type": "Function",
+                    "description": "Returns the right-vector perpendicular to the camera's aim."
+                },
+                {
+                    "name": "getFov",
+                    "type": "Function",
+                    "description": "Returns the camera's field of view angle."
+                },
+                {
+                    "name": "setShake",
+                    "type": "Function",
+                    "description": "Sets the camera's level of camera shake."
+                }
+            ]
+        },
+        {
+            "name": "sm.audio",
+            "members": [
+                {
+                    "name": "setShake",
+                    "type": "Function",
+                    "description": "Plays a sound."
+                },
+                {
+                    "name": "soundList",
+                    "type": "Variable",
+                    "description": "A table of available sounds in the game."
+                }
             ] 
         }
     ]

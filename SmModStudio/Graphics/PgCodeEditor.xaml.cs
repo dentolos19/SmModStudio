@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -17,9 +16,9 @@ namespace SmModStudio.Graphics
     public partial class PgCodeEditor
     {
 
-        private readonly CcDocumentationModel _documentation;
         private readonly string _currentFilePath;
 
+        private CcDocumentationModel _documentation;
         private CompletionWindow _completionWindow;
 
         public PgCodeEditor(string filePath)
@@ -50,12 +49,8 @@ namespace SmModStudio.Graphics
             {
                 SyntaxHighlightingBox.SelectedIndex = 0;
             }
-            if (App.Settings.EnableCodeCompletion)
-            {
-                _documentation = JsonConvert.DeserializeObject<CcDocumentationModel>(Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Documentation.json"));
-                Editor.TextArea.TextEntering += CodeCompletionEntering;
-                Editor.TextArea.TextEntered += CodeCompletionEntered;
-            }
+            Editor.TextArea.TextEntering += CodeCompletionEntering;
+            Editor.TextArea.TextEntered += CodeCompletionEntered;
             Editor.Load(_currentFilePath);
             Title = Path.GetFileName(_currentFilePath);
         }
@@ -82,16 +77,20 @@ namespace SmModStudio.Graphics
                 return;
             if (item.Tag is IHighlightingDefinition definition)
             {
+                _documentation = definition.Name == "RblxLua" && App.Settings.EnableCodeCompletion ? JsonConvert.DeserializeObject<CcDocumentationModel>(Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Documentation.json")) : null;
                 Editor.SyntaxHighlighting = definition;
             }
             else
             {
+                _documentation = null;
                 Editor.SyntaxHighlighting = null;
             }
         }
 
         private void CodeCompletionEntering(object sender, TextCompositionEventArgs args)
         {
+            if (_documentation == null)
+                return;
             _completionWindow = new CompletionWindow(Editor.TextArea);
             foreach (var @namespace in _documentation.Namespaces)
             {
@@ -108,6 +107,8 @@ namespace SmModStudio.Graphics
 
         private void CodeCompletionEntered(object sender, TextCompositionEventArgs args)
         {
+            if (_documentation == null)
+                return;
             if (args.Text.Length <= 0 || _completionWindow == null)
                 return;
             if (!char.IsLetterOrDigit(args.Text[0]))
