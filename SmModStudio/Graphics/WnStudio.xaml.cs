@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,6 +34,11 @@ namespace SmModStudio.Graphics
             ShowHierarchyCheckBox.IsChecked = true;
             _originalHierarchyWidth = (int)HierarchyColumn.MinWidth;
             _originalSplitterWidth = int.Parse(new GridLengthConverter().ConvertToString(SplitterColumn.Width)!);
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            VersionText.Text = $"v{version!.Major}.{version.Minor}.{version.Build}";
+            #if DEBUG
+            VersionText.Text += "-DEBUG";
+            #endif
         }
 
         private void Open(object sender, ExecutedRoutedEventArgs args)

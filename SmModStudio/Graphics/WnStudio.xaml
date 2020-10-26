@@ -94,6 +94,24 @@
                 <MenuItem Header="{StaticResource ResourceKey=TxtPreferences}" Click="ShowPreferences"/>
             </MenuItem>
         </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <TextBlock Text="Ready"/>
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="1">
+                <TextBlock x:Name="VersionText"/>
+            </StatusBarItem>
+        </StatusBar>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="HierarchyColumn" Width="Auto" MinWidth="200" MaxWidth="600"/>
