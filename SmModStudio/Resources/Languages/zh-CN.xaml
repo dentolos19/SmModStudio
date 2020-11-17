@@ -12,6 +12,7 @@
     <sys:String x:Key="TxtBrowse">浏览</sys:String>
     <sys:String x:Key="TxtComingSoon">即将到来</sys:String>
     <sys:String x:Key="TxtYes">是的</sys:String>
+    <sys:String x:Key="TxtReady">妥当</sys:String>
 
     <!-- Menu Strings -->
 

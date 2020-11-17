@@ -13,6 +13,7 @@
     <sys:String x:Key="TxtComingSoon">Coming Soon</sys:String>
     <sys:String x:Key="TxtYes">Yes</sys:String>
     <sys:String x:Key="TxtNo">No</sys:String>
+    <sys:String x:Key="TxtReady">Ready</sys:String>
 
     <!-- Window Title Strings -->
 

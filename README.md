@@ -21,7 +21,7 @@
 - [X] Easy Project Mangement
 - [X] Code Editor
   - [X] Syntax Highlighting
-  - [ ] Documentation (w/ Code Completion)
+  - [ ] Code Completion
 - [X] Language Editor
 - [X] Multi-Language Support
   - [X] Chinese (zh-CN)

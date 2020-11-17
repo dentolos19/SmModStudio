@@ -2,12 +2,8 @@
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
-using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Highlighting;
-using Newtonsoft.Json;
 using SmModStudio.Core;
-using SmModStudio.Core.Bindings;
-using SmModStudio.Core.Models;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
 namespace SmModStudio.Graphics
@@ -17,9 +13,6 @@ namespace SmModStudio.Graphics
     {
 
         private readonly string _currentFilePath;
-
-        private CcDocumentationModel _documentation;
-        private CompletionWindow _completionWindow;
 
         public PgCodeEditor(string filePath)
         {
@@ -49,8 +42,6 @@ namespace SmModStudio.Graphics
             {
                 SyntaxHighlightingBox.SelectedIndex = 0;
             }
-            Editor.TextArea.TextEntering += CodeCompletionEntering;
-            Editor.TextArea.TextEntered += CodeCompletionEntered;
             Editor.Load(_currentFilePath);
             Title = Path.GetFileName(_currentFilePath);
         }
@@ -77,42 +68,12 @@ namespace SmModStudio.Graphics
                 return;
             if (item.Tag is IHighlightingDefinition definition)
             {
-                _documentation = definition.Name == "RblxLua" && App.Settings.EnableCodeCompletion ? JsonConvert.DeserializeObject<CcDocumentationModel>(Utilities.RetrieveResourceString("SmModStudio.Resources.Documents.Documentation.json")) : null;
                 Editor.SyntaxHighlighting = definition;
             }
             else
             {
-                _documentation = null;
                 Editor.SyntaxHighlighting = null;
             }
-        }
-
-        private void CodeCompletionEntering(object sender, TextCompositionEventArgs args)
-        {
-            if (_documentation == null)
-                return;
-            _completionWindow = new CompletionWindow(Editor.TextArea);
-            foreach (var @namespace in _documentation.Namespaces)
-            {
-                foreach (var member in @namespace.Members)
-                {
-                    if (!member.Name.Contains(args.Text))
-                        continue;
-                    _completionWindow.CompletionList.CompletionData.Add(new CodeCompletionBinding(@namespace.Name, member));
-                }
-            }
-            _completionWindow.Closed += (o, a) => { _completionWindow = null; };
-            _completionWindow.Show();
-        }
-
-        private void CodeCompletionEntered(object sender, TextCompositionEventArgs args)
-        {
-            if (_documentation == null)
-                return;
-            if (args.Text.Length <= 0 || _completionWindow == null)
-                return;
-            if (!char.IsLetterOrDigit(args.Text[0]))
-                _completionWindow.CompletionList.RequestInsertion(args);
         }
 
     }

@@ -33,7 +33,6 @@ namespace SmModStudio.Graphics
                 UserDataPathBox.Items.Add(userDataPath);
             UserDataPathBox.SelectedIndex = 0;
             AutoSaveClosingFileOption.IsChecked = App.Settings.AutoSaveClosingFile;
-            EnableCodeCompletionOption.IsChecked = App.Settings.EnableCodeCompletion;
         }
 
         private void Save(object sender, RoutedEventArgs args)
@@ -52,7 +51,6 @@ namespace SmModStudio.Graphics
             App.Settings.WorkshopPath = WorkshopPathBox.Text;
             App.Settings.UserDataPath = UserDataPathBox.Text;
             App.Settings.AutoSaveClosingFile = AutoSaveClosingFileOption.IsChecked == true;
-            App.Settings.EnableCodeCompletion = EnableCodeCompletionOption.IsChecked == true;
             App.Settings.Save();
             if (AdonisMessageBox.Show(Constants.TxtDialogMsg2, Constants.TxtDialogTitle, MessageBoxButton.YesNo) == AdonisMessageBoxResult.Yes)
                 Utilities.RestartApp();

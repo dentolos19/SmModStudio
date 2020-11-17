@@ -106,7 +106,7 @@
                 </ItemsPanelTemplate>
             </StatusBar.ItemsPanel>
             <StatusBarItem Grid.Column="0">
-                <TextBlock Text="Ready"/>
+                <TextBlock Text="{StaticResource ResourceKey=TxtReady}"/>
             </StatusBarItem>
             <StatusBarItem Grid.Column="1">
                 <TextBlock x:Name="VersionText"/>
