@@ -1,16 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net5.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		
 		<UseWPF>true</UseWPF>
-		<StartupObject>SmModStudio.App</StartupObject>
-		<Authors>Dennise Catolos</Authors>
-		<Product>Scrap Mechanic Mod Studio</Product>
-		<Copyright>Copyright © 2020</Copyright>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>Properties\AssemblyKey.snk</AssemblyOriginatorKeyFile>
 		<ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+		<Product>Scrap Mechanic Mod Studio</Product>
+		<Authors>Dennise Catolos</Authors>
+		<Copyright>Copyright © 2021</Copyright>
+		
 	</PropertyGroup>
 
 	<ItemGroup>
