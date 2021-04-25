@@ -9,19 +9,18 @@ namespace SmModStudio.Core.Models
     public class InventoryDescriptionModel : INotifyPropertyChanged
     {
 
-        [JsonProperty("title")] private string _title;
         [JsonProperty("description")] private string _description;
+        [JsonProperty("title")] private string _title;
 
-        [JsonIgnore]
-        public Guid Id { get; set; }
+        [JsonIgnore] public Guid Id { get; set; }
 
         [JsonIgnore]
         public string Title
-        { 
+        {
             get => _title;
             set
             {
-                if(_title == value)
+                if (_title == value)
                     return;
                 _title = value;
                 OnPropertyChanged();
@@ -41,9 +40,9 @@ namespace SmModStudio.Core.Models
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

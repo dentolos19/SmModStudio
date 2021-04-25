@@ -7,7 +7,6 @@ namespace SmModStudio.Core.Bindings
     {
 
         public string Path { get; set; }
-
         public Page Content { get; set; }
 
     }

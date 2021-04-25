@@ -4,8 +4,8 @@ using Ookii.Dialogs.Wpf;
 using SmModStudio.Core;
 using SmModStudio.Core.Enums;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
-using MessageBoxButton = AdonisUI.Controls.MessageBoxButton;
 using AdonisMessageBoxResult = AdonisUI.Controls.MessageBoxResult;
+using MessageBoxButton = AdonisUI.Controls.MessageBoxButton;
 
 namespace SmModStudio.Graphics
 {

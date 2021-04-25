@@ -10,21 +10,17 @@ namespace SmModStudio.Core.Models
     public class ModDescriptionModel
     {
 
-        [JsonProperty("localId")]
-        public Guid Id { get; set; }
+        [JsonProperty("localId")] public Guid Id { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("name")] public string Name { get; set; }
 
         [JsonProperty("type")]
         [JsonConverter(typeof(StringEnumConverter))]
         public ModType Type { get; set; }
 
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("description")] public string Description { get; set; }
 
-        [JsonProperty("fileId")]
-        public uint WorkshopId { get; set; }
+        [JsonProperty("fileId")] public uint WorkshopId { get; set; }
 
         public void Save(string descriptionPath)
         {
@@ -35,7 +31,7 @@ namespace SmModStudio.Core.Models
         public static ModDescriptionModel Load(string descriptionPath)
         {
             var contents = File.ReadAllText(descriptionPath);
-            return JsonConvert.DeserializeObject<ModDescriptionModel>(contents);
+            return JsonConvert.DeserializeObject<ModDescriptionModel>(contents)!;
         }
 
     }

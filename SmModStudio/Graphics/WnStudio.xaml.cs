@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -21,10 +20,10 @@ namespace SmModStudio.Graphics
         private readonly int _originalHierarchyWidth;
         private readonly int _originalSplitterWidth;
         private readonly ObservableCollection<ViewTabBinding> _tabs;
+        private FileSystemWatcher _hierarchyUpdater;
 
         private string _modName;
         private string _modPath;
-        private FileSystemWatcher _hierarchyUpdater;
 
         public WnStudio()
         {
@@ -46,7 +45,7 @@ namespace SmModStudio.Graphics
             var dialog = new WnOpenProject { Owner = this };
             if (dialog.ShowDialog() != true)
                 return;
-            SaveAll(null, null);
+            SaveAll(null!, null!);
             _tabs.Clear();
             _hierarchyUpdater = new FileSystemWatcher(dialog.ModPath);
             _hierarchyUpdater.Created += (s, a) => { UpdateHierarchy(); };
@@ -99,17 +98,11 @@ namespace SmModStudio.Graphics
             if (Utilities.IsFileEditable(item.Path))
             {
                 if (item.Path == Path.Combine(_modPath, "description.json"))
-                {
                     page = new PgDescriptionEditor(item.Path);
-                }
                 else if (Path.GetFileName(item.Path) == "inventoryDescriptions.json")
-                {
                     page = new PgLanguageEditor(item.Path);
-                }
                 else
-                {
                     page = new PgCodeEditor(item.Path);
-                }
             }
             else if (Utilities.IsImagePreviewable(item.Path))
             {
@@ -130,13 +123,9 @@ namespace SmModStudio.Graphics
             if (AdonisMessageBox.Show(Constants.TxtDialogMsg8, Constants.TxtDialogTitle, AdonisMessageBoxButton.YesNo) != AdonisMessageBoxResult.Yes)
                 return;
             if (Utilities.IsPathDirectory(item.Path))
-            {
                 Directory.Delete(item.Path, true);
-            }
             else
-            {
                 File.Delete(item.Path);
-            }
         }
 
         private void CreateFolder(object sender, RoutedEventArgs args)
@@ -238,7 +227,7 @@ namespace SmModStudio.Graphics
             });
         }
 
-        private void UpdateHierarchy(string modName = null, string modPath = null)
+        private void UpdateHierarchy(string? modName = null, string? modPath = null)
         {
             if (!string.IsNullOrEmpty(modName))
                 _modName = modName;
@@ -264,13 +253,13 @@ namespace SmModStudio.Graphics
             switch (_tabs[index].Content)
             {
                 case PgCodeEditor codeEditor:
-                    codeEditor.Save(null, null);
+                    codeEditor.Save(null!, null!);
                     break;
                 case PgDescriptionEditor descriptionEditor:
-                    descriptionEditor.Save(null, null);
+                    descriptionEditor.Save(null!, null!);
                     break;
                 case PgLanguageEditor languageEditor:
-                    languageEditor.Save(null, null);
+                    languageEditor.Save(null!, null!);
                     break;
             }
         }
@@ -286,7 +275,7 @@ namespace SmModStudio.Graphics
             else
             {
                 HierarchyColumn.MinWidth = 0;
-                HierarchyColumn.Width = (GridLength) new GridLengthConverter().ConvertFrom(0)!;
+                HierarchyColumn.Width = (GridLength)new GridLengthConverter().ConvertFrom(0)!;
                 SplitterColumn.Width = (GridLength)new GridLengthConverter().ConvertFrom(0)!;
             }
         }

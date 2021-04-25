@@ -46,7 +46,7 @@ namespace SmModStudio.Graphics
 
         private void EditItem(object sender, MouseButtonEventArgs args)
         {
-            if (!(DescriptionListBox.SelectedItem is InventoryDescriptionModel item))
+            if (DescriptionListBox.SelectedItem is not InventoryDescriptionModel item)
                 return;
             _currentDescriptionModel = item;
             ItemIdBox.Text = _currentDescriptionModel.Id.ToString();

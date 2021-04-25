@@ -3,7 +3,7 @@ using System.Windows;
 using SmModStudio.Core;
 using AdonisMessageBox = AdonisUI.Controls.MessageBox;
 
-namespace SmModStudio.Graphics 
+namespace SmModStudio.Graphics
 {
 
     public partial class WnNewFolder

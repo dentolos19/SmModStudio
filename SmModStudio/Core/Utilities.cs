@@ -159,14 +159,14 @@ namespace SmModStudio.Core
                 };
                 items.Add(item);
             }
-            foreach(var file in info.GetFiles())
+            foreach (var file in info.GetFiles())
             {
                 if (file.Attributes.HasFlag(FileAttributes.Hidden | FileAttributes.Temporary))
                     continue;
                 var item = new HierarchyFileBinding
                 {
                     Icon = Constants.ImgWrittenFile,
-                    Name = file.Name, 
+                    Name = file.Name,
                     Path = file.FullName
                 };
                 items.Add(item);

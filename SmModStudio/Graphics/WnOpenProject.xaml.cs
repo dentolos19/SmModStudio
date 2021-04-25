@@ -12,14 +12,14 @@ namespace SmModStudio.Graphics
     public partial class WnOpenProject
     {
 
-        public string ModName { get; private set; }
-        public string ModPath { get; private set; }
-
         public WnOpenProject()
         {
             InitializeComponent();
             ProjectLocationBox.SelectedIndex = 1;
         }
+
+        public string ModName { get; private set; }
+        public string ModPath { get; private set; }
 
         private void Continue(object sender, RoutedEventArgs args)
         {
@@ -70,7 +70,6 @@ namespace SmModStudio.Graphics
                     });
                 }
             }
-            
         }
 
     }

@@ -31,12 +31,8 @@ namespace SmModStudio.Graphics
             if (targetDefinition != null)
             {
                 foreach (var item in SyntaxHighlightingBox.Items.OfType<ComboBoxItem>())
-                {
                     if (item.Tag != null && item.Tag.Equals(targetDefinition))
-                    {
                         SyntaxHighlightingBox.SelectedItem = item;
-                    }
-                }
             }
             else
             {
@@ -67,13 +63,9 @@ namespace SmModStudio.Graphics
             if (item == null)
                 return;
             if (item.Tag is IHighlightingDefinition definition)
-            {
                 Editor.SyntaxHighlighting = definition;
-            }
             else
-            {
                 Editor.SyntaxHighlighting = null;
-            }
         }
 
     }

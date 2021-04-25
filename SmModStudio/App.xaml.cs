@@ -16,11 +16,10 @@ namespace SmModStudio
     public partial class App
     {
 
-        internal static Configuration Settings { get; private set; }
+        internal static Configuration Settings { get; } = Configuration.Load();
 
         private void InitializeApp(object sender, StartupEventArgs args)
         {
-            Settings = Configuration.Load();
             AutoDetectSteamLocation();
             SetupHighlightingDefinitions();
             SetAppTheme();
@@ -29,10 +28,10 @@ namespace SmModStudio
             MainWindow.Show();
         }
 
-        private void HandleError(object sender, DispatcherUnhandledExceptionEventArgs args)
+        private void HandleException(object sender, DispatcherUnhandledExceptionEventArgs args)
         {
             args.Handled = true;
-            new WnErrorHandler(args.Exception).ShowDialog();
+            new WnExceptionHandler(args.Exception).ShowDialog();
         }
 
         private static void AutoDetectSteamLocation()

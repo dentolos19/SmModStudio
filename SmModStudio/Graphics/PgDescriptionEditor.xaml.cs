@@ -11,21 +11,23 @@ namespace SmModStudio.Graphics
     public partial class PgDescriptionEditor
     {
 
-        private readonly string _descriptionPath;
         private readonly ModDescriptionModel _descriptionModel;
+
+        private readonly string _descriptionPath;
+
         public PgDescriptionEditor(string descriptionPath)
         {
             InitializeComponent();
             _descriptionPath = descriptionPath;
             _descriptionModel = ModDescriptionModel.Load(_descriptionPath);
             ProjectIdBox.Text = _descriptionModel.Id.ToString();
-            ProjectNameBox.Text =  _descriptionModel.Name;
-            ProjectTypeBox.SelectedIndex =  _descriptionModel.Type switch
+            ProjectNameBox.Text = _descriptionModel.Name;
+            ProjectTypeBox.SelectedIndex = _descriptionModel.Type switch
             {
                 ModType.TerrainAssets => 1,
                 _ => 0
             };
-            ProjectDescriptionBox.Text =  _descriptionModel.Description;
+            ProjectDescriptionBox.Text = _descriptionModel.Description;
             Title = Path.GetFileName(_descriptionPath);
         }
 
